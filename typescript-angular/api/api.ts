@@ -1,0 +1,11 @@
+export * from './cameras.service';
+import { CamerasService } from './cameras.service';
+export * from './enterprises.service';
+import { EnterprisesService } from './enterprises.service';
+export * from './events.service';
+import { EventsService } from './events.service';
+export * from './tags.service';
+import { TagsService } from './tags.service';
+export * from './videos.service';
+import { VideosService } from './videos.service';
+export const APIS = [CamerasService, EnterprisesService, EventsService, TagsService, VideosService];
