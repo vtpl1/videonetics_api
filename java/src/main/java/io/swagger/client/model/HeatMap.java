@@ -29,7 +29,7 @@ import java.util.List;
  * HeatMap
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-05T14:46:13.659Z[GMT]")public class HeatMap {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-05T14:46:16.991Z[GMT]")public class HeatMap {
 
   @SerializedName("max")
   private BigDecimal max = null;
