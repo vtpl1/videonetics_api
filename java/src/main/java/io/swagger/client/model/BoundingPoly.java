@@ -28,7 +28,7 @@ import java.util.List;
  * BoundingPoly
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-05T12:34:15.370Z[GMT]")public class BoundingPoly {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-05T12:39:22.845Z[GMT]")public class BoundingPoly {
 
   @SerializedName("vertices")
   private List<Vertex> vertices = null;
