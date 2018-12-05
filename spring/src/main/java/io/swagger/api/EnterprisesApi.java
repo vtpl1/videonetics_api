@@ -25,16 +25,12 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-11-21T13:08:36.940Z[GMT]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2018-12-05T07:09:15.776Z[GMT]")
 
 @Api(value = "enterprises", description = "the enterprises API")
 public interface EnterprisesApi {
 
-    @ApiOperation(value = "Get enterprises with details", nickname = "enterprisesEnterpriseIdDetailsGet", notes = "List all enterprises available.", response = EnterpriseDetail.class, authorizations = {
-        @Authorization(value = "accessCode", scopes = {
-            @AuthorizationScope(scope = "", description = "")
-            })
-    }, tags={ "enterprises", })
+    @ApiOperation(value = "Get enterprises with details", nickname = "enterprisesEnterpriseIdDetailsGet", notes = "List all enterprises available.", response = EnterpriseDetail.class, tags={ "enterprises", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Get all enterprises", response = EnterpriseDetail.class) })
     @RequestMapping(value = "/enterprises/{enterpriseId}/details",
@@ -43,11 +39,7 @@ public interface EnterprisesApi {
     ResponseEntity<EnterpriseDetail> enterprisesEnterpriseIdDetailsGet(@ApiParam(value = "enterprise Id",required=true) @PathVariable("enterpriseId") UUID enterpriseId);
 
 
-    @ApiOperation(value = "Get enterprises list", nickname = "enterprisesGet", notes = "List all enterprises available.", response = Enterprises.class, authorizations = {
-        @Authorization(value = "accessCode", scopes = {
-            @AuthorizationScope(scope = "", description = "")
-            })
-    }, tags={ "enterprises", })
+    @ApiOperation(value = "Get enterprises list", nickname = "enterprisesGet", notes = "List all enterprises available.", response = Enterprises.class, tags={ "enterprises", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Get all enterprises", response = Enterprises.class) })
     @RequestMapping(value = "/enterprises",
@@ -56,11 +48,7 @@ public interface EnterprisesApi {
     ResponseEntity<Enterprises> enterprisesGet();
 
 
-    @ApiOperation(value = "Add new enterprise", nickname = "enterprisesPost", notes = "Add new enterprise.", response = Enterprise.class, authorizations = {
-        @Authorization(value = "accessCode", scopes = {
-            @AuthorizationScope(scope = "", description = "")
-            })
-    }, tags={ "enterprises", })
+    @ApiOperation(value = "Add new enterprise", nickname = "enterprisesPost", notes = "Add new enterprise.", response = Enterprise.class, tags={ "enterprises", })
     @ApiResponses(value = { 
         @ApiResponse(code = 201, message = "Get all enterprises", response = Enterprise.class) })
     @RequestMapping(value = "/enterprises",
