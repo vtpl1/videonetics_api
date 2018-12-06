@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.UserRole;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 
@@ -25,13 +26,16 @@ import java.io.IOException;
  * User
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:05:09.757Z[GMT]")public class User {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:12:58.891Z[GMT]")public class User {
 
   @SerializedName("id")
   private String id = null;
 
   @SerializedName("name")
   private String name = null;
+
+  @SerializedName("userRole")
+  private UserRole userRole = null;
   public User id(String id) {
     this.id = id;
     return this;
@@ -68,6 +72,24 @@ import java.io.IOException;
   public void setName(String name) {
     this.name = name;
   }
+  public User userRole(UserRole userRole) {
+    this.userRole = userRole;
+    return this;
+  }
+
+  
+
+  /**
+  * Get userRole
+  * @return userRole
+  **/
+  @Schema(description = "")
+  public UserRole getUserRole() {
+    return userRole;
+  }
+  public void setUserRole(UserRole userRole) {
+    this.userRole = userRole;
+  }
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -78,12 +100,13 @@ import java.io.IOException;
     }
     User user = (User) o;
     return Objects.equals(this.id, user.id) &&
-        Objects.equals(this.name, user.name);
+        Objects.equals(this.name, user.name) &&
+        Objects.equals(this.userRole, user.userRole);
   }
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(id, name);
+    return java.util.Objects.hash(id, name, userRole);
   }
 
   @Override
@@ -93,6 +116,7 @@ import java.io.IOException;
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    userRole: ").append(toIndentedString(userRole)).append("\n");
     sb.append("}");
     return sb.toString();
   }

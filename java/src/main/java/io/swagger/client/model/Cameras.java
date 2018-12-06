@@ -21,7 +21,7 @@ import java.util.List;
  * Cameras
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:05:09.757Z[GMT]")public class Cameras extends ArrayList<Camera> {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:12:58.891Z[GMT]")public class Cameras extends ArrayList<Camera> {
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

@@ -26,7 +26,7 @@ import java.io.IOException;
  * FaceAnnotation
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:05:09.757Z[GMT]")public class FaceAnnotation {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:12:58.891Z[GMT]")public class FaceAnnotation {
 
   @SerializedName("boundingBox")
   private BoundingBox boundingBox = null;
