@@ -26,7 +26,7 @@ import java.util.UUID;
  * FavouriteTag
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T02:17:56.471Z[GMT]")public class FavouriteTag {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T02:21:29.019Z[GMT]")public class FavouriteTag {
 
   @SerializedName("id")
   private UUID id = null;
