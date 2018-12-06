@@ -26,7 +26,7 @@ import java.io.IOException;
  * User
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:26:25.142Z[GMT]")public class User {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:28:46.069Z[GMT]")public class User {
 
   @SerializedName("id")
   private String id = null;
@@ -65,7 +65,7 @@ import java.io.IOException;
   * Get name
   * @return name
   **/
-  @Schema(description = "")
+  @Schema(example = "John Doe", description = "")
   public String getName() {
     return name;
   }

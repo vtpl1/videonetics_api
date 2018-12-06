@@ -28,7 +28,8 @@ import com.google.gson.stream.JsonWriter;
 public enum UserRole {
   ADMIN("admin"),
   READER("reader"),
-  WRITER("writer");
+  WRITER("writer"),
+  EVENTGENERATOR("eventGenerator");
 
   private String value;
 

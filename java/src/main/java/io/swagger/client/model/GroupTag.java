@@ -26,7 +26,7 @@ import java.util.UUID;
  * GroupTag
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:26:25.142Z[GMT]")public class GroupTag {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:28:46.069Z[GMT]")public class GroupTag {
 
   @SerializedName("id")
   private UUID id = null;
