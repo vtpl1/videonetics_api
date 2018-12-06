@@ -1,6 +1,6 @@
 # EventsApi
 
-All URIs are relative to *https://v2.videonetics.com:5000/v1*
+All URIs are relative to *http://v2.videonetics.com:5000/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

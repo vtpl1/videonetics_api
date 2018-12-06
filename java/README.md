@@ -89,7 +89,7 @@ public class CamerasApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://v2.videonetics.com:5000/v1*
+All URIs are relative to *http://v2.videonetics.com:5000/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
