@@ -13,7 +13,6 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
-import java.util.UUID;
 import io.swagger.client.model.User;
 import io.swagger.client.model.Users;
 import org.junit.Test;
@@ -56,7 +55,7 @@ public class UsersApiTest {
      */
     @Test
     public void usersPostTest() throws ApiException {
-        UUID body = null;
+        User body = null;
         User response = api.usersPost(body);
 
         // TODO: test validations

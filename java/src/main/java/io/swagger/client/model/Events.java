@@ -21,7 +21,7 @@ import java.util.List;
  * Events
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:42:31.383Z[GMT]")public class Events extends ArrayList<Event> {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:43:17.141Z[GMT]")public class Events extends ArrayList<Event> {
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

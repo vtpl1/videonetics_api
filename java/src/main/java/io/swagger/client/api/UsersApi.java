@@ -26,7 +26,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import java.util.UUID;
 import io.swagger.client.model.User;
 import io.swagger.client.model.Users;
 
@@ -179,7 +178,7 @@ public class UsersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call usersPostCall(UUID body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call usersPostCall(User body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -221,7 +220,7 @@ public class UsersApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call usersPostValidateBeforeCall(UUID body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call usersPostValidateBeforeCall(User body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         com.squareup.okhttp.Call call = usersPostCall(body, progressListener, progressRequestListener);
         return call;
@@ -239,7 +238,7 @@ public class UsersApi {
      * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public User usersPost(UUID body) throws ApiException {
+    public User usersPost(User body) throws ApiException {
         ApiResponse<User> resp = usersPostWithHttpInfo(body);
         return resp.getData();
     }
@@ -251,7 +250,7 @@ public class UsersApi {
      * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<User> usersPostWithHttpInfo(UUID body) throws ApiException {
+    public ApiResponse<User> usersPostWithHttpInfo(User body) throws ApiException {
         com.squareup.okhttp.Call call = usersPostValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<User>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -265,7 +264,7 @@ public class UsersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call usersPostAsync(UUID body, final ApiCallback<User> callback) throws ApiException {
+    public com.squareup.okhttp.Call usersPostAsync(User body, final ApiCallback<User> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

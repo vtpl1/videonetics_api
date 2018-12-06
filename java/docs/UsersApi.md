@@ -76,7 +76,7 @@ OAuth accessCode = (OAuth) defaultClient.getAuthentication("accessCode");
 accessCode.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
-UUID body = new UUID(); // UUID | 
+User body = new User(); // User | 
 try {
     User result = apiInstance.usersPost(body);
     System.out.println(result);
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UUID**](UUID.md)|  | [optional]
+ **body** | [**User**](User.md)|  | [optional]
 
 ### Return type
 

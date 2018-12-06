@@ -25,7 +25,7 @@ import java.io.IOException;
  * AccessStatus
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:42:31.383Z[GMT]")public class AccessStatus {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:43:17.141Z[GMT]")public class AccessStatus {
 
   @SerializedName("createdOn")
   private Long createdOn = null;

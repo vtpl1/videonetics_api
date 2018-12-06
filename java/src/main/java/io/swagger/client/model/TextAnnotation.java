@@ -27,7 +27,7 @@ import java.io.IOException;
  * TextAnnotation
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:42:31.383Z[GMT]")public class TextAnnotation {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:43:17.141Z[GMT]")public class TextAnnotation {
 
   @SerializedName("locale")
   private Locale locale = null;
