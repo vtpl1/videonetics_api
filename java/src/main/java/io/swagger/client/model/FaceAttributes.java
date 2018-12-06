@@ -25,7 +25,7 @@ import java.io.IOException;
  * FaceAttributes
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:25:06.162Z[GMT]")public class FaceAttributes {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:26:25.142Z[GMT]")public class FaceAttributes {
 
   @SerializedName("smile")
   private Float smile = null;

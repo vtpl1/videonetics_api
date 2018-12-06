@@ -26,7 +26,7 @@ import java.io.IOException;
  * User
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:25:06.162Z[GMT]")public class User {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:26:25.142Z[GMT]")public class User {
 
   @SerializedName("id")
   private String id = null;
@@ -34,8 +34,8 @@ import java.io.IOException;
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("userRole")
-  private UserRole userRole = null;
+  @SerializedName("role")
+  private UserRole role = null;
   public User id(String id) {
     this.id = id;
     return this;
@@ -72,23 +72,23 @@ import java.io.IOException;
   public void setName(String name) {
     this.name = name;
   }
-  public User userRole(UserRole userRole) {
-    this.userRole = userRole;
+  public User role(UserRole role) {
+    this.role = role;
     return this;
   }
 
   
 
   /**
-  * Get userRole
-  * @return userRole
+  * Get role
+  * @return role
   **/
   @Schema(description = "")
-  public UserRole getUserRole() {
-    return userRole;
+  public UserRole getRole() {
+    return role;
   }
-  public void setUserRole(UserRole userRole) {
-    this.userRole = userRole;
+  public void setRole(UserRole role) {
+    this.role = role;
   }
   @Override
   public boolean equals(java.lang.Object o) {
@@ -101,12 +101,12 @@ import java.io.IOException;
     User user = (User) o;
     return Objects.equals(this.id, user.id) &&
         Objects.equals(this.name, user.name) &&
-        Objects.equals(this.userRole, user.userRole);
+        Objects.equals(this.role, user.role);
   }
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(id, name, userRole);
+    return java.util.Objects.hash(id, name, role);
   }
 
   @Override
@@ -116,7 +116,7 @@ import java.io.IOException;
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    userRole: ").append(toIndentedString(userRole)).append("\n");
+    sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("}");
     return sb.toString();
   }
