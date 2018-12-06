@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 <a name="usersPost"></a>
 # **usersPost**
-> String usersPost(body)
+> InlineResponse201 usersPost(body)
 
 Create a Gloabal System level user
 
@@ -78,7 +78,7 @@ accessCode.setAccessToken("YOUR ACCESS TOKEN");
 UsersApi apiInstance = new UsersApi();
 User body = new User(); // User | 
 try {
-    String result = apiInstance.usersPost(body);
+    InlineResponse201 result = apiInstance.usersPost(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersPost");
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**InlineResponse201**](InlineResponse201.md)
 
 ### Authorization
 

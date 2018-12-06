@@ -26,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import io.swagger.client.model.InlineResponse201;
 import io.swagger.client.model.User;
 import io.swagger.client.model.Users;
 
@@ -235,11 +236,11 @@ public class UsersApi {
      * Create a Gloabal System level user
      * 
      * @param body  (optional)
-     * @return String
+     * @return InlineResponse201
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public String usersPost(User body) throws ApiException {
-        ApiResponse<String> resp = usersPostWithHttpInfo(body);
+    public InlineResponse201 usersPost(User body) throws ApiException {
+        ApiResponse<InlineResponse201> resp = usersPostWithHttpInfo(body);
         return resp.getData();
     }
 
@@ -247,12 +248,12 @@ public class UsersApi {
      * Create a Gloabal System level user
      * 
      * @param body  (optional)
-     * @return ApiResponse&lt;String&gt;
+     * @return ApiResponse&lt;InlineResponse201&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<String> usersPostWithHttpInfo(User body) throws ApiException {
+    public ApiResponse<InlineResponse201> usersPostWithHttpInfo(User body) throws ApiException {
         com.squareup.okhttp.Call call = usersPostValidateBeforeCall(body, null, null);
-        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse201>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -264,7 +265,7 @@ public class UsersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call usersPostAsync(User body, final ApiCallback<String> callback) throws ApiException {
+    public com.squareup.okhttp.Call usersPostAsync(User body, final ApiCallback<InlineResponse201> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -286,7 +287,7 @@ public class UsersApi {
         }
 
         com.squareup.okhttp.Call call = usersPostValidateBeforeCall(body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        Type localVarReturnType = new TypeToken<InlineResponse201>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

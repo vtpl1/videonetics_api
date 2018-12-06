@@ -13,6 +13,7 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
+import io.swagger.client.model.InlineResponse201;
 import io.swagger.client.model.User;
 import io.swagger.client.model.Users;
 import org.junit.Test;
@@ -56,7 +57,7 @@ public class UsersApiTest {
     @Test
     public void usersPostTest() throws ApiException {
         User body = null;
-        String response = api.usersPost(body);
+        InlineResponse201 response = api.usersPost(body);
 
         // TODO: test validations
     }

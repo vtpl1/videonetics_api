@@ -123,6 +123,7 @@ Class | Method | HTTP request | Description
  - [FavouriteTag](docs/FavouriteTag.md)
  - [GroupTag](docs/GroupTag.md)
  - [HeatMap](docs/HeatMap.md)
+ - [InlineResponse201](docs/InlineResponse201.md)
  - [LabelAnnotation](docs/LabelAnnotation.md)
  - [LabelAnnotations](docs/LabelAnnotations.md)
  - [Locale](docs/Locale.md)

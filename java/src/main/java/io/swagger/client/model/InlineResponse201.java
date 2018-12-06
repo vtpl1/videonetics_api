@@ -18,57 +18,34 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.Vertex;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
- * VertexWithValue
+ * InlineResponse201
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T16:14:29.389Z[GMT]")public class VertexWithValue {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T16:14:29.389Z[GMT]")public class InlineResponse201 {
 
-  @SerializedName("value")
-  private BigDecimal value = null;
-
-  @SerializedName("vertex")
-  private Vertex vertex = null;
-  public VertexWithValue value(BigDecimal value) {
-    this.value = value;
+  @SerializedName("_id")
+  private String _id = null;
+  public InlineResponse201 _id(String _id) {
+    this._id = _id;
     return this;
   }
 
   
 
   /**
-  * Get value
-  * @return value
-  **/
-  @Schema(example = "5", description = "")
-  public BigDecimal getValue() {
-    return value;
-  }
-  public void setValue(BigDecimal value) {
-    this.value = value;
-  }
-  public VertexWithValue vertex(Vertex vertex) {
-    this.vertex = vertex;
-    return this;
-  }
-
-  
-
-  /**
-  * Get vertex
-  * @return vertex
+  * Get _id
+  * @return _id
   **/
   @Schema(description = "")
-  public Vertex getVertex() {
-    return vertex;
+  public String getId() {
+    return _id;
   }
-  public void setVertex(Vertex vertex) {
-    this.vertex = vertex;
+  public void setId(String _id) {
+    this._id = _id;
   }
   @Override
   public boolean equals(java.lang.Object o) {
@@ -78,23 +55,21 @@ import java.math.BigDecimal;
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    VertexWithValue vertexWithValue = (VertexWithValue) o;
-    return Objects.equals(this.value, vertexWithValue.value) &&
-        Objects.equals(this.vertex, vertexWithValue.vertex);
+    InlineResponse201 inlineResponse201 = (InlineResponse201) o;
+    return Objects.equals(this._id, inlineResponse201._id);
   }
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(value, vertex);
+    return java.util.Objects.hash(_id);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class VertexWithValue {\n");
+    sb.append("class InlineResponse201 {\n");
     
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    vertex: ").append(toIndentedString(vertex)).append("\n");
+    sb.append("    _id: ").append(toIndentedString(_id)).append("\n");
     sb.append("}");
     return sb.toString();
   }
