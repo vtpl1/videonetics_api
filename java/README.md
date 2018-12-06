@@ -130,6 +130,8 @@ Class | Method | HTTP request | Description
  - [Tags](docs/Tags.md)
  - [TextAnnotation](docs/TextAnnotation.md)
  - [TextAnnotations](docs/TextAnnotations.md)
+ - [User](docs/User.md)
+ - [Users](docs/Users.md)
  - [Vertex](docs/Vertex.md)
  - [VertexWithValue](docs/VertexWithValue.md)
 

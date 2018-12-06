@@ -20,54 +20,54 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
+import java.util.UUID;
 
 /**
- * Vertex
+ * User
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T02:17:56.471Z[GMT]")public class Vertex {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T02:17:56.471Z[GMT]")public class User {
 
-  @SerializedName("x")
-  private BigDecimal x = null;
+  @SerializedName("id")
+  private UUID id = null;
 
-  @SerializedName("y")
-  private BigDecimal y = null;
-  public Vertex x(BigDecimal x) {
-    this.x = x;
+  @SerializedName("name")
+  private String name = null;
+  public User id(UUID id) {
+    this.id = id;
     return this;
   }
 
   
 
   /**
-  * Get x
-  * @return x
+  * Get id
+  * @return id
   **/
-  @Schema(example = "10", description = "")
-  public BigDecimal getX() {
-    return x;
+  @Schema(description = "")
+  public UUID getId() {
+    return id;
   }
-  public void setX(BigDecimal x) {
-    this.x = x;
+  public void setId(UUID id) {
+    this.id = id;
   }
-  public Vertex y(BigDecimal y) {
-    this.y = y;
+  public User name(String name) {
+    this.name = name;
     return this;
   }
 
   
 
   /**
-  * Get y
-  * @return y
+  * Get name
+  * @return name
   **/
-  @Schema(example = "10", description = "")
-  public BigDecimal getY() {
-    return y;
+  @Schema(description = "")
+  public String getName() {
+    return name;
   }
-  public void setY(BigDecimal y) {
-    this.y = y;
+  public void setName(String name) {
+    this.name = name;
   }
   @Override
   public boolean equals(java.lang.Object o) {
@@ -77,23 +77,23 @@ import java.math.BigDecimal;
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Vertex vertex = (Vertex) o;
-    return Objects.equals(this.x, vertex.x) &&
-        Objects.equals(this.y, vertex.y);
+    User user = (User) o;
+    return Objects.equals(this.id, user.id) &&
+        Objects.equals(this.name, user.name);
   }
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(x, y);
+    return java.util.Objects.hash(id, name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Vertex {\n");
+    sb.append("class User {\n");
     
-    sb.append("    x: ").append(toIndentedString(x)).append("\n");
-    sb.append("    y: ").append(toIndentedString(y)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

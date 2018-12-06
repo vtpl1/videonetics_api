@@ -13,15 +13,15 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
-import io.swagger.client.model.TextAnnotation;
+import io.swagger.client.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TextAnnotations
+ * Users
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T02:17:56.471Z[GMT]")public class TextAnnotations extends ArrayList<TextAnnotation> {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T02:17:56.471Z[GMT]")public class Users extends ArrayList<User> {
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -41,7 +41,7 @@ import java.util.List;
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TextAnnotations {\n");
+    sb.append("class Users {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();
