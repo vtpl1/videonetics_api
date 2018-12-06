@@ -20,7 +20,7 @@ import java.util.List;
  * Tags
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:12:58.891Z[GMT]")public class Tags extends ArrayList<Object> {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:15:06.313Z[GMT]")public class Tags extends ArrayList<Object> {
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
