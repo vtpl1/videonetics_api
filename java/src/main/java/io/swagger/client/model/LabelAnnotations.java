@@ -21,7 +21,7 @@ import java.util.List;
  * LabelAnnotations
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:44:44.471Z[GMT]")public class LabelAnnotations extends ArrayList<LabelAnnotation> {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:49:12.755Z[GMT]")public class LabelAnnotations extends ArrayList<LabelAnnotation> {
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

@@ -1,6 +1,6 @@
 # TagsApi
 
-All URIs are relative to *http://v2.videonetics.com:5000/v1*
+All URIs are relative to *http://v2.videonetics.com:5000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
