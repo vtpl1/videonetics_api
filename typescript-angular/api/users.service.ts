@@ -18,8 +18,8 @@ import { CustomHttpUrlEncodingCodec }                        from '../encoder';
 
 import { Observable }                                        from 'rxjs/Observable';
 
+import { InlineResponse201 } from '../model/inlineResponse201';
 import { User } from '../model/user';
-import { UserId } from '../model/userId';
 import { Users } from '../model/users';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -109,9 +109,9 @@ export class UsersService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public usersPost(body?: User, observe?: 'body', reportProgress?: boolean): Observable<UserId>;
-    public usersPost(body?: User, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<UserId>>;
-    public usersPost(body?: User, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<UserId>>;
+    public usersPost(body?: User, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse201>;
+    public usersPost(body?: User, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse201>>;
+    public usersPost(body?: User, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse201>>;
     public usersPost(body?: User, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;

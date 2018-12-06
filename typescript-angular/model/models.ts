@@ -17,6 +17,7 @@ export * from './faceAttributes';
 export * from './favouriteTag';
 export * from './groupTag';
 export * from './heatMap';
+export * from './inlineResponse201';
 export * from './labelAnnotation';
 export * from './labelAnnotations';
 export * from './locale';
