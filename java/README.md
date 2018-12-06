@@ -101,6 +101,7 @@ Class | Method | HTTP request | Description
 *EventsApi* | [**enterpriseIdEventsPost**](docs/EventsApi.md#enterpriseIdEventsPost) | **POST** /{enterpriseId}/events | Create new event
 *TagsApi* | [**enterpriseIdTagsGet**](docs/TagsApi.md#enterpriseIdTagsGet) | **GET** /{enterpriseId}/tags | Get all tags for a enterprise
 *UsersApi* | [**usersGet**](docs/UsersApi.md#usersGet) | **GET** /users | Get all users
+*UsersApi* | [**usersPost**](docs/UsersApi.md#usersPost) | **POST** /users | Create a user
 *VideosApi* | [**enterpriseIdCameraIdVideosGet**](docs/VideosApi.md#enterpriseIdCameraIdVideosGet) | **GET** /{enterpriseId}/{cameraId}/videos | Get all cameras for a enterprise
 
 ## Documentation for Models

@@ -28,7 +28,7 @@ import java.util.List;
  * BoundingBox
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:32:55.264Z[GMT]")public class BoundingBox {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:39:17.411Z[GMT]")public class BoundingBox {
 
   @SerializedName("vertices")
   private List<Vertex> vertices = null;

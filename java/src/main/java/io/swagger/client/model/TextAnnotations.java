@@ -21,7 +21,7 @@ import java.util.List;
  * TextAnnotations
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:32:55.264Z[GMT]")public class TextAnnotations extends ArrayList<TextAnnotation> {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:39:17.411Z[GMT]")public class TextAnnotations extends ArrayList<TextAnnotation> {
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
