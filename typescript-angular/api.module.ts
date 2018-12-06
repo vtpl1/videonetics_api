@@ -7,6 +7,7 @@ import { CamerasService } from './api/cameras.service';
 import { EnterprisesService } from './api/enterprises.service';
 import { EventsService } from './api/events.service';
 import { TagsService } from './api/tags.service';
+import { UsersService } from './api/users.service';
 import { VideosService } from './api/videos.service';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { VideosService } from './api/videos.service';
     EnterprisesService,
     EventsService,
     TagsService,
+    UsersService,
     VideosService ]
 })
 export class ApiModule {
