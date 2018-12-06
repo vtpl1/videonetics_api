@@ -108,10 +108,10 @@ export class UsersService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public usersPost(body?: string, observe?: 'body', reportProgress?: boolean): Observable<User>;
-    public usersPost(body?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<User>>;
-    public usersPost(body?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<User>>;
-    public usersPost(body?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public usersPost(body?: User, observe?: 'body', reportProgress?: boolean): Observable<User>;
+    public usersPost(body?: User, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<User>>;
+    public usersPost(body?: User, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<User>>;
+    public usersPost(body?: User, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 
