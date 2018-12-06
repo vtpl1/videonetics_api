@@ -28,7 +28,7 @@ import java.util.UUID;
  * Camera
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:31:00.040Z[GMT]")public class Camera {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:32:55.264Z[GMT]")public class Camera {
 
   @SerializedName("id")
   private UUID id = null;
