@@ -102,15 +102,16 @@ export class UsersService {
     }
 
     /**
-     * Create a user
+     * Create a Gloabal System level user
      * 
+     * @param body 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public usersPost(observe?: 'body', reportProgress?: boolean): Observable<User>;
-    public usersPost(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<User>>;
-    public usersPost(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<User>>;
-    public usersPost(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public usersPost(body?: string, observe?: 'body', reportProgress?: boolean): Observable<User>;
+    public usersPost(body?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<User>>;
+    public usersPost(body?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<User>>;
+    public usersPost(body?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 
@@ -133,7 +134,12 @@ export class UsersService {
 
         // to determine the Content-Type header
         const consumes: string[] = [
+            'application/json'
         ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected != undefined) {
+            headers = headers.set('Content-Type', httpContentTypeSelected);
+        }
 
         return this.httpClient.post(`${this.basePath}/users`,
             {
