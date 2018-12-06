@@ -131,6 +131,7 @@ Class | Method | HTTP request | Description
  - [TextAnnotation](docs/TextAnnotation.md)
  - [TextAnnotations](docs/TextAnnotations.md)
  - [User](docs/User.md)
+ - [UserRole](docs/UserRole.md)
  - [Users](docs/Users.md)
  - [Vertex](docs/Vertex.md)
  - [VertexWithValue](docs/VertexWithValue.md)

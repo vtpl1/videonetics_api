@@ -26,7 +26,7 @@ import java.util.UUID;
  * Event
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T03:19:41.434Z[GMT]")public class Event {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:05:09.757Z[GMT]")public class Event {
 
   @SerializedName("id")
   private UUID id = null;
