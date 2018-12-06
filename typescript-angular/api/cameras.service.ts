@@ -28,7 +28,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class CamerasService {
 
-    protected basePath = 'https://virtserver.swaggerhub.com/videonetics/visna/1.0.0';
+    protected basePath = 'https://v2.videonetics.com:5000/v1';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
