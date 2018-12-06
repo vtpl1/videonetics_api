@@ -56,7 +56,7 @@ public class UsersApiTest {
     @Test
     public void usersPostTest() throws ApiException {
         User body = null;
-        User response = api.usersPost(body);
+        String response = api.usersPost(body);
 
         // TODO: test validations
     }
