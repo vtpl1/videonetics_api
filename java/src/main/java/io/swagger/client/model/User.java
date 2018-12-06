@@ -20,20 +20,19 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.UUID;
 
 /**
  * User
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T02:21:29.019Z[GMT]")public class User {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T03:19:41.434Z[GMT]")public class User {
 
   @SerializedName("id")
-  private UUID id = null;
+  private String id = null;
 
   @SerializedName("name")
   private String name = null;
-  public User id(UUID id) {
+  public User id(String id) {
     this.id = id;
     return this;
   }
@@ -45,10 +44,10 @@ import java.util.UUID;
   * @return id
   **/
   @Schema(description = "")
-  public UUID getId() {
+  public String getId() {
     return id;
   }
-  public void setId(UUID id) {
+  public void setId(String id) {
     this.id = id;
   }
   public User name(String name) {
