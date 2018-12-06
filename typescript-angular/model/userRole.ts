@@ -10,10 +10,11 @@
  * Do not edit the class manually.
  */
 
-export type UserRole = 'admin' | 'reader' | 'writer';
+export type UserRole = 'admin' | 'reader' | 'writer' | 'eventGenerator';
 
 export const UserRole = {
     Admin: 'admin' as UserRole,
     Reader: 'reader' as UserRole,
-    Writer: 'writer' as UserRole
+    Writer: 'writer' as UserRole,
+    EventGenerator: 'eventGenerator' as UserRole
 };
