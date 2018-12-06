@@ -26,7 +26,7 @@ import java.util.UUID;
  * OtherTag
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-05T14:46:16.991Z[GMT]")public class OtherTag {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T01:41:27.133Z[GMT]")public class OtherTag {
 
   @SerializedName("id")
   private UUID id = null;

@@ -1,6 +1,6 @@
 # VideosApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/videonetics/visna/1.0.0*
+All URIs are relative to *https://v2.videonetics.com:5000/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
