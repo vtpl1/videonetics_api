@@ -30,7 +30,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class EnterprisesService {
 
-    protected basePath = 'https://v2.videonetics.com:5000/v1';
+    protected basePath = 'http://v2.videonetics.com:5000/v1';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
