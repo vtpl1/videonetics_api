@@ -26,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import java.util.UUID;
 import io.swagger.client.model.User;
 import io.swagger.client.model.Users;
 
@@ -172,13 +173,14 @@ public class UsersApi {
     }
     /**
      * Build call for usersPost
+     * @param body  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call usersPostCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+    public com.squareup.okhttp.Call usersPostCall(UUID body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
         
         // create path and map variables
         String localVarPath = "/users";
@@ -197,7 +199,7 @@ public class UsersApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -219,9 +221,9 @@ public class UsersApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call usersPostValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call usersPostValidateBeforeCall(UUID body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = usersPostCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = usersPostCall(body, progressListener, progressRequestListener);
         return call;
 
         
@@ -231,36 +233,39 @@ public class UsersApi {
     }
 
     /**
-     * Create a user
+     * Create a Gloabal System level user
      * 
+     * @param body  (optional)
      * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public User usersPost() throws ApiException {
-        ApiResponse<User> resp = usersPostWithHttpInfo();
+    public User usersPost(UUID body) throws ApiException {
+        ApiResponse<User> resp = usersPostWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
-     * Create a user
+     * Create a Gloabal System level user
      * 
+     * @param body  (optional)
      * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<User> usersPostWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = usersPostValidateBeforeCall(null, null);
+    public ApiResponse<User> usersPostWithHttpInfo(UUID body) throws ApiException {
+        com.squareup.okhttp.Call call = usersPostValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<User>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Create a user (asynchronously)
+     * Create a Gloabal System level user (asynchronously)
      * 
+     * @param body  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call usersPostAsync(final ApiCallback<User> callback) throws ApiException {
+    public com.squareup.okhttp.Call usersPostAsync(UUID body, final ApiCallback<User> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -281,7 +286,7 @@ public class UsersApi {
             };
         }
 
-        com.squareup.okhttp.Call call = usersPostValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = usersPostValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<User>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

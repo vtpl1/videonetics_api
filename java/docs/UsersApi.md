@@ -5,7 +5,7 @@ All URIs are relative to *http://v2.videonetics.com:5000/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**usersGet**](UsersApi.md#usersGet) | **GET** /users | Get all users
-[**usersPost**](UsersApi.md#usersPost) | **POST** /users | Create a user
+[**usersPost**](UsersApi.md#usersPost) | **POST** /users | Create a Gloabal System level user
 
 <a name="usersGet"></a>
 # **usersGet**
@@ -56,9 +56,9 @@ This endpoint does not need any parameter.
 
 <a name="usersPost"></a>
 # **usersPost**
-> User usersPost()
+> User usersPost(body)
 
-Create a user
+Create a Gloabal System level user
 
 ### Example
 ```java
@@ -76,8 +76,9 @@ OAuth accessCode = (OAuth) defaultClient.getAuthentication("accessCode");
 accessCode.setAccessToken("YOUR ACCESS TOKEN");
 
 UsersApi apiInstance = new UsersApi();
+UUID body = new UUID(); // UUID | 
 try {
-    User result = apiInstance.usersPost();
+    User result = apiInstance.usersPost(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#usersPost");
@@ -86,7 +87,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UUID**](UUID.md)|  | [optional]
 
 ### Return type
 
@@ -98,6 +102,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

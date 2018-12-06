@@ -26,7 +26,7 @@ import java.util.UUID;
  * LocationTag
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:39:17.411Z[GMT]")public class LocationTag {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T15:42:31.383Z[GMT]")public class LocationTag {
 
   @SerializedName("id")
   private UUID id = null;
