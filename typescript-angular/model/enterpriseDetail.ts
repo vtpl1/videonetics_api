@@ -12,12 +12,13 @@
 import { Enterprise } from './enterprise';
 import { EnterpriseAccountStatus } from './enterpriseAccountStatus';
 import { EnterpriseId } from './enterpriseId';
+import { Logo } from './logo';
 
 
 export interface EnterpriseDetail extends AccessStatus { 
     id: EnterpriseId;
     name: string;
-    logo?: string;
+    logo?: Logo;
     address?: string;
     contact?: string;
     accountStatus: EnterpriseAccountStatus;
