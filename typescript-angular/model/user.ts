@@ -15,5 +15,5 @@ import { UserRole } from './userRole';
 export interface User { 
     id?: UserId;
     name?: string;
-    userRole?: UserRole;
+    role?: UserRole;
 }
