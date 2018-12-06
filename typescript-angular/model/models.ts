@@ -29,6 +29,7 @@ export * from './textAnnotation';
 export * from './textAnnotations';
 export * from './user';
 export * from './userId';
+export * from './userRole';
 export * from './users';
 export * from './vertex';
 export * from './vertexWithValue';
