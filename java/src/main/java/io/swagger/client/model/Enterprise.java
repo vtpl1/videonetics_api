@@ -27,7 +27,7 @@ import java.util.UUID;
  * Enterprise
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T16:14:29.389Z[GMT]")public class Enterprise {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class Enterprise {
 
   @SerializedName("id")
   private UUID id = null;

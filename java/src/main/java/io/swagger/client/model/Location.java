@@ -25,7 +25,7 @@ import java.io.IOException;
  * Location
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-06T16:14:29.389Z[GMT]")public class Location {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class Location {
 
   @SerializedName("lat")
   private Float lat = null;
