@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,44 +22,46 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.UUID;
-
 /**
  * LocationTag
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class LocationTag {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class LocationTag implements AnyOftagsItems {
   @SerializedName("id")
   private UUID id = null;
 
   @SerializedName("name")
   private String name = null;
-  /**
-  * Get id
-  * @return id
+
+   /**
+   * Get id
+   * @return id
   **/
   @Schema(description = "")
   public UUID getId() {
     return id;
   }
+
   public LocationTag name(String name) {
     this.name = name;
     return this;
   }
 
-  
-
-  /**
-  * Get name
-  * @return name
+   /**
+   * Get name
+   * @return name
   **/
   @Schema(example = "location-outside", description = "")
   public String getName() {
     return name;
   }
+
   public void setName(String name) {
     this.name = name;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -74,8 +77,9 @@ import java.util.UUID;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(id, name);
+    return Objects.hash(id, name);
   }
+
 
   @Override
   public String toString() {

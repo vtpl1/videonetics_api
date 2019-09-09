@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,13 +24,12 @@ import io.swagger.client.model.Tags;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.UUID;
-
 /**
  * Camera
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class Camera {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class Camera {
   @SerializedName("id")
   private UUID id = null;
 
@@ -41,68 +41,71 @@ import java.util.UUID;
 
   @SerializedName("location")
   private Location location = null;
-  /**
-  * Get id
-  * @return id
+
+   /**
+   * Get id
+   * @return id
   **/
   @Schema(description = "")
   public UUID getId() {
     return id;
   }
+
   public Camera name(String name) {
     this.name = name;
     return this;
   }
 
-  
-
-  /**
-  * Get name
-  * @return name
+   /**
+   * Get name
+   * @return name
   **/
   @Schema(description = "")
   public String getName() {
     return name;
   }
+
   public void setName(String name) {
     this.name = name;
   }
+
   public Camera tags(Tags tags) {
     this.tags = tags;
     return this;
   }
 
-  
-
-  /**
-  * Get tags
-  * @return tags
+   /**
+   * Get tags
+   * @return tags
   **/
   @Schema(description = "")
   public Tags getTags() {
     return tags;
   }
+
   public void setTags(Tags tags) {
     this.tags = tags;
   }
+
   public Camera location(Location location) {
     this.location = location;
     return this;
   }
 
-  
-
-  /**
-  * Get location
-  * @return location
+   /**
+   * Get location
+   * @return location
   **/
   @Schema(description = "")
   public Location getLocation() {
     return location;
   }
+
   public void setLocation(Location location) {
     this.location = location;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -120,8 +123,9 @@ import java.util.UUID;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(id, name, tags, location);
+    return Objects.hash(id, name, tags, location);
   }
+
 
   @Override
   public String toString() {

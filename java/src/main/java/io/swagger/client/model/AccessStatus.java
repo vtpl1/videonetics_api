@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,13 +21,12 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * AccessStatus
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class AccessStatus {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class AccessStatus {
   @SerializedName("createdOn")
   private Long createdOn = null;
 
@@ -38,78 +38,80 @@ import java.io.IOException;
 
   @SerializedName("onlineTimeInSec")
   private Float onlineTimeInSec = null;
+
   public AccessStatus createdOn(Long createdOn) {
     this.createdOn = createdOn;
     return this;
   }
 
-  
-
-  /**
-  * Get createdOn
-  * @return createdOn
+   /**
+   * Get createdOn
+   * @return createdOn
   **/
   @Schema(description = "")
   public Long getCreatedOn() {
     return createdOn;
   }
+
   public void setCreatedOn(Long createdOn) {
     this.createdOn = createdOn;
   }
+
   public AccessStatus lastAccesseOn(Long lastAccesseOn) {
     this.lastAccesseOn = lastAccesseOn;
     return this;
   }
 
-  
-
-  /**
-  * Get lastAccesseOn
-  * @return lastAccesseOn
+   /**
+   * Get lastAccesseOn
+   * @return lastAccesseOn
   **/
   @Schema(description = "")
   public Long getLastAccesseOn() {
     return lastAccesseOn;
   }
+
   public void setLastAccesseOn(Long lastAccesseOn) {
     this.lastAccesseOn = lastAccesseOn;
   }
+
   public AccessStatus firstAccesseOn(Long firstAccesseOn) {
     this.firstAccesseOn = firstAccesseOn;
     return this;
   }
 
-  
-
-  /**
-  * Get firstAccesseOn
-  * @return firstAccesseOn
+   /**
+   * Get firstAccesseOn
+   * @return firstAccesseOn
   **/
   @Schema(description = "")
   public Long getFirstAccesseOn() {
     return firstAccesseOn;
   }
+
   public void setFirstAccesseOn(Long firstAccesseOn) {
     this.firstAccesseOn = firstAccesseOn;
   }
+
   public AccessStatus onlineTimeInSec(Float onlineTimeInSec) {
     this.onlineTimeInSec = onlineTimeInSec;
     return this;
   }
 
-  
-
-  /**
-  * Get onlineTimeInSec
-  * @return onlineTimeInSec
+   /**
+   * Get onlineTimeInSec
+   * @return onlineTimeInSec
   **/
   @Schema(description = "")
   public Float getOnlineTimeInSec() {
     return onlineTimeInSec;
   }
+
   public void setOnlineTimeInSec(Float onlineTimeInSec) {
     this.onlineTimeInSec = onlineTimeInSec;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -127,8 +129,9 @@ import java.io.IOException;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(createdOn, lastAccesseOn, firstAccesseOn, onlineTimeInSec);
+    return Objects.hash(createdOn, lastAccesseOn, firstAccesseOn, onlineTimeInSec);
   }
+
 
   @Override
   public String toString() {

@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,13 +23,12 @@ import io.swagger.client.model.BoundingBox;
 import io.swagger.client.model.Locale;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * TextAnnotation
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class TextAnnotation {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class TextAnnotation {
   @SerializedName("locale")
   private Locale locale = null;
 
@@ -37,60 +37,62 @@ import java.io.IOException;
 
   @SerializedName("boundingPoly")
   private BoundingBox boundingPoly = null;
+
   public TextAnnotation locale(Locale locale) {
     this.locale = locale;
     return this;
   }
 
-  
-
-  /**
-  * Get locale
-  * @return locale
+   /**
+   * Get locale
+   * @return locale
   **/
   @Schema(description = "")
   public Locale getLocale() {
     return locale;
   }
+
   public void setLocale(Locale locale) {
     this.locale = locale;
   }
+
   public TextAnnotation description(String description) {
     this.description = description;
     return this;
   }
 
-  
-
-  /**
-  * Get description
-  * @return description
+   /**
+   * Get description
+   * @return description
   **/
   @Schema(example = "WB02AB1234", description = "")
   public String getDescription() {
     return description;
   }
+
   public void setDescription(String description) {
     this.description = description;
   }
+
   public TextAnnotation boundingPoly(BoundingBox boundingPoly) {
     this.boundingPoly = boundingPoly;
     return this;
   }
 
-  
-
-  /**
-  * Get boundingPoly
-  * @return boundingPoly
+   /**
+   * Get boundingPoly
+   * @return boundingPoly
   **/
   @Schema(description = "")
   public BoundingBox getBoundingPoly() {
     return boundingPoly;
   }
+
   public void setBoundingPoly(BoundingBox boundingPoly) {
     this.boundingPoly = boundingPoly;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -107,8 +109,9 @@ import java.io.IOException;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(locale, description, boundingPoly);
+    return Objects.hash(locale, description, boundingPoly);
   }
+
 
   @Override
   public String toString() {

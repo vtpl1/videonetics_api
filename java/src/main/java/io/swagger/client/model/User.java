@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,13 +22,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.client.model.UserRole;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * User
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class User {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class User {
   @SerializedName("id")
   private String id = null;
 
@@ -36,60 +36,62 @@ import java.io.IOException;
 
   @SerializedName("role")
   private UserRole role = null;
+
   public User id(String id) {
     this.id = id;
     return this;
   }
 
-  
-
-  /**
-  * Get id
-  * @return id
+   /**
+   * Get id
+   * @return id
   **/
   @Schema(description = "")
   public String getId() {
     return id;
   }
+
   public void setId(String id) {
     this.id = id;
   }
+
   public User name(String name) {
     this.name = name;
     return this;
   }
 
-  
-
-  /**
-  * Get name
-  * @return name
+   /**
+   * Get name
+   * @return name
   **/
   @Schema(example = "John Doe", description = "")
   public String getName() {
     return name;
   }
+
   public void setName(String name) {
     this.name = name;
   }
+
   public User role(UserRole role) {
     this.role = role;
     return this;
   }
 
-  
-
-  /**
-  * Get role
-  * @return role
+   /**
+   * Get role
+   * @return role
   **/
   @Schema(description = "")
   public UserRole getRole() {
     return role;
   }
+
   public void setRole(UserRole role) {
     this.role = role;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -106,8 +108,9 @@ import java.io.IOException;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(id, name, role);
+    return Objects.hash(id, name, role);
   }
+
 
   @Override
   public String toString() {

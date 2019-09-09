@@ -15,7 +15,9 @@ package io.swagger.client;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import io.gsonfire.GsonFireBuilder;
+import io.gsonfire.PostProcessor;
 import io.gsonfire.TypeSelector;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapter;
@@ -59,6 +61,27 @@ public class JSON {
                             classByDiscriminatorValue,
                             getDiscriminatorValue(readElement, ""));
             }
+          })
+          .registerPostProcessor(AccessStatus.class, new PostProcessor<AccessStatus>() {
+              @Override
+              public void postDeserialize(AccessStatus result, JsonElement src, Gson gson) {
+
+              }
+
+              @Override
+              public void postSerialize(JsonElement result, AccessStatus src, Gson gson) {
+                  Map<Class<? extends AccessStatus>, String> discriminatorValueByClass = new HashMap<>();
+
+                      discriminatorValueByClass.put(EnterpriseDetail.class, "enterpriseDetail");
+                      discriminatorValueByClass.put(AccessStatus.class, "AccessStatus");
+                  if(result instanceof JsonObject)
+                  {
+                      if(!((JsonObject) result).has(""))
+                      {
+                          ((JsonObject) result).addProperty("", discriminatorValueByClass.get(src.getClass()));
+                      }
+                  }
+              }
           })
         ;
         return fireBuilder.createGsonBuilder();

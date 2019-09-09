@@ -19,55 +19,54 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.client.model.BoundingBox;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * FaceAnnotation
+ * LinksSelfSelf
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
-public class FaceAnnotation {
-  @SerializedName("boundingBox")
-  private BoundingBox boundingBox = null;
+public class LinksSelfSelf {
+  @SerializedName("title")
+  private String title = null;
 
-  @SerializedName("tightBoundingBox")
-  private BoundingBox tightBoundingBox = null;
+  @SerializedName("href")
+  private String href = null;
 
-  public FaceAnnotation boundingBox(BoundingBox boundingBox) {
-    this.boundingBox = boundingBox;
+  public LinksSelfSelf title(String title) {
+    this.title = title;
     return this;
   }
 
    /**
-   * Get boundingBox
-   * @return boundingBox
+   * Get title
+   * @return title
   **/
   @Schema(description = "")
-  public BoundingBox getBoundingBox() {
-    return boundingBox;
+  public String getTitle() {
+    return title;
   }
 
-  public void setBoundingBox(BoundingBox boundingBox) {
-    this.boundingBox = boundingBox;
+  public void setTitle(String title) {
+    this.title = title;
   }
 
-  public FaceAnnotation tightBoundingBox(BoundingBox tightBoundingBox) {
-    this.tightBoundingBox = tightBoundingBox;
+  public LinksSelfSelf href(String href) {
+    this.href = href;
     return this;
   }
 
    /**
-   * Get tightBoundingBox
-   * @return tightBoundingBox
+   * Get href
+   * @return href
   **/
   @Schema(description = "")
-  public BoundingBox getTightBoundingBox() {
-    return tightBoundingBox;
+  public String getHref() {
+    return href;
   }
 
-  public void setTightBoundingBox(BoundingBox tightBoundingBox) {
-    this.tightBoundingBox = tightBoundingBox;
+  public void setHref(String href) {
+    this.href = href;
   }
 
 
@@ -79,24 +78,24 @@ public class FaceAnnotation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FaceAnnotation faceAnnotation = (FaceAnnotation) o;
-    return Objects.equals(this.boundingBox, faceAnnotation.boundingBox) &&
-        Objects.equals(this.tightBoundingBox, faceAnnotation.tightBoundingBox);
+    LinksSelfSelf linksSelfSelf = (LinksSelfSelf) o;
+    return Objects.equals(this.title, linksSelfSelf.title) &&
+        Objects.equals(this.href, linksSelfSelf.href);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(boundingBox, tightBoundingBox);
+    return Objects.hash(title, href);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FaceAnnotation {\n");
+    sb.append("class LinksSelfSelf {\n");
     
-    sb.append("    boundingBox: ").append(toIndentedString(boundingBox)).append("\n");
-    sb.append("    tightBoundingBox: ").append(toIndentedString(tightBoundingBox)).append("\n");
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    href: ").append(toIndentedString(href)).append("\n");
     sb.append("}");
     return sb.toString();
   }

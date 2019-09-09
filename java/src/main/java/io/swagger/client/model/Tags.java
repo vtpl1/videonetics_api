@@ -13,14 +13,17 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
+import io.swagger.client.model.AnyOftagsItems;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * Tags
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class Tags extends ArrayList<Object> {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class Tags extends ArrayList<AnyOftagsItems> {
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -34,8 +37,9 @@ import java.util.List;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(super.hashCode());
+    return Objects.hash(super.hashCode());
   }
+
 
   @Override
   public String toString() {

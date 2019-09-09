@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,13 +25,12 @@ import io.swagger.client.model.EnterpriseAccountStatus;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.UUID;
-
 /**
  * EnterpriseDetail
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class EnterpriseDetail extends AccessStatus {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class EnterpriseDetail extends AccessStatus implements enterprise {
   @SerializedName("id")
   private UUID id = null;
 
@@ -48,114 +48,116 @@ import java.util.UUID;
 
   @SerializedName("accountStatus")
   private EnterpriseAccountStatus accountStatus = null;
+
   public EnterpriseDetail id(UUID id) {
     this.id = id;
     return this;
   }
 
-  
-
-  /**
-  * Get id
-  * @return id
+   /**
+   * Get id
+   * @return id
   **/
   @Schema(required = true, description = "")
   public UUID getId() {
     return id;
   }
+
   public void setId(UUID id) {
     this.id = id;
   }
+
   public EnterpriseDetail name(String name) {
     this.name = name;
     return this;
   }
 
-  
-
-  /**
-  * Get name
-  * @return name
+   /**
+   * Get name
+   * @return name
   **/
   @Schema(required = true, description = "")
   public String getName() {
     return name;
   }
+
   public void setName(String name) {
     this.name = name;
   }
+
   public EnterpriseDetail logo(String logo) {
     this.logo = logo;
     return this;
   }
 
-  
-
-  /**
-  * Get logo
-  * @return logo
+   /**
+   * Get logo
+   * @return logo
   **/
   @Schema(description = "")
   public String getLogo() {
     return logo;
   }
+
   public void setLogo(String logo) {
     this.logo = logo;
   }
+
   public EnterpriseDetail address(String address) {
     this.address = address;
     return this;
   }
 
-  
-
-  /**
-  * Get address
-  * @return address
+   /**
+   * Get address
+   * @return address
   **/
   @Schema(description = "")
   public String getAddress() {
     return address;
   }
+
   public void setAddress(String address) {
     this.address = address;
   }
+
   public EnterpriseDetail contact(String contact) {
     this.contact = contact;
     return this;
   }
 
-  
-
-  /**
-  * Get contact
-  * @return contact
+   /**
+   * Get contact
+   * @return contact
   **/
   @Schema(description = "")
   public String getContact() {
     return contact;
   }
+
   public void setContact(String contact) {
     this.contact = contact;
   }
+
   public EnterpriseDetail accountStatus(EnterpriseAccountStatus accountStatus) {
     this.accountStatus = accountStatus;
     return this;
   }
 
-  
-
-  /**
-  * Get accountStatus
-  * @return accountStatus
+   /**
+   * Get accountStatus
+   * @return accountStatus
   **/
   @Schema(required = true, description = "")
   public EnterpriseAccountStatus getAccountStatus() {
     return accountStatus;
   }
+
   public void setAccountStatus(EnterpriseAccountStatus accountStatus) {
     this.accountStatus = accountStatus;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -176,8 +178,9 @@ import java.util.UUID;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(id, name, logo, address, contact, accountStatus, super.hashCode());
+    return Objects.hash(id, name, logo, address, contact, accountStatus, super.hashCode());
   }
+
 
   @Override
   public String toString() {

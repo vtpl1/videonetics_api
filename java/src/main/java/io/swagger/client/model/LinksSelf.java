@@ -14,15 +14,41 @@ package io.swagger.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import io.swagger.client.model.Event;
-import java.util.ArrayList;
-import java.util.List;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.client.model.LinksSelfSelf;
+import io.swagger.v3.oas.annotations.media.Schema;
+import java.io.IOException;
 /**
- * Events
+ * LinksSelf
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
-public class Events extends ArrayList<Event> {
+public class LinksSelf {
+  @SerializedName("self")
+  private LinksSelfSelf self = null;
+
+  public LinksSelf self(LinksSelfSelf self) {
+    this.self = self;
+    return this;
+  }
+
+   /**
+   * Get self
+   * @return self
+  **/
+  @Schema(description = "")
+  public LinksSelfSelf getSelf() {
+    return self;
+  }
+
+  public void setSelf(LinksSelfSelf self) {
+    this.self = self;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -32,20 +58,22 @@ public class Events extends ArrayList<Event> {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    LinksSelf linksSelf = (LinksSelf) o;
+    return Objects.equals(this.self, linksSelf.self);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(self);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Events {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class LinksSelf {\n");
+    
+    sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("}");
     return sb.toString();
   }

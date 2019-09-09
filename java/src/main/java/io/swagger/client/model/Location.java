@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,54 +21,55 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * Location
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class Location {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class Location {
   @SerializedName("lat")
   private Float lat = null;
 
   @SerializedName("long")
   private Float _long = null;
+
   public Location lat(Float lat) {
     this.lat = lat;
     return this;
   }
 
-  
-
-  /**
-  * Get lat
-  * @return lat
+   /**
+   * Get lat
+   * @return lat
   **/
   @Schema(example = "22.572645", description = "")
   public Float getLat() {
     return lat;
   }
+
   public void setLat(Float lat) {
     this.lat = lat;
   }
+
   public Location _long(Float _long) {
     this._long = _long;
     return this;
   }
 
-  
-
-  /**
-  * Get _long
-  * @return _long
+   /**
+   * Get _long
+   * @return _long
   **/
   @Schema(example = "88.363892", description = "")
   public Float getLong() {
     return _long;
   }
+
   public void setLong(Float _long) {
     this._long = _long;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -83,8 +85,9 @@ import java.io.IOException;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(lat, _long);
+    return Objects.hash(lat, _long);
   }
+
 
   @Override
   public String toString() {

@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,15 +21,15 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * FaceAttributes
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class FaceAttributes {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class FaceAttributes {
   @SerializedName("smile")
   private Float smile = null;
+
   /**
    * Gets or Sets gender
    */
@@ -71,12 +72,12 @@ import java.io.IOException;
         return GenderEnum.fromValue(String.valueOf(value));
       }
     }
-  }
-  @SerializedName("gender")
+  }  @SerializedName("gender")
   private GenderEnum gender = null;
 
   @SerializedName("age")
   private Float age = null;
+
   /**
    * Gets or Sets glasses
    */
@@ -118,81 +119,82 @@ import java.io.IOException;
         return GlassesEnum.fromValue(String.valueOf(value));
       }
     }
-  }
-  @SerializedName("glasses")
+  }  @SerializedName("glasses")
   private GlassesEnum glasses = null;
+
   public FaceAttributes smile(Float smile) {
     this.smile = smile;
     return this;
   }
 
-  
-
-  /**
-  * Get smile
-  * @return smile
+   /**
+   * Get smile
+   * @return smile
   **/
   @Schema(example = "0.562", description = "")
   public Float getSmile() {
     return smile;
   }
+
   public void setSmile(Float smile) {
     this.smile = smile;
   }
+
   public FaceAttributes gender(GenderEnum gender) {
     this.gender = gender;
     return this;
   }
 
-  
-
-  /**
-  * Get gender
-  * @return gender
+   /**
+   * Get gender
+   * @return gender
   **/
   @Schema(example = "female", description = "")
   public GenderEnum getGender() {
     return gender;
   }
+
   public void setGender(GenderEnum gender) {
     this.gender = gender;
   }
+
   public FaceAttributes age(Float age) {
     this.age = age;
     return this;
   }
 
-  
-
-  /**
-  * Get age
-  * @return age
+   /**
+   * Get age
+   * @return age
   **/
   @Schema(example = "22.9", description = "")
   public Float getAge() {
     return age;
   }
+
   public void setAge(Float age) {
     this.age = age;
   }
+
   public FaceAttributes glasses(GlassesEnum glasses) {
     this.glasses = glasses;
     return this;
   }
 
-  
-
-  /**
-  * Get glasses
-  * @return glasses
+   /**
+   * Get glasses
+   * @return glasses
   **/
   @Schema(description = "")
   public GlassesEnum getGlasses() {
     return glasses;
   }
+
   public void setGlasses(GlassesEnum glasses) {
     this.glasses = glasses;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -210,8 +212,9 @@ import java.io.IOException;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(smile, gender, age, glasses);
+    return Objects.hash(smile, gender, age, glasses);
   }
+
 
   @Override
   public String toString() {

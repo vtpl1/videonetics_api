@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,33 +21,34 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * InlineResponse201
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class InlineResponse201 {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class InlineResponse201 {
   @SerializedName("_id")
   private String _id = null;
+
   public InlineResponse201 _id(String _id) {
     this._id = _id;
     return this;
   }
 
-  
-
-  /**
-  * Get _id
-  * @return _id
+   /**
+   * Get _id
+   * @return _id
   **/
   @Schema(description = "")
   public String getId() {
     return _id;
   }
+
   public void setId(String _id) {
     this._id = _id;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -61,8 +63,9 @@ import java.io.IOException;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(_id);
+    return Objects.hash(_id);
   }
+
 
   @Override
   public String toString() {

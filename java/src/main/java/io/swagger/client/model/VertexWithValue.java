@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,54 +23,55 @@ import io.swagger.client.model.Vertex;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
-
 /**
  * VertexWithValue
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class VertexWithValue {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class VertexWithValue {
   @SerializedName("value")
   private BigDecimal value = null;
 
   @SerializedName("vertex")
   private Vertex vertex = null;
+
   public VertexWithValue value(BigDecimal value) {
     this.value = value;
     return this;
   }
 
-  
-
-  /**
-  * Get value
-  * @return value
+   /**
+   * Get value
+   * @return value
   **/
   @Schema(example = "5", description = "")
   public BigDecimal getValue() {
     return value;
   }
+
   public void setValue(BigDecimal value) {
     this.value = value;
   }
+
   public VertexWithValue vertex(Vertex vertex) {
     this.vertex = vertex;
     return this;
   }
 
-  
-
-  /**
-  * Get vertex
-  * @return vertex
+   /**
+   * Get vertex
+   * @return vertex
   **/
   @Schema(description = "")
   public Vertex getVertex() {
     return vertex;
   }
+
   public void setVertex(Vertex vertex) {
     this.vertex = vertex;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -85,8 +87,9 @@ import java.math.BigDecimal;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(value, vertex);
+    return Objects.hash(value, vertex);
   }
+
 
   @Override
   public String toString() {

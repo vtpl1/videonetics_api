@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,13 +21,12 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * LabelAnnotation
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class LabelAnnotation {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class LabelAnnotation {
   @SerializedName("id")
   private String id = null;
 
@@ -35,50 +35,53 @@ import java.io.IOException;
 
   @SerializedName("score")
   private Float score = null;
-  /**
-  * Get id
-  * @return id
+
+   /**
+   * Get id
+   * @return id
   **/
   @Schema(example = "di8wMDAx", description = "")
   public String getId() {
     return id;
   }
+
   public LabelAnnotation description(String description) {
     this.description = description;
     return this;
   }
 
-  
-
-  /**
-  * Get description
-  * @return description
+   /**
+   * Get description
+   * @return description
   **/
   @Schema(example = "person", description = "")
   public String getDescription() {
     return description;
   }
+
   public void setDescription(String description) {
     this.description = description;
   }
+
   public LabelAnnotation score(Float score) {
     this.score = score;
     return this;
   }
 
-  
-
-  /**
-  * Get score
-  * @return score
+   /**
+   * Get score
+   * @return score
   **/
   @Schema(example = "0.854", description = "")
   public Float getScore() {
     return score;
   }
+
   public void setScore(Float score) {
     this.score = score;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -95,8 +98,9 @@ import java.io.IOException;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(id, description, score);
+    return Objects.hash(id, description, score);
   }
+
 
   @Override
   public String toString() {

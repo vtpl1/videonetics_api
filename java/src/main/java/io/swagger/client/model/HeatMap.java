@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,36 +25,36 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * HeatMap
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class HeatMap {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class HeatMap {
   @SerializedName("max")
   private BigDecimal max = null;
 
   @SerializedName("verticesWithValue")
   private List<VertexWithValue> verticesWithValue = null;
+
   public HeatMap max(BigDecimal max) {
     this.max = max;
     return this;
   }
 
-  
-
-  /**
-  * Get max
-  * @return max
+   /**
+   * Get max
+   * @return max
   **/
   @Schema(example = "5", description = "")
   public BigDecimal getMax() {
     return max;
   }
+
   public void setMax(BigDecimal max) {
     this.max = max;
   }
+
   public HeatMap verticesWithValue(List<VertexWithValue> verticesWithValue) {
     this.verticesWithValue = verticesWithValue;
     return this;
@@ -67,17 +68,20 @@ import java.util.List;
     return this;
   }
 
-  /**
-  * Get verticesWithValue
-  * @return verticesWithValue
+   /**
+   * Get verticesWithValue
+   * @return verticesWithValue
   **/
   @Schema(description = "")
   public List<VertexWithValue> getVerticesWithValue() {
     return verticesWithValue;
   }
+
   public void setVerticesWithValue(List<VertexWithValue> verticesWithValue) {
     this.verticesWithValue = verticesWithValue;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -93,8 +97,9 @@ import java.util.List;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(max, verticesWithValue);
+    return Objects.hash(max, verticesWithValue);
   }
+
 
   @Override
   public String toString() {

@@ -13,6 +13,7 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,15 +24,15 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * BoundingBox
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2018-12-07T13:54:39.197Z[GMT]")public class BoundingBox {
-
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-09-09T12:31:58.860Z[GMT]")
+public class BoundingBox {
   @SerializedName("vertices")
   private List<Vertex> vertices = null;
+
   public BoundingBox vertices(List<Vertex> vertices) {
     this.vertices = vertices;
     return this;
@@ -45,17 +46,20 @@ import java.util.List;
     return this;
   }
 
-  /**
-  * Get vertices
-  * @return vertices
+   /**
+   * Get vertices
+   * @return vertices
   **/
   @Schema(description = "")
   public List<Vertex> getVertices() {
     return vertices;
   }
+
   public void setVertices(List<Vertex> vertices) {
     this.vertices = vertices;
   }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -70,8 +74,9 @@ import java.util.List;
 
   @Override
   public int hashCode() {
-    return java.util.Objects.hash(vertices);
+    return Objects.hash(vertices);
   }
+
 
   @Override
   public String toString() {
