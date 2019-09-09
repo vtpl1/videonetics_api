@@ -10,7 +10,5 @@
  * Do not edit the class manually.
  */
 
-export interface Vertex { 
-    x?: number;
-    y?: number;
+export interface AnyOftagsItems { 
 }
