@@ -30,20 +30,26 @@ class ObjectDimension(object):
     swagger_types = {
         'height': 'float',
         'width': 'float',
-        'length': 'float'
+        'length': 'float',
+        'area': 'float',
+        'centroid': 'Vertex'
     }
 
     attribute_map = {
         'height': 'height',
         'width': 'width',
-        'length': 'length'
+        'length': 'length',
+        'area': 'area',
+        'centroid': 'centroid'
     }
 
-    def __init__(self, height=0, width=0, length=0):  # noqa: E501
+    def __init__(self, height=0, width=0, length=0, area=0, centroid=None):  # noqa: E501
         """ObjectDimension - a model defined in Swagger"""  # noqa: E501
         self._height = None
         self._width = None
         self._length = None
+        self._area = None
+        self._centroid = None
         self.discriminator = None
         if height is not None:
             self.height = height
@@ -51,6 +57,10 @@ class ObjectDimension(object):
             self.width = width
         if length is not None:
             self.length = length
+        if area is not None:
+            self.area = area
+        if centroid is not None:
+            self.centroid = centroid
 
     @property
     def height(self):
@@ -114,6 +124,48 @@ class ObjectDimension(object):
         """
 
         self._length = length
+
+    @property
+    def area(self):
+        """Gets the area of this ObjectDimension.  # noqa: E501
+
+
+        :return: The area of this ObjectDimension.  # noqa: E501
+        :rtype: float
+        """
+        return self._area
+
+    @area.setter
+    def area(self, area):
+        """Sets the area of this ObjectDimension.
+
+
+        :param area: The area of this ObjectDimension.  # noqa: E501
+        :type: float
+        """
+
+        self._area = area
+
+    @property
+    def centroid(self):
+        """Gets the centroid of this ObjectDimension.  # noqa: E501
+
+
+        :return: The centroid of this ObjectDimension.  # noqa: E501
+        :rtype: Vertex
+        """
+        return self._centroid
+
+    @centroid.setter
+    def centroid(self, centroid):
+        """Sets the centroid of this ObjectDimension.
+
+
+        :param centroid: The centroid of this ObjectDimension.  # noqa: E501
+        :type: Vertex
+        """
+
+        self._centroid = centroid
 
     def to_dict(self):
         """Returns the model properties as a dict"""
