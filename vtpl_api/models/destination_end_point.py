@@ -28,24 +28,19 @@ class DestinationEndPoint(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'destination_list': 'list[DestinationEndPointDestinationList]',
-        'extras': 'list[Extra]'
+        'destination_list': 'list[DestinationEndPointDestinationList]'
     }
 
     attribute_map = {
-        'destination_list': 'destinationList',
-        'extras': 'extras'
+        'destination_list': 'destinationList'
     }
 
-    def __init__(self, destination_list=None, extras=None):  # noqa: E501
+    def __init__(self, destination_list=None):  # noqa: E501
         """DestinationEndPoint - a model defined in Swagger"""  # noqa: E501
         self._destination_list = None
-        self._extras = None
         self.discriminator = None
         if destination_list is not None:
             self.destination_list = destination_list
-        if extras is not None:
-            self.extras = extras
 
     @property
     def destination_list(self):
@@ -67,27 +62,6 @@ class DestinationEndPoint(object):
         """
 
         self._destination_list = destination_list
-
-    @property
-    def extras(self):
-        """Gets the extras of this DestinationEndPoint.  # noqa: E501
-
-
-        :return: The extras of this DestinationEndPoint.  # noqa: E501
-        :rtype: list[Extra]
-        """
-        return self._extras
-
-    @extras.setter
-    def extras(self, extras):
-        """Sets the extras of this DestinationEndPoint.
-
-
-        :param extras: The extras of this DestinationEndPoint.  # noqa: E501
-        :type: list[Extra]
-        """
-
-        self._extras = extras
 
     def to_dict(self):
         """Returns the model properties as a dict"""

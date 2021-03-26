@@ -37,6 +37,7 @@ class EngineTask(object):
         'time_to_live': 'int',
         'source': 'SourceEndPoint',
         'destination': 'DestinationEndPoint',
+        'extras': 'list[Extra]',
         'zone_setting': 'EngineTaskZoneSetting',
         'line_setting': 'EngineTaskLineSetting',
         'config': 'list[Config]',
@@ -56,6 +57,7 @@ class EngineTask(object):
         'time_to_live': 'timeToLive',
         'source': 'source',
         'destination': 'destination',
+        'extras': 'extras',
         'zone_setting': 'zoneSetting',
         'line_setting': 'lineSetting',
         'config': 'config',
@@ -65,7 +67,7 @@ class EngineTask(object):
         'links': 'links'
     }
 
-    def __init__(self, id=None, capbilities_type=None, event_type=None, engine_machine_id=None, is_expired=False, children=None, time_to_live=-1, source=None, destination=None, zone_setting=None, line_setting=None, config=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
+    def __init__(self, id=None, capbilities_type=None, event_type=None, engine_machine_id=None, is_expired=False, children=None, time_to_live=-1, source=None, destination=None, extras=None, zone_setting=None, line_setting=None, config=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
         """EngineTask - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._capbilities_type = None
@@ -76,6 +78,7 @@ class EngineTask(object):
         self._time_to_live = None
         self._source = None
         self._destination = None
+        self._extras = None
         self._zone_setting = None
         self._line_setting = None
         self._config = None
@@ -102,6 +105,8 @@ class EngineTask(object):
             self.source = source
         if destination is not None:
             self.destination = destination
+        if extras is not None:
+            self.extras = extras
         if zone_setting is not None:
             self.zone_setting = zone_setting
         if line_setting is not None:
@@ -309,6 +314,27 @@ class EngineTask(object):
         """
 
         self._destination = destination
+
+    @property
+    def extras(self):
+        """Gets the extras of this EngineTask.  # noqa: E501
+
+
+        :return: The extras of this EngineTask.  # noqa: E501
+        :rtype: list[Extra]
+        """
+        return self._extras
+
+    @extras.setter
+    def extras(self, extras):
+        """Sets the extras of this EngineTask.
+
+
+        :param extras: The extras of this EngineTask.  # noqa: E501
+        :type: list[Extra]
+        """
+
+        self._extras = extras
 
     @property
     def zone_setting(self):

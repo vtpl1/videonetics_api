@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **time_stamp** | **int** |  | [optional] 
 **fps** | **float** |  | [optional] 
 **frame** | **object** |  | [optional] 
+**gpu_frame** | **object** |  | [optional] 
 **is_first_frame** | **bool** |  | [optional] [default to False]
 **is_end_of_stream** | **bool** |  | [optional] [default to False]
 **type** | [**SourceType**](SourceType.md) |  | [optional] 

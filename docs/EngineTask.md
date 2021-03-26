@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **time_to_live** | **int** | Time in milliseconds of expiry or the task. Engines will not execute an expired task. Explanations: * -1 &#x3D; Never expires * -2 &#x3D; Expired *  0 &#x3D; Will expire in 0 milliseconds * &gt;0 &#x3D; This task is invalid and must not be executed after &gt;0 milliseconds from task creation time | [optional] [default to -1]
 **source** | [**SourceEndPoint**](SourceEndPoint.md) |  | [optional] 
 **destination** | [**DestinationEndPoint**](DestinationEndPoint.md) |  | [optional] 
+**extras** | [**list[Extra]**](Extra.md) |  | [optional] 
 **zone_setting** | [**EngineTaskZoneSetting**](EngineTaskZoneSetting.md) |  | [optional] 
 **line_setting** | [**EngineTaskLineSetting**](EngineTaskLineSetting.md) |  | [optional] 
 **config** | [**list[Config]**](Config.md) |  | [optional] 

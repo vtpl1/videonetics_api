@@ -34,6 +34,7 @@ class VtplVideoFrame(object):
         'time_stamp': 'int',
         'fps': 'float',
         'frame': 'object',
+        'gpu_frame': 'object',
         'is_first_frame': 'bool',
         'is_end_of_stream': 'bool',
         'type': 'SourceType',
@@ -49,6 +50,7 @@ class VtplVideoFrame(object):
         'time_stamp': 'timeStamp',
         'fps': 'fps',
         'frame': 'frame',
+        'gpu_frame': 'gpuFrame',
         'is_first_frame': 'isFirstFrame',
         'is_end_of_stream': 'isEndOfStream',
         'type': 'type',
@@ -57,7 +59,7 @@ class VtplVideoFrame(object):
         '_pass': 'pass'
     }
 
-    def __init__(self, channel_id=None, app_id=None, frame_id=None, time_stamp=None, fps=None, frame=None, is_first_frame=False, is_end_of_stream=False, type=None, base_url=None, user=None, _pass=None):  # noqa: E501
+    def __init__(self, channel_id=None, app_id=None, frame_id=None, time_stamp=None, fps=None, frame=None, gpu_frame=None, is_first_frame=False, is_end_of_stream=False, type=None, base_url=None, user=None, _pass=None):  # noqa: E501
         """VtplVideoFrame - a model defined in Swagger"""  # noqa: E501
         self._channel_id = None
         self._app_id = None
@@ -65,6 +67,7 @@ class VtplVideoFrame(object):
         self._time_stamp = None
         self._fps = None
         self._frame = None
+        self._gpu_frame = None
         self._is_first_frame = None
         self._is_end_of_stream = None
         self._type = None
@@ -84,6 +87,8 @@ class VtplVideoFrame(object):
             self.fps = fps
         if frame is not None:
             self.frame = frame
+        if gpu_frame is not None:
+            self.gpu_frame = gpu_frame
         if is_first_frame is not None:
             self.is_first_frame = is_first_frame
         if is_end_of_stream is not None:
@@ -222,6 +227,27 @@ class VtplVideoFrame(object):
         """
 
         self._frame = frame
+
+    @property
+    def gpu_frame(self):
+        """Gets the gpu_frame of this VtplVideoFrame.  # noqa: E501
+
+
+        :return: The gpu_frame of this VtplVideoFrame.  # noqa: E501
+        :rtype: object
+        """
+        return self._gpu_frame
+
+    @gpu_frame.setter
+    def gpu_frame(self, gpu_frame):
+        """Sets the gpu_frame of this VtplVideoFrame.
+
+
+        :param gpu_frame: The gpu_frame of this VtplVideoFrame.  # noqa: E501
+        :type: object
+        """
+
+        self._gpu_frame = gpu_frame
 
     @property
     def is_first_frame(self):
