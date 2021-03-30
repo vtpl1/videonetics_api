@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **frame_id** | **int** |  | [optional] 
 **time_stamp** | **int** |  | [optional] 
 **fps** | **float** |  | [optional] 
+**width** | **int** |  | [optional] 
+**height** | **int** |  | [optional] 
 **frame** | **object** |  | [optional] 
 **gpu_frame** | **object** |  | [optional] 
 **is_first_frame** | **bool** |  | [optional] [default to False]

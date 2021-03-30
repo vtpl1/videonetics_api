@@ -33,6 +33,8 @@ class VtplVideoFrame(object):
         'frame_id': 'int',
         'time_stamp': 'int',
         'fps': 'float',
+        'width': 'int',
+        'height': 'int',
         'frame': 'object',
         'gpu_frame': 'object',
         'is_first_frame': 'bool',
@@ -49,6 +51,8 @@ class VtplVideoFrame(object):
         'frame_id': 'frameId',
         'time_stamp': 'timeStamp',
         'fps': 'fps',
+        'width': 'width',
+        'height': 'height',
         'frame': 'frame',
         'gpu_frame': 'gpuFrame',
         'is_first_frame': 'isFirstFrame',
@@ -59,13 +63,15 @@ class VtplVideoFrame(object):
         '_pass': 'pass'
     }
 
-    def __init__(self, channel_id=None, app_id=None, frame_id=None, time_stamp=None, fps=None, frame=None, gpu_frame=None, is_first_frame=False, is_end_of_stream=False, type=None, base_url=None, user=None, _pass=None):  # noqa: E501
+    def __init__(self, channel_id=None, app_id=None, frame_id=None, time_stamp=None, fps=None, width=None, height=None, frame=None, gpu_frame=None, is_first_frame=False, is_end_of_stream=False, type=None, base_url=None, user=None, _pass=None):  # noqa: E501
         """VtplVideoFrame - a model defined in Swagger"""  # noqa: E501
         self._channel_id = None
         self._app_id = None
         self._frame_id = None
         self._time_stamp = None
         self._fps = None
+        self._width = None
+        self._height = None
         self._frame = None
         self._gpu_frame = None
         self._is_first_frame = None
@@ -85,6 +91,10 @@ class VtplVideoFrame(object):
             self.time_stamp = time_stamp
         if fps is not None:
             self.fps = fps
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
         if frame is not None:
             self.frame = frame
         if gpu_frame is not None:
@@ -206,6 +216,48 @@ class VtplVideoFrame(object):
         """
 
         self._fps = fps
+
+    @property
+    def width(self):
+        """Gets the width of this VtplVideoFrame.  # noqa: E501
+
+
+        :return: The width of this VtplVideoFrame.  # noqa: E501
+        :rtype: int
+        """
+        return self._width
+
+    @width.setter
+    def width(self, width):
+        """Sets the width of this VtplVideoFrame.
+
+
+        :param width: The width of this VtplVideoFrame.  # noqa: E501
+        :type: int
+        """
+
+        self._width = width
+
+    @property
+    def height(self):
+        """Gets the height of this VtplVideoFrame.  # noqa: E501
+
+
+        :return: The height of this VtplVideoFrame.  # noqa: E501
+        :rtype: int
+        """
+        return self._height
+
+    @height.setter
+    def height(self, height):
+        """Sets the height of this VtplVideoFrame.
+
+
+        :param height: The height of this VtplVideoFrame.  # noqa: E501
+        :type: int
+        """
+
+        self._height = height
 
     @property
     def frame(self):
