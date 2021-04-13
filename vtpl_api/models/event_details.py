@@ -28,259 +28,49 @@ class EventDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'job_id': 'str',
-        'camera_id': 'str',
-        'camera_ip': 'str',
-        'camera_name': 'str',
-        'is_valid': 'bool',
-        'is_restricted': 'bool',
-        'source_id': 'str',
         'engine_task_id': 'str',
-        'zone_id': 'int',
-        'confidence': 'float',
         'start_time_stamp': 'int',
         'end_time_stamp': 'int',
-        'video_file_name': 'str',
+        'zone_id': 'int',
+        'confidence': 'float',
         'capture_time_in_video': 'int',
-        'gdpr_enabled': 'bool',
-        'latitude': 'float',
-        'longitude': 'float',
         'extras': 'list[Extra]'
     }
 
     attribute_map = {
-        'job_id': 'jobId',
-        'camera_id': 'cameraId',
-        'camera_ip': 'cameraIp',
-        'camera_name': 'cameraName',
-        'is_valid': 'isValid',
-        'is_restricted': 'isRestricted',
-        'source_id': 'sourceId',
         'engine_task_id': 'engineTaskId',
-        'zone_id': 'zoneId',
-        'confidence': 'confidence',
         'start_time_stamp': 'startTimeStamp',
         'end_time_stamp': 'endTimeStamp',
-        'video_file_name': 'videoFileName',
+        'zone_id': 'zoneId',
+        'confidence': 'confidence',
         'capture_time_in_video': 'captureTimeInVideo',
-        'gdpr_enabled': 'gdprEnabled',
-        'latitude': 'latitude',
-        'longitude': 'longitude',
         'extras': 'extras'
     }
 
-    def __init__(self, job_id=None, camera_id=None, camera_ip=None, camera_name=None, is_valid=False, is_restricted=True, source_id=None, engine_task_id=None, zone_id=0, confidence=0, start_time_stamp=None, end_time_stamp=None, video_file_name=None, capture_time_in_video=-1, gdpr_enabled=False, latitude=0, longitude=0, extras=None):  # noqa: E501
+    def __init__(self, engine_task_id=None, start_time_stamp=None, end_time_stamp=None, zone_id=0, confidence=0, capture_time_in_video=None, extras=None):  # noqa: E501
         """EventDetails - a model defined in Swagger"""  # noqa: E501
-        self._job_id = None
-        self._camera_id = None
-        self._camera_ip = None
-        self._camera_name = None
-        self._is_valid = None
-        self._is_restricted = None
-        self._source_id = None
         self._engine_task_id = None
-        self._zone_id = None
-        self._confidence = None
         self._start_time_stamp = None
         self._end_time_stamp = None
-        self._video_file_name = None
+        self._zone_id = None
+        self._confidence = None
         self._capture_time_in_video = None
-        self._gdpr_enabled = None
-        self._latitude = None
-        self._longitude = None
         self._extras = None
         self.discriminator = None
-        if job_id is not None:
-            self.job_id = job_id
-        if camera_id is not None:
-            self.camera_id = camera_id
-        if camera_ip is not None:
-            self.camera_ip = camera_ip
-        if camera_name is not None:
-            self.camera_name = camera_name
-        if is_valid is not None:
-            self.is_valid = is_valid
-        if is_restricted is not None:
-            self.is_restricted = is_restricted
-        if source_id is not None:
-            self.source_id = source_id
         if engine_task_id is not None:
             self.engine_task_id = engine_task_id
-        if zone_id is not None:
-            self.zone_id = zone_id
-        if confidence is not None:
-            self.confidence = confidence
         if start_time_stamp is not None:
             self.start_time_stamp = start_time_stamp
         if end_time_stamp is not None:
             self.end_time_stamp = end_time_stamp
-        if video_file_name is not None:
-            self.video_file_name = video_file_name
+        if zone_id is not None:
+            self.zone_id = zone_id
+        if confidence is not None:
+            self.confidence = confidence
         if capture_time_in_video is not None:
             self.capture_time_in_video = capture_time_in_video
-        if gdpr_enabled is not None:
-            self.gdpr_enabled = gdpr_enabled
-        if latitude is not None:
-            self.latitude = latitude
-        if longitude is not None:
-            self.longitude = longitude
         if extras is not None:
             self.extras = extras
-
-    @property
-    def job_id(self):
-        """Gets the job_id of this EventDetails.  # noqa: E501
-
-
-        :return: The job_id of this EventDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._job_id
-
-    @job_id.setter
-    def job_id(self, job_id):
-        """Sets the job_id of this EventDetails.
-
-
-        :param job_id: The job_id of this EventDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._job_id = job_id
-
-    @property
-    def camera_id(self):
-        """Gets the camera_id of this EventDetails.  # noqa: E501
-
-        _id of camera #$ref: '#/components/schemas/camera' from project cameras  # noqa: E501
-
-        :return: The camera_id of this EventDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._camera_id
-
-    @camera_id.setter
-    def camera_id(self, camera_id):
-        """Sets the camera_id of this EventDetails.
-
-        _id of camera #$ref: '#/components/schemas/camera' from project cameras  # noqa: E501
-
-        :param camera_id: The camera_id of this EventDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._camera_id = camera_id
-
-    @property
-    def camera_ip(self):
-        """Gets the camera_ip of this EventDetails.  # noqa: E501
-
-
-        :return: The camera_ip of this EventDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._camera_ip
-
-    @camera_ip.setter
-    def camera_ip(self, camera_ip):
-        """Sets the camera_ip of this EventDetails.
-
-
-        :param camera_ip: The camera_ip of this EventDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._camera_ip = camera_ip
-
-    @property
-    def camera_name(self):
-        """Gets the camera_name of this EventDetails.  # noqa: E501
-
-
-        :return: The camera_name of this EventDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._camera_name
-
-    @camera_name.setter
-    def camera_name(self, camera_name):
-        """Sets the camera_name of this EventDetails.
-
-
-        :param camera_name: The camera_name of this EventDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._camera_name = camera_name
-
-    @property
-    def is_valid(self):
-        """Gets the is_valid of this EventDetails.  # noqa: E501
-
-        If event validated by operator/admin  # noqa: E501
-
-        :return: The is_valid of this EventDetails.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_valid
-
-    @is_valid.setter
-    def is_valid(self, is_valid):
-        """Sets the is_valid of this EventDetails.
-
-        If event validated by operator/admin  # noqa: E501
-
-        :param is_valid: The is_valid of this EventDetails.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_valid = is_valid
-
-    @property
-    def is_restricted(self):
-        """Gets the is_restricted of this EventDetails.  # noqa: E501
-
-        If event validated by operator/admin  # noqa: E501
-
-        :return: The is_restricted of this EventDetails.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_restricted
-
-    @is_restricted.setter
-    def is_restricted(self, is_restricted):
-        """Sets the is_restricted of this EventDetails.
-
-        If event validated by operator/admin  # noqa: E501
-
-        :param is_restricted: The is_restricted of this EventDetails.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_restricted = is_restricted
-
-    @property
-    def source_id(self):
-        """Gets the source_id of this EventDetails.  # noqa: E501
-
-        _id of camera #$ref: '#/components/schemas/camera' from project cameras  # noqa: E501
-
-        :return: The source_id of this EventDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._source_id
-
-    @source_id.setter
-    def source_id(self, source_id):
-        """Sets the source_id of this EventDetails.
-
-        _id of camera #$ref: '#/components/schemas/camera' from project cameras  # noqa: E501
-
-        :param source_id: The source_id of this EventDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._source_id = source_id
 
     @property
     def engine_task_id(self):
@@ -304,52 +94,6 @@ class EventDetails(object):
         """
 
         self._engine_task_id = engine_task_id
-
-    @property
-    def zone_id(self):
-        """Gets the zone_id of this EventDetails.  # noqa: E501
-
-        the zoneId of the engineTask in zoneSetting, #$ref: '#/components/schemas/zone'  # noqa: E501
-
-        :return: The zone_id of this EventDetails.  # noqa: E501
-        :rtype: int
-        """
-        return self._zone_id
-
-    @zone_id.setter
-    def zone_id(self, zone_id):
-        """Sets the zone_id of this EventDetails.
-
-        the zoneId of the engineTask in zoneSetting, #$ref: '#/components/schemas/zone'  # noqa: E501
-
-        :param zone_id: The zone_id of this EventDetails.  # noqa: E501
-        :type: int
-        """
-
-        self._zone_id = zone_id
-
-    @property
-    def confidence(self):
-        """Gets the confidence of this EventDetails.  # noqa: E501
-
-        match confidence predicted by engine during event detection  # noqa: E501
-
-        :return: The confidence of this EventDetails.  # noqa: E501
-        :rtype: float
-        """
-        return self._confidence
-
-    @confidence.setter
-    def confidence(self, confidence):
-        """Sets the confidence of this EventDetails.
-
-        match confidence predicted by engine during event detection  # noqa: E501
-
-        :param confidence: The confidence of this EventDetails.  # noqa: E501
-        :type: float
-        """
-
-        self._confidence = confidence
 
     @property
     def start_time_stamp(self):
@@ -398,27 +142,50 @@ class EventDetails(object):
         self._end_time_stamp = end_time_stamp
 
     @property
-    def video_file_name(self):
-        """Gets the video_file_name of this EventDetails.  # noqa: E501
+    def zone_id(self):
+        """Gets the zone_id of this EventDetails.  # noqa: E501
 
-        Video file name if it is present  # noqa: E501
+        the zoneId of the engineTask in zoneSetting, #$ref: '#/components/schemas/zone'  # noqa: E501
 
-        :return: The video_file_name of this EventDetails.  # noqa: E501
-        :rtype: str
+        :return: The zone_id of this EventDetails.  # noqa: E501
+        :rtype: int
         """
-        return self._video_file_name
+        return self._zone_id
 
-    @video_file_name.setter
-    def video_file_name(self, video_file_name):
-        """Sets the video_file_name of this EventDetails.
+    @zone_id.setter
+    def zone_id(self, zone_id):
+        """Sets the zone_id of this EventDetails.
 
-        Video file name if it is present  # noqa: E501
+        the zoneId of the engineTask in zoneSetting, #$ref: '#/components/schemas/zone'  # noqa: E501
 
-        :param video_file_name: The video_file_name of this EventDetails.  # noqa: E501
-        :type: str
+        :param zone_id: The zone_id of this EventDetails.  # noqa: E501
+        :type: int
         """
 
-        self._video_file_name = video_file_name
+        self._zone_id = zone_id
+
+    @property
+    def confidence(self):
+        """Gets the confidence of this EventDetails.  # noqa: E501
+
+        match confidence predicted by engine during event detection  # noqa: E501
+
+        :return: The confidence of this EventDetails.  # noqa: E501
+        :rtype: float
+        """
+        return self._confidence
+
+    @confidence.setter
+    def confidence(self, confidence):
+        """Sets the confidence of this EventDetails.
+
+        match confidence predicted by engine during event detection  # noqa: E501
+
+        :param confidence: The confidence of this EventDetails.  # noqa: E501
+        :type: float
+        """
+
+        self._confidence = confidence
 
     @property
     def capture_time_in_video(self):
@@ -442,71 +209,6 @@ class EventDetails(object):
         """
 
         self._capture_time_in_video = capture_time_in_video
-
-    @property
-    def gdpr_enabled(self):
-        """Gets the gdpr_enabled of this EventDetails.  # noqa: E501
-
-        If gdpr enabled by admin  # noqa: E501
-
-        :return: The gdpr_enabled of this EventDetails.  # noqa: E501
-        :rtype: bool
-        """
-        return self._gdpr_enabled
-
-    @gdpr_enabled.setter
-    def gdpr_enabled(self, gdpr_enabled):
-        """Sets the gdpr_enabled of this EventDetails.
-
-        If gdpr enabled by admin  # noqa: E501
-
-        :param gdpr_enabled: The gdpr_enabled of this EventDetails.  # noqa: E501
-        :type: bool
-        """
-
-        self._gdpr_enabled = gdpr_enabled
-
-    @property
-    def latitude(self):
-        """Gets the latitude of this EventDetails.  # noqa: E501
-
-
-        :return: The latitude of this EventDetails.  # noqa: E501
-        :rtype: float
-        """
-        return self._latitude
-
-    @latitude.setter
-    def latitude(self, latitude):
-        """Sets the latitude of this EventDetails.
-
-
-        :param latitude: The latitude of this EventDetails.  # noqa: E501
-        :type: float
-        """
-
-        self._latitude = latitude
-
-    @property
-    def longitude(self):
-        """Gets the longitude of this EventDetails.  # noqa: E501
-
-
-        :return: The longitude of this EventDetails.  # noqa: E501
-        :rtype: float
-        """
-        return self._longitude
-
-    @longitude.setter
-    def longitude(self, longitude):
-        """Sets the longitude of this EventDetails.
-
-
-        :param longitude: The longitude of this EventDetails.  # noqa: E501
-        :type: float
-        """
-
-        self._longitude = longitude
 
     @property
     def extras(self):

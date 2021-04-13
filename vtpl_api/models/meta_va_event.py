@@ -41,15 +41,15 @@ class MetaVaEvent(object):
     attribute_map = {
         'identifier': 'identifier',
         'count': 'count',
-        'obj_count': 'obj_count',
-        'zone_id': 'zone_id',
-        'line_id': 'line_id',
-        'entry_count': 'entry_count',
-        'exit_count': 'exit_count',
-        'count_type': 'count_type'
+        'obj_count': 'objCount',
+        'zone_id': 'zoneId',
+        'line_id': 'lineId',
+        'entry_count': 'entryCount',
+        'exit_count': 'exitCount',
+        'count_type': 'countType'
     }
 
-    def __init__(self, identifier=None, count=0, obj_count=0, zone_id=0, line_id=0, entry_count=0, exit_count=0, count_type=None):  # noqa: E501
+    def __init__(self, identifier=None, count=None, obj_count=None, zone_id=None, line_id=None, entry_count=None, exit_count=None, count_type=None):  # noqa: E501
         """MetaVaEvent - a model defined in Swagger"""  # noqa: E501
         self._identifier = None
         self._count = None

@@ -131,12 +131,7 @@ class TestEnginesApi(unittest.TestCase):
 
         Get all engineTasks  # noqa: E501
         """
-        try:
-            # Get all anprEvents
-            api_response = self.api.engine_tasks_get()
-            pprint(api_response)
-        except ApiException as e:
-            print("Exception when calling EnginesApi->anpr_events_get: %s\n" % e)
+        pass
 
     def test_engine_tasks_id_delete(self):
         """Test case for engine_tasks_id_delete
