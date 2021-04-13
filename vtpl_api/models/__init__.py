@@ -31,6 +31,10 @@ from vtpl_api.models.destination_type import DestinationType
 from vtpl_api.models.engine import Engine
 from vtpl_api.models.engine_task import EngineTask
 from vtpl_api.models.engine_task_line_setting import EngineTaskLineSetting
+from vtpl_api.models.engine_task_status import EngineTaskStatus
+from vtpl_api.models.engine_task_status_failure import EngineTaskStatusFailure
+from vtpl_api.models.engine_task_status_progress import EngineTaskStatusProgress
+from vtpl_api.models.engine_task_status_response import EngineTaskStatusResponse
 from vtpl_api.models.engine_task_zone_setting import EngineTaskZoneSetting
 from vtpl_api.models.engine_tasks_response import EngineTasksResponse
 from vtpl_api.models.engines_response import EnginesResponse

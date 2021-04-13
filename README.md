@@ -159,6 +159,65 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engineTaskStatus?page=4 (optional)
+sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTaskStatus?sort=created   * To sort engineTasks by created IN DECENDING order, use /engineTaskStatus?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
+max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /engineTaskStatus?maxResults=1   * To limit engineTasks to 2, use /engineTaskStatus?maxResults=2 (optional)
+
+try:
+    # Get all engineTaskStatus
+    api_response = api_instance.engine_task_status_get(page=page, sort=sort, max_results=max_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engine_task_status_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an engineTaskStatus
+    api_instance.engine_task_status_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engine_task_status_id_delete: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+
+try:
+    # Get engineTaskStatus by id
+    api_response = api_instance.engine_task_status_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engine_task_status_id_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.EngineTaskStatus() # EngineTaskStatus |  (optional)
+
+try:
+    # Patch an engineTaskStatus
+    api_response = api_instance.engine_task_status_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engine_task_status_id_patch: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+body = vtpl_api.EngineTaskStatus() # EngineTaskStatus |  (optional)
+
+try:
+    # Create an engineTaskStatus
+    api_response = api_instance.engine_task_status_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engine_task_status_post: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the engineTask model. Example:   * To find engineTasks with capbilitiesType equal 211 and sourceId equal \"4\", use /engineTasks?where={\"capbilitiesType\":322,\"source.sourceId\":\"4\"}   * To find engineTasks with destination.extras.value equal \"1553774721506487\", use /engineTasks?where={\"destination.extras.value\":\"1553774721506487\"} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engines?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTasks?sort=created   * To sort engineTasks by created IN DECENDING order, use /engineTasks?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
@@ -380,6 +439,11 @@ Class | Method | HTTP request | Description
 *EnginesApi* | [**clips_get**](docs/EnginesApi.md#clips_get) | **GET** /clips | Get all unprocesed clips
 *EnginesApi* | [**clips_id_get**](docs/EnginesApi.md#clips_id_get) | **GET** /clips/{id} | Get clip by id
 *EnginesApi* | [**clips_post**](docs/EnginesApi.md#clips_post) | **POST** /clips | Create an unprocesed clip
+*EnginesApi* | [**engine_task_status_get**](docs/EnginesApi.md#engine_task_status_get) | **GET** /engineTaskStatus | Get all engineTaskStatus
+*EnginesApi* | [**engine_task_status_id_delete**](docs/EnginesApi.md#engine_task_status_id_delete) | **DELETE** /engineTaskStatus/{id} | Delete an engineTaskStatus
+*EnginesApi* | [**engine_task_status_id_get**](docs/EnginesApi.md#engine_task_status_id_get) | **GET** /engineTaskStatus/{id} | Get engineTaskStatus by id
+*EnginesApi* | [**engine_task_status_id_patch**](docs/EnginesApi.md#engine_task_status_id_patch) | **PATCH** /engineTaskStatus/{id} | Patch an engineTaskStatus
+*EnginesApi* | [**engine_task_status_post**](docs/EnginesApi.md#engine_task_status_post) | **POST** /engineTaskStatus | Create an engineTaskStatus
 *EnginesApi* | [**engine_tasks_get**](docs/EnginesApi.md#engine_tasks_get) | **GET** /engineTasks | Get all engineTasks
 *EnginesApi* | [**engine_tasks_id_delete**](docs/EnginesApi.md#engine_tasks_id_delete) | **DELETE** /engineTasks/{id} | Delete an engine task
 *EnginesApi* | [**engine_tasks_id_get**](docs/EnginesApi.md#engine_tasks_id_get) | **GET** /engineTasks/{id} | Get engine task by id
@@ -418,6 +482,10 @@ Class | Method | HTTP request | Description
  - [Engine](docs/Engine.md)
  - [EngineTask](docs/EngineTask.md)
  - [EngineTaskLineSetting](docs/EngineTaskLineSetting.md)
+ - [EngineTaskStatus](docs/EngineTaskStatus.md)
+ - [EngineTaskStatusFailure](docs/EngineTaskStatusFailure.md)
+ - [EngineTaskStatusProgress](docs/EngineTaskStatusProgress.md)
+ - [EngineTaskStatusResponse](docs/EngineTaskStatusResponse.md)
  - [EngineTaskZoneSetting](docs/EngineTaskZoneSetting.md)
  - [EngineTasksResponse](docs/EngineTasksResponse.md)
  - [EnginesResponse](docs/EnginesResponse.md)

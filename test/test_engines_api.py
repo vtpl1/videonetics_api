@@ -91,12 +91,52 @@ class TestEnginesApi(unittest.TestCase):
         """
         pass
 
+    def test_engine_task_status_get(self):
+        """Test case for engine_task_status_get
+
+        Get all engineTaskStatus  # noqa: E501
+        """
+        pass
+
+    def test_engine_task_status_id_delete(self):
+        """Test case for engine_task_status_id_delete
+
+        Delete an engineTaskStatus  # noqa: E501
+        """
+        pass
+
+    def test_engine_task_status_id_get(self):
+        """Test case for engine_task_status_id_get
+
+        Get engineTaskStatus by id  # noqa: E501
+        """
+        pass
+
+    def test_engine_task_status_id_patch(self):
+        """Test case for engine_task_status_id_patch
+
+        Patch an engineTaskStatus  # noqa: E501
+        """
+        pass
+
+    def test_engine_task_status_post(self):
+        """Test case for engine_task_status_post
+
+        Create an engineTaskStatus  # noqa: E501
+        """
+        pass
+
     def test_engine_tasks_get(self):
         """Test case for engine_tasks_get
 
         Get all engineTasks  # noqa: E501
         """
-        pass
+        try:
+            # Get all anprEvents
+            api_response = self.api.engine_tasks_get()
+            pprint(api_response)
+        except ApiException as e:
+            print("Exception when calling EnginesApi->anpr_events_get: %s\n" % e)
 
     def test_engine_tasks_id_delete(self):
         """Test case for engine_tasks_id_delete

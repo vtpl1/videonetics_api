@@ -13,6 +13,11 @@ Method | HTTP request | Description
 [**clips_get**](EnginesApi.md#clips_get) | **GET** /clips | Get all unprocesed clips
 [**clips_id_get**](EnginesApi.md#clips_id_get) | **GET** /clips/{id} | Get clip by id
 [**clips_post**](EnginesApi.md#clips_post) | **POST** /clips | Create an unprocesed clip
+[**engine_task_status_get**](EnginesApi.md#engine_task_status_get) | **GET** /engineTaskStatus | Get all engineTaskStatus
+[**engine_task_status_id_delete**](EnginesApi.md#engine_task_status_id_delete) | **DELETE** /engineTaskStatus/{id} | Delete an engineTaskStatus
+[**engine_task_status_id_get**](EnginesApi.md#engine_task_status_id_get) | **GET** /engineTaskStatus/{id} | Get engineTaskStatus by id
+[**engine_task_status_id_patch**](EnginesApi.md#engine_task_status_id_patch) | **PATCH** /engineTaskStatus/{id} | Patch an engineTaskStatus
+[**engine_task_status_post**](EnginesApi.md#engine_task_status_post) | **POST** /engineTaskStatus | Create an engineTaskStatus
 [**engine_tasks_get**](EnginesApi.md#engine_tasks_get) | **GET** /engineTasks | Get all engineTasks
 [**engine_tasks_id_delete**](EnginesApi.md#engine_tasks_id_delete) | **DELETE** /engineTasks/{id} | Delete an engine task
 [**engine_tasks_id_get**](EnginesApi.md#engine_tasks_id_get) | **GET** /engineTasks/{id} | Get engine task by id
@@ -460,6 +465,255 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Clip**](Clip.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engine_task_status_get**
+> EngineTaskStatusResponse engine_task_status_get(page=page, sort=sort, max_results=max_results)
+
+Get all engineTaskStatus
+
+Get all engineTaskStatus
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engineTaskStatus?page=4 (optional)
+sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTaskStatus?sort=created   * To sort engineTasks by created IN DECENDING order, use /engineTaskStatus?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
+max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /engineTaskStatus?maxResults=1   * To limit engineTasks to 2, use /engineTaskStatus?maxResults=2 (optional)
+
+try:
+    # Get all engineTaskStatus
+    api_response = api_instance.engine_task_status_get(page=page, sort=sort, max_results=max_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engine_task_status_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engineTaskStatus?page&#x3D;4 | [optional] 
+ **sort** | **str**| The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTaskStatus?sort&#x3D;created   * To sort engineTasks by created IN DECENDING order, use /engineTaskStatus?sort&#x3D;-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING | [optional] 
+ **max_results** | **int**| The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /engineTaskStatus?maxResults&#x3D;1   * To limit engineTasks to 2, use /engineTaskStatus?maxResults&#x3D;2 | [optional] 
+
+### Return type
+
+[**EngineTaskStatusResponse**](EngineTaskStatusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engine_task_status_id_delete**
+> engine_task_status_id_delete(id, if_match)
+
+Delete an engineTaskStatus
+
+Delete an engineTaskStatus
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an engineTaskStatus
+    api_instance.engine_task_status_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engine_task_status_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+ **if_match** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engine_task_status_id_get**
+> EngineTaskStatus engine_task_status_id_get(id)
+
+Get engineTaskStatus by id
+
+Get engineTaskStatus for a given id
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+
+try:
+    # Get engineTaskStatus by id
+    api_response = api_instance.engine_task_status_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engine_task_status_id_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+
+### Return type
+
+[**EngineTaskStatus**](EngineTaskStatus.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engine_task_status_id_patch**
+> DefaultResponse engine_task_status_id_patch(if_match, id, body=body)
+
+Patch an engineTaskStatus
+
+Patch an engineTaskStatus. Submit an object with one or more properties of the engineTask model.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.EngineTaskStatus() # EngineTaskStatus |  (optional)
+
+try:
+    # Patch an engineTaskStatus
+    api_response = api_instance.engine_task_status_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engine_task_status_id_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_match** | **str**|  | 
+ **id** | **str**| Unique ID | 
+ **body** | [**EngineTaskStatus**](EngineTaskStatus.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engine_task_status_post**
+> DefaultResponse engine_task_status_post(body=body)
+
+Create an engineTaskStatus
+
+Create a engineTaskStatus.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+body = vtpl_api.EngineTaskStatus() # EngineTaskStatus |  (optional)
+
+try:
+    # Create an engineTaskStatus
+    api_response = api_instance.engine_task_status_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engine_task_status_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EngineTaskStatus**](EngineTaskStatus.md)|  | [optional] 
 
 ### Return type
 
