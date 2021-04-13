@@ -61,7 +61,7 @@ class Snap(object):
         'links': 'links'
     }
 
-    def __init__(self, id=None, snap=None, full_snap='', snap_id=None, snap_time_stamp=None, process_count=0, registered_face_id='0', feature_vector1=None, feature_vector2=None, confidence=0, updated=None, created=None, etag=None, links=None):  # noqa: E501
+    def __init__(self, id=None, snap=None, full_snap=None, snap_id=None, snap_time_stamp=None, process_count=None, registered_face_id=None, feature_vector1=None, feature_vector2=None, confidence=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
         """Snap - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._snap = None
