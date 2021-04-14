@@ -12,7 +12,9 @@ from vtpl_api.models.va_event import VaEvent
 from vtpl_api.models.meta_va_event import MetaVaEvent
 from vtpl_api.models.event_details import EventDetails
 from vtpl_api.models.snap import Snap
+from vtpl_api.models.engine_task_status import EngineTaskStatus
 import uuid
+import time
 
 
 class TestEnginesApi(unittest.TestCase):
@@ -104,24 +106,63 @@ class TestEnginesApi(unittest.TestCase):
                     try:
                         api_response2 = self.api.engine_tasks_id_patch(
                             if_match=etag, id=id, body=json.dumps({"engineMachineId": my_id}))
-                        pprint(api_response2)
                         assert api_response2.status == 'OK'
                         etag = api_response2.etag
                         id = api_response2.id
                         # process Tasks
                         # generate events
 
+                        status_id = None
+                        status_etag = None
+
+                        status_max_results = 1
+                        status_where = {'engineTaskId': item.id}
+                        api_response7 = self.api.engine_tasks_get(where=json.dumps(
+                            status_where), max_results=json.dumps(status_max_results))
+                        if len(api_response7.items) > 0:
+                            status_id = api_response7.item[0].id
+                            status_etag = api_response7.item[0].etag
+
+                        for i in range(10, 71, 10):
+                            try:
+
+                                if(status_id == None and status_etag == None):
+                                    progress = {'percentage': i, 'startTimeStamp': time.time(
+                                    ), 'endTimeStamp': time.time()}
+                                    failure = None
+                                    engine_task_status = EngineTaskStatus(
+                                        engine_task_id=item.id, progress=progress, failure=failure)
+                                    api_response6 = self.api.engine_task_status_post(
+                                        body=engine_task_status)
+                                    status_id = api_response6.id
+                                    status_etag = api_response6.etag
+                                else:
+                                    progress = {'percentage': i, 'startTimeStamp': time.time(
+                                    ), 'endTimeStamp': time.time()}
+                                    failure = None
+                                    engine_task_status = EngineTaskStatus(
+                                        engine_task_id=item.id, progress=progress, failure=failure)
+                                    print(
+                                        f"monotosh: engine_task_status_id_patch {engine_task_status}")
+                                    api_response6 = self.api.engine_task_status_id_patch(if_match=status_etag, id=status_id,
+                                                                                         body=engine_task_status)
+                                    status_id = api_response6.id
+                                    status_etag = api_response6.etag
+                            except ApiException as e:
+                                print(
+                                    "Exception when calling EnginesApi->engine_task_status_post: %s\n" % e)
+                                assert (False)
+
                         try:
                             snap_url = f'{vs3_host_name}/api/motion/1618288200000-1618288260000/5.png'
                             event_snap = Snap(
                                 snap=snap_url, snap_id=str(uuid.uuid4()))
-                            print(f"monotosh: event_snap {event_snap}")
+                            #print(f"monotosh: event_snap {event_snap}")
                             api_response5 = self.api.event_snaps_post(
                                 body=event_snap)
-
                         except ApiException as e:
                             print(
-                                "Exception when calling EnginesApi->va_events_post: %s\n" % e)
+                                "Exception when calling EnginesApi->event_snaps_post: %s\n" % e)
                             assert (False)
 
                         try:
