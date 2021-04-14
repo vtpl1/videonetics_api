@@ -913,6 +913,7 @@ class EnginesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the engineTaskStatus model. Example:   * To find engineTaskStatus with engineTaskId equal \"11\", use /engineTaskStatus?where={\"engineTaskId\":\"11\"}
         :param int page: The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engineTaskStatus?page=4
         :param str sort: The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTaskStatus?sort=created   * To sort engineTasks by created IN DECENDING order, use /engineTaskStatus?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING
         :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /engineTaskStatus?maxResults=1   * To limit engineTasks to 2, use /engineTaskStatus?maxResults=2
@@ -937,6 +938,7 @@ class EnginesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the engineTaskStatus model. Example:   * To find engineTaskStatus with engineTaskId equal \"11\", use /engineTaskStatus?where={\"engineTaskId\":\"11\"}
         :param int page: The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engineTaskStatus?page=4
         :param str sort: The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTaskStatus?sort=created   * To sort engineTasks by created IN DECENDING order, use /engineTaskStatus?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING
         :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /engineTaskStatus?maxResults=1   * To limit engineTasks to 2, use /engineTaskStatus?maxResults=2
@@ -945,7 +947,7 @@ class EnginesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'sort', 'max_results']  # noqa: E501
+        all_params = ['where', 'page', 'sort', 'max_results']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -966,6 +968,8 @@ class EnginesApi(object):
         path_params = {}
 
         query_params = []
+        if 'where' in params:
+            query_params.append(('where', params['where']))  # noqa: E501
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
         if 'sort' in params:

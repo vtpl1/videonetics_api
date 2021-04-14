@@ -31,22 +31,34 @@ class EngineTaskStatus(object):
         'id': 'str',
         'engine_task_id': 'str',
         'progress': 'EngineTaskStatusProgress',
-        'failure': 'EngineTaskStatusFailure'
+        'failure': 'EngineTaskStatusFailure',
+        'updated': 'datetime',
+        'created': 'datetime',
+        'etag': 'str',
+        'links': 'Links'
     }
 
     attribute_map = {
         'id': '_id',
         'engine_task_id': 'engineTaskId',
         'progress': 'progress',
-        'failure': 'failure'
+        'failure': 'failure',
+        'updated': 'updated',
+        'created': 'created',
+        'etag': 'etag',
+        'links': 'links'
     }
 
-    def __init__(self, id=None, engine_task_id=None, progress=None, failure=None):  # noqa: E501
+    def __init__(self, id=None, engine_task_id=None, progress=None, failure=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
         """EngineTaskStatus - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._engine_task_id = None
         self._progress = None
         self._failure = None
+        self._updated = None
+        self._created = None
+        self._etag = None
+        self._links = None
         self.discriminator = None
         if id is not None:
             self.id = id
@@ -56,6 +68,14 @@ class EngineTaskStatus(object):
             self.progress = progress
         if failure is not None:
             self.failure = failure
+        if updated is not None:
+            self.updated = updated
+        if created is not None:
+            self.created = created
+        if etag is not None:
+            self.etag = etag
+        if links is not None:
+            self.links = links
 
     @property
     def id(self):
@@ -140,6 +160,90 @@ class EngineTaskStatus(object):
         """
 
         self._failure = failure
+
+    @property
+    def updated(self):
+        """Gets the updated of this EngineTaskStatus.  # noqa: E501
+
+
+        :return: The updated of this EngineTaskStatus.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated
+
+    @updated.setter
+    def updated(self, updated):
+        """Sets the updated of this EngineTaskStatus.
+
+
+        :param updated: The updated of this EngineTaskStatus.  # noqa: E501
+        :type: datetime
+        """
+
+        self._updated = updated
+
+    @property
+    def created(self):
+        """Gets the created of this EngineTaskStatus.  # noqa: E501
+
+
+        :return: The created of this EngineTaskStatus.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created
+
+    @created.setter
+    def created(self, created):
+        """Sets the created of this EngineTaskStatus.
+
+
+        :param created: The created of this EngineTaskStatus.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created = created
+
+    @property
+    def etag(self):
+        """Gets the etag of this EngineTaskStatus.  # noqa: E501
+
+
+        :return: The etag of this EngineTaskStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._etag
+
+    @etag.setter
+    def etag(self, etag):
+        """Sets the etag of this EngineTaskStatus.
+
+
+        :param etag: The etag of this EngineTaskStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._etag = etag
+
+    @property
+    def links(self):
+        """Gets the links of this EngineTaskStatus.  # noqa: E501
+
+
+        :return: The links of this EngineTaskStatus.  # noqa: E501
+        :rtype: Links
+        """
+        return self._links
+
+    @links.setter
+    def links(self, links):
+        """Sets the links of this EngineTaskStatus.
+
+
+        :param links: The links of this EngineTaskStatus.  # noqa: E501
+        :type: Links
+        """
+
+        self._links = links
 
     def to_dict(self):
         """Returns the model properties as a dict"""

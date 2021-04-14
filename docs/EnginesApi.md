@@ -482,7 +482,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engine_task_status_get**
-> EngineTaskStatusResponse engine_task_status_get(page=page, sort=sort, max_results=max_results)
+> EngineTaskStatusResponse engine_task_status_get(where=where, page=page, sort=sort, max_results=max_results)
 
 Get all engineTaskStatus
 
@@ -498,13 +498,14 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi()
+where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the engineTaskStatus model. Example:   * To find engineTaskStatus with engineTaskId equal \"11\", use /engineTaskStatus?where={\"engineTaskId\":\"11\"} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engineTaskStatus?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTaskStatus?sort=created   * To sort engineTasks by created IN DECENDING order, use /engineTaskStatus?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
 max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /engineTaskStatus?maxResults=1   * To limit engineTasks to 2, use /engineTaskStatus?maxResults=2 (optional)
 
 try:
     # Get all engineTaskStatus
-    api_response = api_instance.engine_task_status_get(page=page, sort=sort, max_results=max_results)
+    api_response = api_instance.engine_task_status_get(where=where, page=page, sort=sort, max_results=max_results)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_task_status_get: %s\n" % e)
@@ -514,6 +515,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **where** | **str**| The where clause takes a JSON as a string with one or many properties of the engineTaskStatus model. Example:   * To find engineTaskStatus with engineTaskId equal \&quot;11\&quot;, use /engineTaskStatus?where&#x3D;{\&quot;engineTaskId\&quot;:\&quot;11\&quot;} | [optional] 
  **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engineTaskStatus?page&#x3D;4 | [optional] 
  **sort** | **str**| The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTaskStatus?sort&#x3D;created   * To sort engineTasks by created IN DECENDING order, use /engineTaskStatus?sort&#x3D;-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING | [optional] 
  **max_results** | **int**| The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /engineTaskStatus?maxResults&#x3D;1   * To limit engineTasks to 2, use /engineTaskStatus?maxResults&#x3D;2 | [optional] 

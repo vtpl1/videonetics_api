@@ -19,6 +19,7 @@ RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/test
    && rm -rf /tmp/pip-tmp
 
 RUN pip3 --disable-pip-version-check --no-cache-dir install pytest
+RUN pip3 --disable-pip-version-check --no-cache-dir install requests
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \

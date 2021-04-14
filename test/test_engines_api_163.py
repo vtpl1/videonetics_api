@@ -22,7 +22,9 @@ class TestEnginesApi(unittest.TestCase):
 
     def setUp(self):
         self.configuration = Configuration()
-        self.configuration.host = "http://192.168.1.163:2050"
+        host_name = "http://192.168.1.199"
+        vs3_host = f"{host_name}:2080"
+        self.configuration.host = f"{host_name}:2050"
 
         self.api = EnginesApi(api_client=ApiClient(self.configuration))  # noqa: E501
 
@@ -68,6 +70,12 @@ class TestEnginesApi(unittest.TestCase):
             print("Exception when calling EnginesApi->engine_tasks_id_patch: %s\n" % e)
             assert (False)
 
+    def get_jobs(self, capabilties, max_channels, my_id):
+        assert capabilties is not None
+        assert max_channels > 0
+        assert my_id is not None
+
+
     def test_engine_task_state_machine(self):
         # 1 get engine tasks
         # 2 patch with machine id
@@ -88,11 +96,9 @@ class TestEnginesApi(unittest.TestCase):
             sort = [('created', -1)]
             maxResults = max_channels
 
-            str_where = json.dumps(where)  # str(where).replace("'", "\"")
-            print(f"where : {str_where}")
-
             api_response = self.api.engine_tasks_get(where=json.dumps(
                 where), sort=json.dumps(sort), max_results=json.dumps(maxResults))
+            print(api_response)
             assert len(api_response.items) > 0
             assert len(api_response.items) <= max_channels
 
@@ -123,7 +129,7 @@ class TestEnginesApi(unittest.TestCase):
                             status_id = api_response7.item[0].id
                             status_etag = api_response7.item[0].etag
 
-                        for i in range(10, 71, 10):
+                        for i in range(10, 101, 10):
                             try:
 
                                 if(status_id == None and status_etag == None):
@@ -202,5 +208,6 @@ class TestEnginesApi(unittest.TestCase):
             # pprint(api_response)
         except ApiException as e:
             print("Exception when calling EnginesApi->engine_tasks_get: %s\n" % e)
+            assert (False)
 
         pass
