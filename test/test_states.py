@@ -284,7 +284,7 @@ class DeeperLookTaskSubmitterApi:
         content_type = "video/mp4"
         bucket_name = "deeperlook3"
         key_name = "dd-aa"
-        api_url = f"{self.vs3_host}/api/vs3/test/{video_name}"
+        api_url = f"{self.vs3_host}/api/vs3/test"
         ret = (None, None)
         try:
             files = {"file": (video_name, open(video_file_path, 'rb'), content_type)}
@@ -322,6 +322,7 @@ class DeeperLookTaskSubmitterApi:
                 source=SourceEndPoint(source_list=[SourceEndPointSourceList(type=SourceType.HTTP, base_url=fully_qualified_url)],
                                       start_time_stamp=start_time_stamp,
                                       end_time_stamp=end_time_stamp)))
+            logging.info(api_response)
             ret = True
         except ApiException as e:
             logging.error("Exception when calling EnginesApi->engine_tasks_id_get: %s\n" % e)
@@ -348,7 +349,7 @@ def test_upload_video(caplog):
     logging.info("Started")
     x = DeeperLookTaskSubmitterApi()
     ret = x.upload_video("1.AVI", "1.AVI")
-    assert ret == "/api/vs3/test/1.AVI/1.AVI"
+    assert ret == "/api/vs3/test/1.AVI"
 
 
 def test_job_executor(caplog):
@@ -385,3 +386,4 @@ def test_job_submitter(caplog):
     #y.get_jobs([201, 207], 2, my_id)
 
     logging.info("End")
+    assert False

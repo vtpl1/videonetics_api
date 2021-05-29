@@ -1,11 +1,44 @@
-theme: readthedocs
 site_name: Videonetics Analytics API
 nav:
     - Home: 'index.md'
-    - 'API Guide':
-        - 'Submitting Task': 'submitting-task-docs.md'
-        - 'Task Status': 'task-status-docs.md'
-        - 'Event': 'event-docs.md'
+    - 'Available Applications': 'avaliable-apps.md'
+    - 'Authentication and authorization': 'authentication-and-authorization-docs.md'
+    - 'Submitting Task': 'submitting-task-docs.md'
+    - 'Task Status': 'task-status-docs.md'
+    - 'Event': 'event-docs.md'
     - About:
         - 'License': 'license.md'
         - 'Release Notes': 'release-notes.md'
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - content.tabs.link
+
+markdown_extensions:
+  - admonition
+  - abbr
+  - meta
+  - pymdownx.tabbed
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.keys
+
+plugins:
+  - search
+  - macros
+  - snippet:
+      check_paths: true
+
+extra:
+  api:
+    base: 'https://deeperlook.videonetics.com'
+    relative: 'api'
+    token: '<token>'
