@@ -6,5 +6,5 @@ python:
     - requirements: docs/requirements.txt
 
 mkdocs:
-  configuration: mkdocs.yml
+  configuration: mkdocs1.yml
   fail_on_warning: false
