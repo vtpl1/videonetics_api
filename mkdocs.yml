@@ -34,8 +34,9 @@ markdown_extensions:
 plugins:
   - search
   - macros
-  - snippet:
-      check_paths: true
+  - include-markdown
+  # - snippet:
+  #     check_paths: true
 
 extra:
   api:
