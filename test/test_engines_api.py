@@ -210,6 +210,146 @@ class TestEnginesApi(unittest.TestCase):
         """
         pass
 
+    def test_inferencers_get(self):
+        """Test case for inferencers_get
+
+        Get all inferencers details  # noqa: E501
+        """
+        pass
+
+    def test_inferencers_id_delete(self):
+        """Test case for inferencers_id_delete
+
+        Delete an inferencer  # noqa: E501
+        """
+        pass
+
+    def test_inferencers_id_get(self):
+        """Test case for inferencers_id_get
+
+        Get inferencer by id  # noqa: E501
+        """
+        pass
+
+    def test_inferencers_id_patch(self):
+        """Test case for inferencers_id_patch
+
+        Patch  # noqa: E501
+        """
+        pass
+
+    def test_inferencers_post(self):
+        """Test case for inferencers_post
+
+        Create an inferencer  # noqa: E501
+        """
+        pass
+
+    def test_motion_detectors_get(self):
+        """Test case for motion_detectors_get
+
+        Get all motionDetectors details  # noqa: E501
+        """
+        pass
+
+    def test_motion_detectors_id_delete(self):
+        """Test case for motion_detectors_id_delete
+
+        Delete an motionDetector  # noqa: E501
+        """
+        pass
+
+    def test_motion_detectors_id_get(self):
+        """Test case for motion_detectors_id_get
+
+        Get motionDetector by id  # noqa: E501
+        """
+        pass
+
+    def test_motion_detectors_id_patch(self):
+        """Test case for motion_detectors_id_patch
+
+        Patch  # noqa: E501
+        """
+        pass
+
+    def test_motion_detectors_post(self):
+        """Test case for motion_detectors_post
+
+        Create an motionDetector  # noqa: E501
+        """
+        pass
+
+    def test_pipelines_get(self):
+        """Test case for pipelines_get
+
+        Get all pipelines details  # noqa: E501
+        """
+        pass
+
+    def test_pipelines_id_delete(self):
+        """Test case for pipelines_id_delete
+
+        Delete an pipeline  # noqa: E501
+        """
+        pass
+
+    def test_pipelines_id_get(self):
+        """Test case for pipelines_id_get
+
+        Get pipeline by id  # noqa: E501
+        """
+        pass
+
+    def test_pipelines_id_patch(self):
+        """Test case for pipelines_id_patch
+
+        Patch  # noqa: E501
+        """
+        pass
+
+    def test_pipelines_post(self):
+        """Test case for pipelines_post
+
+        Create an pipeline  # noqa: E501
+        """
+        pass
+
+    def test_pre_processes_get(self):
+        """Test case for pre_processes_get
+
+        Get all preProcesses details  # noqa: E501
+        """
+        pass
+
+    def test_pre_processes_id_delete(self):
+        """Test case for pre_processes_id_delete
+
+        Delete an preProcess  # noqa: E501
+        """
+        pass
+
+    def test_pre_processes_id_get(self):
+        """Test case for pre_processes_id_get
+
+        Get preProcess by id  # noqa: E501
+        """
+        pass
+
+    def test_pre_processes_id_patch(self):
+        """Test case for pre_processes_id_patch
+
+        Patch  # noqa: E501
+        """
+        pass
+
+    def test_pre_processes_post(self):
+        """Test case for pre_processes_post
+
+        Create an preProcess  # noqa: E501
+        """
+        pass
+
     def test_snaps_get(self):
         """Test case for snaps_get
 

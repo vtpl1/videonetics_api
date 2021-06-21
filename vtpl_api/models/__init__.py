@@ -46,6 +46,8 @@ from vtpl_api.models.evidence_config import EvidenceConfig
 from vtpl_api.models.extra import Extra
 from vtpl_api.models.href import Href
 from vtpl_api.models.human_properties import HumanProperties
+from vtpl_api.models.inferencer import Inferencer
+from vtpl_api.models.inferencers_response import InferencersResponse
 from vtpl_api.models.line import Line
 from vtpl_api.models.line_type import LineType
 from vtpl_api.models.links import Links
@@ -55,11 +57,17 @@ from vtpl_api.models.meta import Meta
 from vtpl_api.models.meta_anpr_event import MetaAnprEvent
 from vtpl_api.models.meta_attribute_event import MetaAttributeEvent
 from vtpl_api.models.meta_va_event import MetaVaEvent
+from vtpl_api.models.motion_detector import MotionDetector
+from vtpl_api.models.motion_detectors_response import MotionDetectorsResponse
 from vtpl_api.models.object_dimension import ObjectDimension
 from vtpl_api.models.object_direct_properties import ObjectDirectProperties
 from vtpl_api.models.object_indirect_properties import ObjectIndirectProperties
 from vtpl_api.models.object_info import ObjectInfo
 from vtpl_api.models.object_rect import ObjectRect
+from vtpl_api.models.pipeline import Pipeline
+from vtpl_api.models.pipelines_response import PipelinesResponse
+from vtpl_api.models.pre_process import PreProcess
+from vtpl_api.models.pre_processes_response import PreProcessesResponse
 from vtpl_api.models.schedule_source import ScheduleSource
 from vtpl_api.models.snap import Snap
 from vtpl_api.models.snaps_response import SnapsResponse

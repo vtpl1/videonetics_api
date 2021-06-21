@@ -36,7 +36,8 @@ class ObjectIndirectProperties(object):
         'object_id': 'int',
         'track_id': 'int',
         'line_id': 'int',
-        'point_id': 'int'
+        'point_id': 'int',
+        'extra': 'str'
     }
 
     attribute_map = {
@@ -48,10 +49,11 @@ class ObjectIndirectProperties(object):
         'object_id': 'objectId',
         'track_id': 'trackId',
         'line_id': 'lineId',
-        'point_id': 'pointId'
+        'point_id': 'pointId',
+        'extra': 'extra'
     }
 
-    def __init__(self, channel_id=None, app_id=None, frame_id=None, time_stamp=None, zone_id=-1, object_id=-1, track_id=-1, line_id=-1, point_id=-1):  # noqa: E501
+    def __init__(self, channel_id=None, app_id=None, frame_id=None, time_stamp=None, zone_id=-1, object_id=-1, track_id=-1, line_id=-1, point_id=-1, extra=None):  # noqa: E501
         """ObjectIndirectProperties - a model defined in Swagger"""  # noqa: E501
         self._channel_id = None
         self._app_id = None
@@ -62,6 +64,7 @@ class ObjectIndirectProperties(object):
         self._track_id = None
         self._line_id = None
         self._point_id = None
+        self._extra = None
         self.discriminator = None
         if channel_id is not None:
             self.channel_id = channel_id
@@ -81,6 +84,8 @@ class ObjectIndirectProperties(object):
             self.line_id = line_id
         if point_id is not None:
             self.point_id = point_id
+        if extra is not None:
+            self.extra = extra
 
     @property
     def channel_id(self):
@@ -270,6 +275,27 @@ class ObjectIndirectProperties(object):
         """
 
         self._point_id = point_id
+
+    @property
+    def extra(self):
+        """Gets the extra of this ObjectIndirectProperties.  # noqa: E501
+
+
+        :return: The extra of this ObjectIndirectProperties.  # noqa: E501
+        :rtype: str
+        """
+        return self._extra
+
+    @extra.setter
+    def extra(self, extra):
+        """Sets the extra of this ObjectIndirectProperties.
+
+
+        :param extra: The extra of this ObjectIndirectProperties.  # noqa: E501
+        :type: str
+        """
+
+        self._extra = extra
 
     def to_dict(self):
         """Returns the model properties as a dict"""

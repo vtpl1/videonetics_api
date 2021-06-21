@@ -2574,6 +2574,2018 @@ class EnginesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def inferencers_get(self, **kwargs):  # noqa: E501
+        """Get all inferencers details  # noqa: E501
+
+        Get all inferencers details  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.inferencers_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /inferencers?where={\"capabilities\":{\"$in\":[206,211]}}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /inferencers?page=4
+        :param str sort:
+        :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first inferencer among all inferencers, use /inferencers?maxResults=1   * To limit inferencers to 5, use /inferencers?maxResults=5
+        :return: InferencersResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.inferencers_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.inferencers_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def inferencers_get_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all inferencers details  # noqa: E501
+
+        Get all inferencers details  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.inferencers_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /inferencers?where={\"capabilities\":{\"$in\":[206,211]}}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /inferencers?page=4
+        :param str sort:
+        :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first inferencer among all inferencers, use /inferencers?maxResults=1   * To limit inferencers to 5, use /inferencers?maxResults=5
+        :return: InferencersResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['where', 'page', 'sort', 'max_results']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method inferencers_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'where' in params:
+            query_params.append(('where', params['where']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/inferencers', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InferencersResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def inferencers_id_delete(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an inferencer  # noqa: E501
+
+        Delete an inferencer  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.inferencers_id_delete(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.inferencers_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+        else:
+            (data) = self.inferencers_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+            return data
+
+    def inferencers_id_delete_with_http_info(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an inferencer  # noqa: E501
+
+        Delete an inferencer  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.inferencers_id_delete_with_http_info(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'if_match']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method inferencers_id_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `inferencers_id_delete`")  # noqa: E501
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `inferencers_id_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/inferencers/{id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def inferencers_id_get(self, id, **kwargs):  # noqa: E501
+        """Get inferencer by id  # noqa: E501
+
+        Get engine details for a given id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.inferencers_id_get(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :return: Inferencer
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.inferencers_id_get_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.inferencers_id_get_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def inferencers_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Get inferencer by id  # noqa: E501
+
+        Get engine details for a given id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.inferencers_id_get_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :return: Inferencer
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method inferencers_id_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `inferencers_id_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/inferencers/{id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Inferencer',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def inferencers_id_patch(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch  # noqa: E501
+
+        Patch  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.inferencers_id_patch(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param Inferencer body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.inferencers_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.inferencers_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+            return data
+
+    def inferencers_id_patch_with_http_info(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch  # noqa: E501
+
+        Patch  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.inferencers_id_patch_with_http_info(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param Inferencer body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['if_match', 'id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method inferencers_id_patch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `inferencers_id_patch`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `inferencers_id_patch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/inferencers/{id}', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def inferencers_post(self, **kwargs):  # noqa: E501
+        """Create an inferencer  # noqa: E501
+
+        Create an inferencer.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.inferencers_post(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param Inferencer body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.inferencers_post_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.inferencers_post_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def inferencers_post_with_http_info(self, **kwargs):  # noqa: E501
+        """Create an inferencer  # noqa: E501
+
+        Create an inferencer.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.inferencers_post_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param Inferencer body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method inferencers_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/inferencers', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def motion_detectors_get(self, **kwargs):  # noqa: E501
+        """Get all motionDetectors details  # noqa: E501
+
+        Get all motionDetectors details  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.motion_detectors_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /motionDetectors?where={\"capabilities\":{\"$in\":[206,211]}}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /motionDetectors?page=4
+        :param str sort:
+        :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first motionDetector among all motionDetectors, use /motionDetectors?maxResults=1   * To limit motionDetectors to 5, use /motionDetectors?maxResults=5
+        :return: MotionDetectorsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.motion_detectors_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.motion_detectors_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def motion_detectors_get_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all motionDetectors details  # noqa: E501
+
+        Get all motionDetectors details  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.motion_detectors_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /motionDetectors?where={\"capabilities\":{\"$in\":[206,211]}}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /motionDetectors?page=4
+        :param str sort:
+        :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first motionDetector among all motionDetectors, use /motionDetectors?maxResults=1   * To limit motionDetectors to 5, use /motionDetectors?maxResults=5
+        :return: MotionDetectorsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['where', 'page', 'sort', 'max_results']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method motion_detectors_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'where' in params:
+            query_params.append(('where', params['where']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/motionDetectors', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='MotionDetectorsResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def motion_detectors_id_delete(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an motionDetector  # noqa: E501
+
+        Delete an motionDetector  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.motion_detectors_id_delete(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.motion_detectors_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+        else:
+            (data) = self.motion_detectors_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+            return data
+
+    def motion_detectors_id_delete_with_http_info(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an motionDetector  # noqa: E501
+
+        Delete an motionDetector  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.motion_detectors_id_delete_with_http_info(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'if_match']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method motion_detectors_id_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `motion_detectors_id_delete`")  # noqa: E501
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `motion_detectors_id_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/motionDetectors/{id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def motion_detectors_id_get(self, id, **kwargs):  # noqa: E501
+        """Get motionDetector by id  # noqa: E501
+
+        Get engine details for a given id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.motion_detectors_id_get(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :return: MotionDetector
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.motion_detectors_id_get_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.motion_detectors_id_get_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def motion_detectors_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Get motionDetector by id  # noqa: E501
+
+        Get engine details for a given id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.motion_detectors_id_get_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :return: MotionDetector
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method motion_detectors_id_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `motion_detectors_id_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/motionDetectors/{id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='MotionDetector',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def motion_detectors_id_patch(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch  # noqa: E501
+
+        Patch  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.motion_detectors_id_patch(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param MotionDetector body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.motion_detectors_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.motion_detectors_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+            return data
+
+    def motion_detectors_id_patch_with_http_info(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch  # noqa: E501
+
+        Patch  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.motion_detectors_id_patch_with_http_info(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param MotionDetector body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['if_match', 'id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method motion_detectors_id_patch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `motion_detectors_id_patch`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `motion_detectors_id_patch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/motionDetectors/{id}', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def motion_detectors_post(self, **kwargs):  # noqa: E501
+        """Create an motionDetector  # noqa: E501
+
+        Create an motionDetector.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.motion_detectors_post(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param MotionDetector body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.motion_detectors_post_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.motion_detectors_post_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def motion_detectors_post_with_http_info(self, **kwargs):  # noqa: E501
+        """Create an motionDetector  # noqa: E501
+
+        Create an motionDetector.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.motion_detectors_post_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param MotionDetector body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method motion_detectors_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/motionDetectors', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pipelines_get(self, **kwargs):  # noqa: E501
+        """Get all pipelines details  # noqa: E501
+
+        Get all pipelines details  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pipelines_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /pipelines?where={\"capabilities\":{\"$in\":[206,211]}}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page=4
+        :param str sort:
+        :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first pipeline among all pipelines, use /pipelines?maxResults=1   * To limit pipelines to 5, use /pipelines?maxResults=5
+        :return: PipelinesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pipelines_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.pipelines_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def pipelines_get_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all pipelines details  # noqa: E501
+
+        Get all pipelines details  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pipelines_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /pipelines?where={\"capabilities\":{\"$in\":[206,211]}}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page=4
+        :param str sort:
+        :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first pipeline among all pipelines, use /pipelines?maxResults=1   * To limit pipelines to 5, use /pipelines?maxResults=5
+        :return: PipelinesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['where', 'page', 'sort', 'max_results']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pipelines_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'where' in params:
+            query_params.append(('where', params['where']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/pipelines', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PipelinesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pipelines_id_delete(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an pipeline  # noqa: E501
+
+        Delete an pipeline  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pipelines_id_delete(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pipelines_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pipelines_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+            return data
+
+    def pipelines_id_delete_with_http_info(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an pipeline  # noqa: E501
+
+        Delete an pipeline  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pipelines_id_delete_with_http_info(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'if_match']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pipelines_id_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `pipelines_id_delete`")  # noqa: E501
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `pipelines_id_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/pipelines/{id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pipelines_id_get(self, id, **kwargs):  # noqa: E501
+        """Get pipeline by id  # noqa: E501
+
+        Get engine details for a given id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pipelines_id_get(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :return: Pipeline
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pipelines_id_get_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pipelines_id_get_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def pipelines_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Get pipeline by id  # noqa: E501
+
+        Get engine details for a given id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pipelines_id_get_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :return: Pipeline
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pipelines_id_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `pipelines_id_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/pipelines/{id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Pipeline',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pipelines_id_patch(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch  # noqa: E501
+
+        Patch  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pipelines_id_patch(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param Pipeline body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pipelines_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pipelines_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+            return data
+
+    def pipelines_id_patch_with_http_info(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch  # noqa: E501
+
+        Patch  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pipelines_id_patch_with_http_info(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param Pipeline body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['if_match', 'id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pipelines_id_patch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `pipelines_id_patch`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `pipelines_id_patch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/pipelines/{id}', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pipelines_post(self, **kwargs):  # noqa: E501
+        """Create an pipeline  # noqa: E501
+
+        Create an pipeline.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pipelines_post(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param Pipeline body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pipelines_post_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.pipelines_post_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def pipelines_post_with_http_info(self, **kwargs):  # noqa: E501
+        """Create an pipeline  # noqa: E501
+
+        Create an pipeline.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pipelines_post_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param Pipeline body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pipelines_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/pipelines', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pre_processes_get(self, **kwargs):  # noqa: E501
+        """Get all preProcesses details  # noqa: E501
+
+        Get all preProcesses details  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pre_processes_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /preProcesses?where={\"capabilities\":{\"$in\":[206,211]}}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /preProcesses?page=4
+        :param str sort:
+        :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first preProcess among all preProcesses, use /preProcesses?maxResults=1   * To limit preProcesses to 5, use /preProcesses?maxResults=5
+        :return: PreProcessesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pre_processes_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.pre_processes_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def pre_processes_get_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all preProcesses details  # noqa: E501
+
+        Get all preProcesses details  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pre_processes_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /preProcesses?where={\"capabilities\":{\"$in\":[206,211]}}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /preProcesses?page=4
+        :param str sort:
+        :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first preProcess among all preProcesses, use /preProcesses?maxResults=1   * To limit preProcesses to 5, use /preProcesses?maxResults=5
+        :return: PreProcessesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['where', 'page', 'sort', 'max_results']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pre_processes_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'where' in params:
+            query_params.append(('where', params['where']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/preProcesses', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PreProcessesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pre_processes_id_delete(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an preProcess  # noqa: E501
+
+        Delete an preProcess  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pre_processes_id_delete(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pre_processes_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pre_processes_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+            return data
+
+    def pre_processes_id_delete_with_http_info(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an preProcess  # noqa: E501
+
+        Delete an preProcess  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pre_processes_id_delete_with_http_info(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'if_match']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pre_processes_id_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `pre_processes_id_delete`")  # noqa: E501
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `pre_processes_id_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/preProcesses/{id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pre_processes_id_get(self, id, **kwargs):  # noqa: E501
+        """Get preProcess by id  # noqa: E501
+
+        Get engine details for a given id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pre_processes_id_get(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :return: PreProcess
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pre_processes_id_get_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pre_processes_id_get_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def pre_processes_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Get preProcess by id  # noqa: E501
+
+        Get engine details for a given id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pre_processes_id_get_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :return: PreProcess
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pre_processes_id_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `pre_processes_id_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/preProcesses/{id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PreProcess',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pre_processes_id_patch(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch  # noqa: E501
+
+        Patch  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pre_processes_id_patch(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param PreProcess body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pre_processes_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pre_processes_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+            return data
+
+    def pre_processes_id_patch_with_http_info(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch  # noqa: E501
+
+        Patch  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pre_processes_id_patch_with_http_info(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param PreProcess body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['if_match', 'id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pre_processes_id_patch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `pre_processes_id_patch`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `pre_processes_id_patch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/preProcesses/{id}', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pre_processes_post(self, **kwargs):  # noqa: E501
+        """Create an preProcess  # noqa: E501
+
+        Create an preProcess.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pre_processes_post(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param PreProcess body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pre_processes_post_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.pre_processes_post_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def pre_processes_post_with_http_info(self, **kwargs):  # noqa: E501
+        """Create an preProcess  # noqa: E501
+
+        Create an preProcess.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pre_processes_post_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param PreProcess body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pre_processes_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/preProcesses', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def snaps_get(self, **kwargs):  # noqa: E501
         """Get all unprocesed snaps  # noqa: E501
 

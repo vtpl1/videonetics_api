@@ -30,6 +30,26 @@ Method | HTTP request | Description
 [**event_snaps_get**](EnginesApi.md#event_snaps_get) | **GET** /eventSnaps | Get all eventSnaps
 [**event_snaps_id_get**](EnginesApi.md#event_snaps_id_get) | **GET** /eventSnaps/{id} | Get eventSnap by id
 [**event_snaps_post**](EnginesApi.md#event_snaps_post) | **POST** /eventSnaps | Create an eventSnap
+[**inferencers_get**](EnginesApi.md#inferencers_get) | **GET** /inferencers | Get all inferencers details
+[**inferencers_id_delete**](EnginesApi.md#inferencers_id_delete) | **DELETE** /inferencers/{id} | Delete an inferencer
+[**inferencers_id_get**](EnginesApi.md#inferencers_id_get) | **GET** /inferencers/{id} | Get inferencer by id
+[**inferencers_id_patch**](EnginesApi.md#inferencers_id_patch) | **PATCH** /inferencers/{id} | Patch
+[**inferencers_post**](EnginesApi.md#inferencers_post) | **POST** /inferencers | Create an inferencer
+[**motion_detectors_get**](EnginesApi.md#motion_detectors_get) | **GET** /motionDetectors | Get all motionDetectors details
+[**motion_detectors_id_delete**](EnginesApi.md#motion_detectors_id_delete) | **DELETE** /motionDetectors/{id} | Delete an motionDetector
+[**motion_detectors_id_get**](EnginesApi.md#motion_detectors_id_get) | **GET** /motionDetectors/{id} | Get motionDetector by id
+[**motion_detectors_id_patch**](EnginesApi.md#motion_detectors_id_patch) | **PATCH** /motionDetectors/{id} | Patch
+[**motion_detectors_post**](EnginesApi.md#motion_detectors_post) | **POST** /motionDetectors | Create an motionDetector
+[**pipelines_get**](EnginesApi.md#pipelines_get) | **GET** /pipelines | Get all pipelines details
+[**pipelines_id_delete**](EnginesApi.md#pipelines_id_delete) | **DELETE** /pipelines/{id} | Delete an pipeline
+[**pipelines_id_get**](EnginesApi.md#pipelines_id_get) | **GET** /pipelines/{id} | Get pipeline by id
+[**pipelines_id_patch**](EnginesApi.md#pipelines_id_patch) | **PATCH** /pipelines/{id} | Patch
+[**pipelines_post**](EnginesApi.md#pipelines_post) | **POST** /pipelines | Create an pipeline
+[**pre_processes_get**](EnginesApi.md#pre_processes_get) | **GET** /preProcesses | Get all preProcesses details
+[**pre_processes_id_delete**](EnginesApi.md#pre_processes_id_delete) | **DELETE** /preProcesses/{id} | Delete an preProcess
+[**pre_processes_id_get**](EnginesApi.md#pre_processes_id_get) | **GET** /preProcesses/{id} | Get preProcess by id
+[**pre_processes_id_patch**](EnginesApi.md#pre_processes_id_patch) | **PATCH** /preProcesses/{id} | Patch
+[**pre_processes_post**](EnginesApi.md#pre_processes_post) | **POST** /preProcesses | Create an preProcess
 [**snaps_get**](EnginesApi.md#snaps_get) | **GET** /snaps | Get all unprocesed snaps
 [**snaps_id_get**](EnginesApi.md#snaps_id_get) | **GET** /snaps/{id} | Get snap by id
 [**snaps_post**](EnginesApi.md#snaps_post) | **POST** /snaps | Create a unprocesed snap
@@ -1304,6 +1324,1010 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Snap**](Snap.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inferencers_get**
+> InferencersResponse inferencers_get(where=where, page=page, sort=sort, max_results=max_results)
+
+Get all inferencers details
+
+Get all inferencers details
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /inferencers?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /inferencers?page=4 (optional)
+sort = 'sort_example' # str |  (optional)
+max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first inferencer among all inferencers, use /inferencers?maxResults=1   * To limit inferencers to 5, use /inferencers?maxResults=5 (optional)
+
+try:
+    # Get all inferencers details
+    api_response = api_instance.inferencers_get(where=where, page=page, sort=sort, max_results=max_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->inferencers_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **where** | **str**| The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /inferencers?where&#x3D;{\&quot;capabilities\&quot;:{\&quot;$in\&quot;:[206,211]}} | [optional] 
+ **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /inferencers?page&#x3D;4 | [optional] 
+ **sort** | **str**|  | [optional] 
+ **max_results** | **int**| The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first inferencer among all inferencers, use /inferencers?maxResults&#x3D;1   * To limit inferencers to 5, use /inferencers?maxResults&#x3D;5 | [optional] 
+
+### Return type
+
+[**InferencersResponse**](InferencersResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inferencers_id_delete**
+> inferencers_id_delete(id, if_match)
+
+Delete an inferencer
+
+Delete an inferencer
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an inferencer
+    api_instance.inferencers_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->inferencers_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+ **if_match** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inferencers_id_get**
+> Inferencer inferencers_id_get(id)
+
+Get inferencer by id
+
+Get engine details for a given id
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+
+try:
+    # Get inferencer by id
+    api_response = api_instance.inferencers_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->inferencers_id_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+
+### Return type
+
+[**Inferencer**](Inferencer.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inferencers_id_patch**
+> DefaultResponse inferencers_id_patch(if_match, id, body=body)
+
+Patch
+
+Patch
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.Inferencer() # Inferencer |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.inferencers_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->inferencers_id_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_match** | **str**|  | 
+ **id** | **str**| Unique ID | 
+ **body** | [**Inferencer**](Inferencer.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inferencers_post**
+> DefaultResponse inferencers_post(body=body)
+
+Create an inferencer
+
+Create an inferencer.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+body = vtpl_api.Inferencer() # Inferencer |  (optional)
+
+try:
+    # Create an inferencer
+    api_response = api_instance.inferencers_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->inferencers_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Inferencer**](Inferencer.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **motion_detectors_get**
+> MotionDetectorsResponse motion_detectors_get(where=where, page=page, sort=sort, max_results=max_results)
+
+Get all motionDetectors details
+
+Get all motionDetectors details
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /motionDetectors?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /motionDetectors?page=4 (optional)
+sort = 'sort_example' # str |  (optional)
+max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first motionDetector among all motionDetectors, use /motionDetectors?maxResults=1   * To limit motionDetectors to 5, use /motionDetectors?maxResults=5 (optional)
+
+try:
+    # Get all motionDetectors details
+    api_response = api_instance.motion_detectors_get(where=where, page=page, sort=sort, max_results=max_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->motion_detectors_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **where** | **str**| The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /motionDetectors?where&#x3D;{\&quot;capabilities\&quot;:{\&quot;$in\&quot;:[206,211]}} | [optional] 
+ **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /motionDetectors?page&#x3D;4 | [optional] 
+ **sort** | **str**|  | [optional] 
+ **max_results** | **int**| The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first motionDetector among all motionDetectors, use /motionDetectors?maxResults&#x3D;1   * To limit motionDetectors to 5, use /motionDetectors?maxResults&#x3D;5 | [optional] 
+
+### Return type
+
+[**MotionDetectorsResponse**](MotionDetectorsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **motion_detectors_id_delete**
+> motion_detectors_id_delete(id, if_match)
+
+Delete an motionDetector
+
+Delete an motionDetector
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an motionDetector
+    api_instance.motion_detectors_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->motion_detectors_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+ **if_match** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **motion_detectors_id_get**
+> MotionDetector motion_detectors_id_get(id)
+
+Get motionDetector by id
+
+Get engine details for a given id
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+
+try:
+    # Get motionDetector by id
+    api_response = api_instance.motion_detectors_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->motion_detectors_id_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+
+### Return type
+
+[**MotionDetector**](MotionDetector.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **motion_detectors_id_patch**
+> DefaultResponse motion_detectors_id_patch(if_match, id, body=body)
+
+Patch
+
+Patch
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.MotionDetector() # MotionDetector |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.motion_detectors_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->motion_detectors_id_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_match** | **str**|  | 
+ **id** | **str**| Unique ID | 
+ **body** | [**MotionDetector**](MotionDetector.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **motion_detectors_post**
+> DefaultResponse motion_detectors_post(body=body)
+
+Create an motionDetector
+
+Create an motionDetector.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+body = vtpl_api.MotionDetector() # MotionDetector |  (optional)
+
+try:
+    # Create an motionDetector
+    api_response = api_instance.motion_detectors_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->motion_detectors_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**MotionDetector**](MotionDetector.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pipelines_get**
+> PipelinesResponse pipelines_get(where=where, page=page, sort=sort, max_results=max_results)
+
+Get all pipelines details
+
+Get all pipelines details
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /pipelines?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page=4 (optional)
+sort = 'sort_example' # str |  (optional)
+max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first pipeline among all pipelines, use /pipelines?maxResults=1   * To limit pipelines to 5, use /pipelines?maxResults=5 (optional)
+
+try:
+    # Get all pipelines details
+    api_response = api_instance.pipelines_get(where=where, page=page, sort=sort, max_results=max_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->pipelines_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **where** | **str**| The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /pipelines?where&#x3D;{\&quot;capabilities\&quot;:{\&quot;$in\&quot;:[206,211]}} | [optional] 
+ **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page&#x3D;4 | [optional] 
+ **sort** | **str**|  | [optional] 
+ **max_results** | **int**| The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first pipeline among all pipelines, use /pipelines?maxResults&#x3D;1   * To limit pipelines to 5, use /pipelines?maxResults&#x3D;5 | [optional] 
+
+### Return type
+
+[**PipelinesResponse**](PipelinesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pipelines_id_delete**
+> pipelines_id_delete(id, if_match)
+
+Delete an pipeline
+
+Delete an pipeline
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an pipeline
+    api_instance.pipelines_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->pipelines_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+ **if_match** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pipelines_id_get**
+> Pipeline pipelines_id_get(id)
+
+Get pipeline by id
+
+Get engine details for a given id
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+
+try:
+    # Get pipeline by id
+    api_response = api_instance.pipelines_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->pipelines_id_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+
+### Return type
+
+[**Pipeline**](Pipeline.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pipelines_id_patch**
+> DefaultResponse pipelines_id_patch(if_match, id, body=body)
+
+Patch
+
+Patch
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.Pipeline() # Pipeline |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.pipelines_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->pipelines_id_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_match** | **str**|  | 
+ **id** | **str**| Unique ID | 
+ **body** | [**Pipeline**](Pipeline.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pipelines_post**
+> DefaultResponse pipelines_post(body=body)
+
+Create an pipeline
+
+Create an pipeline.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+body = vtpl_api.Pipeline() # Pipeline |  (optional)
+
+try:
+    # Create an pipeline
+    api_response = api_instance.pipelines_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->pipelines_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Pipeline**](Pipeline.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pre_processes_get**
+> PreProcessesResponse pre_processes_get(where=where, page=page, sort=sort, max_results=max_results)
+
+Get all preProcesses details
+
+Get all preProcesses details
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /preProcesses?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /preProcesses?page=4 (optional)
+sort = 'sort_example' # str |  (optional)
+max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first preProcess among all preProcesses, use /preProcesses?maxResults=1   * To limit preProcesses to 5, use /preProcesses?maxResults=5 (optional)
+
+try:
+    # Get all preProcesses details
+    api_response = api_instance.pre_processes_get(where=where, page=page, sort=sort, max_results=max_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->pre_processes_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **where** | **str**| The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /preProcesses?where&#x3D;{\&quot;capabilities\&quot;:{\&quot;$in\&quot;:[206,211]}} | [optional] 
+ **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /preProcesses?page&#x3D;4 | [optional] 
+ **sort** | **str**|  | [optional] 
+ **max_results** | **int**| The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first preProcess among all preProcesses, use /preProcesses?maxResults&#x3D;1   * To limit preProcesses to 5, use /preProcesses?maxResults&#x3D;5 | [optional] 
+
+### Return type
+
+[**PreProcessesResponse**](PreProcessesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pre_processes_id_delete**
+> pre_processes_id_delete(id, if_match)
+
+Delete an preProcess
+
+Delete an preProcess
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an preProcess
+    api_instance.pre_processes_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->pre_processes_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+ **if_match** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pre_processes_id_get**
+> PreProcess pre_processes_id_get(id)
+
+Get preProcess by id
+
+Get engine details for a given id
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+
+try:
+    # Get preProcess by id
+    api_response = api_instance.pre_processes_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->pre_processes_id_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+
+### Return type
+
+[**PreProcess**](PreProcess.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pre_processes_id_patch**
+> DefaultResponse pre_processes_id_patch(if_match, id, body=body)
+
+Patch
+
+Patch
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.PreProcess() # PreProcess |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.pre_processes_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->pre_processes_id_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_match** | **str**|  | 
+ **id** | **str**| Unique ID | 
+ **body** | [**PreProcess**](PreProcess.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pre_processes_post**
+> DefaultResponse pre_processes_post(body=body)
+
+Create an preProcess
+
+Create an preProcess.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+body = vtpl_api.PreProcess() # PreProcess |  (optional)
+
+try:
+    # Create an preProcess
+    api_response = api_instance.pre_processes_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->pre_processes_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PreProcess**](PreProcess.md)|  | [optional] 
 
 ### Return type
 
