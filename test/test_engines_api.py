@@ -182,6 +182,13 @@ class TestEnginesApi(unittest.TestCase):
         """
         pass
 
+    def test_engines_id_patch(self):
+        """Test case for engines_id_patch
+
+        Patch  # noqa: E501
+        """
+        pass
+
     def test_engines_post(self):
         """Test case for engines_post
 
@@ -242,6 +249,41 @@ class TestEnginesApi(unittest.TestCase):
         """Test case for inferencers_post
 
         Create an inferencer  # noqa: E501
+        """
+        pass
+
+    def test_media_sources_get(self):
+        """Test case for media_sources_get
+
+        Get all media sources  # noqa: E501
+        """
+        pass
+
+    def test_media_sources_id_delete(self):
+        """Test case for media_sources_id_delete
+
+        Delete a media source  # noqa: E501
+        """
+        pass
+
+    def test_media_sources_id_get(self):
+        """Test case for media_sources_id_get
+
+        Get media source by id  # noqa: E501
+        """
+        pass
+
+    def test_media_sources_id_patch(self):
+        """Test case for media_sources_id_patch
+
+        Patch  # noqa: E501
+        """
+        pass
+
+    def test_media_sources_post(self):
+        """Test case for media_sources_post
+
+        Create a media source  # noqa: E501
         """
         pass
 
@@ -378,10 +420,24 @@ class TestEnginesApi(unittest.TestCase):
         """
         pass
 
+    def test_va_events_id_delete(self):
+        """Test case for va_events_id_delete
+
+        Delete an event  # noqa: E501
+        """
+        pass
+
     def test_va_events_id_get(self):
         """Test case for va_events_id_get
 
         Get vaEvent by id  # noqa: E501
+        """
+        pass
+
+    def test_va_events_id_patch(self):
+        """Test case for va_events_id_patch
+
+        Patch  # noqa: E501
         """
         pass
 

@@ -223,10 +223,11 @@ where = 'where_example' # str | The where clause takes a JSON as a string with o
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engines?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTasks?sort=created   * To sort engineTasks by created IN DECENDING order, use /engineTasks?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
 max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /engineTasks?maxResults=1   * To limit engineTasks to 2, use /engineTasks?maxResults=2 (optional)
+embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with sourceEndPoint argument. Example:   * 'To find engineTasks with sourceEndPoint object. use /engineTasks?embedded={\"sourceEndPoint\":1}' (optional)
 
 try:
     # Get all engineTasks
-    api_response = api_instance.engine_tasks_get(where=where, page=page, sort=sort, max_results=max_results)
+    api_response = api_instance.engine_tasks_get(where=where, page=page, sort=sort, max_results=max_results, embedded=embedded)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_tasks_get: %s\n" % e)
@@ -279,13 +280,14 @@ except ApiException as e:
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /engines?page=4 (optional)
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /engines?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /engines?page=4 (optional)
+sort = 'sort_example' # str |  (optional)
 max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first registeredFace among all registeredFaces, use /engines?maxResults=1   * To limit registeredFaces to 5, use /engines?maxResults=5 (optional)
 
 try:
     # Get all engine details
-    api_response = api_instance.engines_get(page=page, where=where, max_results=max_results)
+    api_response = api_instance.engines_get(where=where, page=page, sort=sort, max_results=max_results)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engines_get: %s\n" % e)
@@ -311,6 +313,19 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engines_id_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.Engine() # Engine |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.engines_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engines_id_patch: %s\n" % e)
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -414,6 +429,66 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->inferencers_post: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+where = 'where_example' # str | Media sources (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /mediaSources?page=4 (optional)
+sort = 'sort_example' # str |  (optional)
+max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first pipeline among all mediaSources, use /mediaSources?maxResults=1   * To limit mediaSources to 5, use /mediaSources?maxResults=5 (optional)
+
+try:
+    # Get all media sources
+    api_response = api_instance.media_sources_get(where=where, page=page, sort=sort, max_results=max_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->media_sources_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete a media source
+    api_instance.media_sources_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->media_sources_id_delete: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+
+try:
+    # Get media source by id
+    api_response = api_instance.media_sources_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->media_sources_id_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.SourceEndPoint() # SourceEndPoint |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.media_sources_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->media_sources_id_patch: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+body = vtpl_api.SourceEndPoint() # SourceEndPoint |  (optional)
+
+try:
+    # Create a media source
+    api_response = api_instance.media_sources_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->media_sources_post: %s\n" % e)
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -630,16 +705,28 @@ except ApiException as e:
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the vaEvent model. Example:   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort vaEvents by startTimeStamp in eventDetails IN ASCEDING order, use /vaEvents?sort=eventDetails.startTimeStamp   * To sort vaEvents by startTimeStamp in eventDetails IN DECENDING order, use /vaEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING (optional)
 max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest vaEvent among whole vaEvents, use /vaEvents?maxResults=1   * To limit vaEvents to 5, use /vaEvents?maxResults=5 (optional)
 embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find vaEvents with eventSnap object. use /vaEvents?embedded={\"eventSnaps\":1}' (optional)
 
 try:
     # Get all vaEvents
-    api_response = api_instance.va_events_get(where=where, sort=sort, max_results=max_results, embedded=embedded)
+    api_response = api_instance.va_events_get(where=where, page=page, sort=sort, max_results=max_results, embedded=embedded)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->va_events_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an event
+    api_instance.va_events_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->va_events_id_delete: %s\n" % e)
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -652,6 +739,19 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->va_events_id_get: %s\n" % e)
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.Pipeline() # Pipeline |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.va_events_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->va_events_id_patch: %s\n" % e)
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -693,6 +793,7 @@ Class | Method | HTTP request | Description
 *EnginesApi* | [**engines_get**](docs/EnginesApi.md#engines_get) | **GET** /engines | Get all engine details
 *EnginesApi* | [**engines_id_delete**](docs/EnginesApi.md#engines_id_delete) | **DELETE** /engines/{id} | Delete an engine
 *EnginesApi* | [**engines_id_get**](docs/EnginesApi.md#engines_id_get) | **GET** /engines/{id} | Get engine by id
+*EnginesApi* | [**engines_id_patch**](docs/EnginesApi.md#engines_id_patch) | **PATCH** /engines/{id} | Patch
 *EnginesApi* | [**engines_post**](docs/EnginesApi.md#engines_post) | **POST** /engines | Create an engine
 *EnginesApi* | [**event_snaps_get**](docs/EnginesApi.md#event_snaps_get) | **GET** /eventSnaps | Get all eventSnaps
 *EnginesApi* | [**event_snaps_id_get**](docs/EnginesApi.md#event_snaps_id_get) | **GET** /eventSnaps/{id} | Get eventSnap by id
@@ -702,6 +803,11 @@ Class | Method | HTTP request | Description
 *EnginesApi* | [**inferencers_id_get**](docs/EnginesApi.md#inferencers_id_get) | **GET** /inferencers/{id} | Get inferencer by id
 *EnginesApi* | [**inferencers_id_patch**](docs/EnginesApi.md#inferencers_id_patch) | **PATCH** /inferencers/{id} | Patch
 *EnginesApi* | [**inferencers_post**](docs/EnginesApi.md#inferencers_post) | **POST** /inferencers | Create an inferencer
+*EnginesApi* | [**media_sources_get**](docs/EnginesApi.md#media_sources_get) | **GET** /mediaSources | Get all media sources
+*EnginesApi* | [**media_sources_id_delete**](docs/EnginesApi.md#media_sources_id_delete) | **DELETE** /mediaSources/{id} | Delete a media source
+*EnginesApi* | [**media_sources_id_get**](docs/EnginesApi.md#media_sources_id_get) | **GET** /mediaSources/{id} | Get media source by id
+*EnginesApi* | [**media_sources_id_patch**](docs/EnginesApi.md#media_sources_id_patch) | **PATCH** /mediaSources/{id} | Patch
+*EnginesApi* | [**media_sources_post**](docs/EnginesApi.md#media_sources_post) | **POST** /mediaSources | Create a media source
 *EnginesApi* | [**motion_detectors_get**](docs/EnginesApi.md#motion_detectors_get) | **GET** /motionDetectors | Get all motionDetectors details
 *EnginesApi* | [**motion_detectors_id_delete**](docs/EnginesApi.md#motion_detectors_id_delete) | **DELETE** /motionDetectors/{id} | Delete an motionDetector
 *EnginesApi* | [**motion_detectors_id_get**](docs/EnginesApi.md#motion_detectors_id_get) | **GET** /motionDetectors/{id} | Get motionDetector by id
@@ -721,7 +827,9 @@ Class | Method | HTTP request | Description
 *EnginesApi* | [**snaps_id_get**](docs/EnginesApi.md#snaps_id_get) | **GET** /snaps/{id} | Get snap by id
 *EnginesApi* | [**snaps_post**](docs/EnginesApi.md#snaps_post) | **POST** /snaps | Create a unprocesed snap
 *EnginesApi* | [**va_events_get**](docs/EnginesApi.md#va_events_get) | **GET** /vaEvents | Get all vaEvents
+*EnginesApi* | [**va_events_id_delete**](docs/EnginesApi.md#va_events_id_delete) | **DELETE** /vaEvents/{id} | Delete an event
 *EnginesApi* | [**va_events_id_get**](docs/EnginesApi.md#va_events_id_get) | **GET** /vaEvents/{id} | Get vaEvent by id
+*EnginesApi* | [**va_events_id_patch**](docs/EnginesApi.md#va_events_id_patch) | **PATCH** /vaEvents/{id} | Patch
 *EnginesApi* | [**va_events_post**](docs/EnginesApi.md#va_events_post) | **POST** /vaEvents | Create an vaEvent
 
 ## Documentation For Models
@@ -765,6 +873,7 @@ Class | Method | HTTP request | Description
  - [Links](docs/Links.md)
  - [LinksSelf](docs/LinksSelf.md)
  - [LinksSelfSelf](docs/LinksSelfSelf.md)
+ - [MediaSourceResponse](docs/MediaSourceResponse.md)
  - [Meta](docs/Meta.md)
  - [MetaAnprEvent](docs/MetaAnprEvent.md)
  - [MetaAttributeEvent](docs/MetaAttributeEvent.md)

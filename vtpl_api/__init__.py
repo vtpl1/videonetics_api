@@ -59,6 +59,7 @@ from vtpl_api.models.line_type import LineType
 from vtpl_api.models.links import Links
 from vtpl_api.models.links_self import LinksSelf
 from vtpl_api.models.links_self_self import LinksSelfSelf
+from vtpl_api.models.media_source_response import MediaSourceResponse
 from vtpl_api.models.meta import Meta
 from vtpl_api.models.meta_anpr_event import MetaAnprEvent
 from vtpl_api.models.meta_attribute_event import MetaAttributeEvent

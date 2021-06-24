@@ -35,7 +35,7 @@ class EngineTask(object):
         'is_expired': 'bool',
         'children': 'list[Capability]',
         'time_to_live': 'int',
-        'source': 'SourceEndPoint',
+        'source_end_point_id': 'str',
         'destination': 'DestinationEndPoint',
         'extras': 'list[Extra]',
         'zone_setting': 'EngineTaskZoneSetting',
@@ -55,7 +55,7 @@ class EngineTask(object):
         'is_expired': 'isExpired',
         'children': 'children',
         'time_to_live': 'timeToLive',
-        'source': 'source',
+        'source_end_point_id': 'sourceEndPointId',
         'destination': 'destination',
         'extras': 'extras',
         'zone_setting': 'zoneSetting',
@@ -67,7 +67,7 @@ class EngineTask(object):
         'links': 'links'
     }
 
-    def __init__(self, id=None, capbilities_type=None, event_type=None, engine_machine_id=None, is_expired=False, children=None, time_to_live=-1, source=None, destination=None, extras=None, zone_setting=None, line_setting=None, config=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
+    def __init__(self, id=None, capbilities_type=None, event_type=None, engine_machine_id=None, is_expired=False, children=None, time_to_live=-1, source_end_point_id=None, destination=None, extras=None, zone_setting=None, line_setting=None, config=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
         """EngineTask - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._capbilities_type = None
@@ -76,7 +76,7 @@ class EngineTask(object):
         self._is_expired = None
         self._children = None
         self._time_to_live = None
-        self._source = None
+        self._source_end_point_id = None
         self._destination = None
         self._extras = None
         self._zone_setting = None
@@ -101,8 +101,8 @@ class EngineTask(object):
             self.children = children
         if time_to_live is not None:
             self.time_to_live = time_to_live
-        if source is not None:
-            self.source = source
+        if source_end_point_id is not None:
+            self.source_end_point_id = source_end_point_id
         if destination is not None:
             self.destination = destination
         if extras is not None:
@@ -274,25 +274,27 @@ class EngineTask(object):
         self._time_to_live = time_to_live
 
     @property
-    def source(self):
-        """Gets the source of this EngineTask.  # noqa: E501
+    def source_end_point_id(self):
+        """Gets the source_end_point_id of this EngineTask.  # noqa: E501
 
+        _id of snap from #$ref: '#/components/schemas/sourceEndPoint'  # noqa: E501
 
-        :return: The source of this EngineTask.  # noqa: E501
-        :rtype: SourceEndPoint
+        :return: The source_end_point_id of this EngineTask.  # noqa: E501
+        :rtype: str
         """
-        return self._source
+        return self._source_end_point_id
 
-    @source.setter
-    def source(self, source):
-        """Sets the source of this EngineTask.
+    @source_end_point_id.setter
+    def source_end_point_id(self, source_end_point_id):
+        """Sets the source_end_point_id of this EngineTask.
 
+        _id of snap from #$ref: '#/components/schemas/sourceEndPoint'  # noqa: E501
 
-        :param source: The source of this EngineTask.  # noqa: E501
-        :type: SourceEndPoint
+        :param source_end_point_id: The source_end_point_id of this EngineTask.  # noqa: E501
+        :type: str
         """
 
-        self._source = source
+        self._source_end_point_id = source_end_point_id
 
     @property
     def destination(self):

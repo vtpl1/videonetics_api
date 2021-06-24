@@ -30,7 +30,7 @@ from vtpl_api.rest import ApiException
 
 class DeeperLookApi:
     def __init__(self) -> None:
-        host_name = "http://10.0.0.103"
+        host_name = "http://192.168.1.198"
         api_host = f"{host_name}:5000"
         config = Configuration()
         config.host = api_host
@@ -254,7 +254,7 @@ class DeeperLookApi:
 
 class DeeperLookTaskSubmitterApi:
     def __init__(self) -> None:
-        host_name = "http://10.0.0.103"
+        host_name = "http://192.168.1.198"
         api_host = f"{host_name}:5000"
         config = Configuration()
         config.host = api_host
@@ -381,7 +381,7 @@ def test_job_submitter(caplog):
     start_time_stamp = time.time()*1000
     end_time_stamp = start_time_stamp
     time_to_live = 5*3600*1000
-    ret = x.put_jobs(201, "1.AVI", start_time_stamp, end_time_stamp, time_to_live)
+    ret = x.put_jobs(201, "2min_1080p.mp4", start_time_stamp, end_time_stamp, time_to_live)
     assert ret == True
     #y.get_jobs([201, 207], 2, my_id)
 

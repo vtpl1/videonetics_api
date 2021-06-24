@@ -28,19 +28,177 @@ class DestinationEndPoint(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
+        'updated': 'datetime',
+        'created': 'datetime',
+        'etag': 'str',
+        'links': 'Links',
+        'name': 'str',
         'destination_list': 'list[DestinationEndPointDestinationList]'
     }
 
     attribute_map = {
+        'id': '_id',
+        'updated': 'updated',
+        'created': 'created',
+        'etag': 'etag',
+        'links': 'links',
+        'name': 'name',
         'destination_list': 'destinationList'
     }
 
-    def __init__(self, destination_list=None):  # noqa: E501
+    def __init__(self, id=None, updated=None, created=None, etag=None, links=None, name=None, destination_list=None):  # noqa: E501
         """DestinationEndPoint - a model defined in Swagger"""  # noqa: E501
+        self._id = None
+        self._updated = None
+        self._created = None
+        self._etag = None
+        self._links = None
+        self._name = None
         self._destination_list = None
         self.discriminator = None
+        if id is not None:
+            self.id = id
+        if updated is not None:
+            self.updated = updated
+        if created is not None:
+            self.created = created
+        if etag is not None:
+            self.etag = etag
+        if links is not None:
+            self.links = links
+        if name is not None:
+            self.name = name
         if destination_list is not None:
             self.destination_list = destination_list
+
+    @property
+    def id(self):
+        """Gets the id of this DestinationEndPoint.  # noqa: E501
+
+
+        :return: The id of this DestinationEndPoint.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this DestinationEndPoint.
+
+
+        :param id: The id of this DestinationEndPoint.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def updated(self):
+        """Gets the updated of this DestinationEndPoint.  # noqa: E501
+
+
+        :return: The updated of this DestinationEndPoint.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated
+
+    @updated.setter
+    def updated(self, updated):
+        """Sets the updated of this DestinationEndPoint.
+
+
+        :param updated: The updated of this DestinationEndPoint.  # noqa: E501
+        :type: datetime
+        """
+
+        self._updated = updated
+
+    @property
+    def created(self):
+        """Gets the created of this DestinationEndPoint.  # noqa: E501
+
+
+        :return: The created of this DestinationEndPoint.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created
+
+    @created.setter
+    def created(self, created):
+        """Sets the created of this DestinationEndPoint.
+
+
+        :param created: The created of this DestinationEndPoint.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created = created
+
+    @property
+    def etag(self):
+        """Gets the etag of this DestinationEndPoint.  # noqa: E501
+
+
+        :return: The etag of this DestinationEndPoint.  # noqa: E501
+        :rtype: str
+        """
+        return self._etag
+
+    @etag.setter
+    def etag(self, etag):
+        """Sets the etag of this DestinationEndPoint.
+
+
+        :param etag: The etag of this DestinationEndPoint.  # noqa: E501
+        :type: str
+        """
+
+        self._etag = etag
+
+    @property
+    def links(self):
+        """Gets the links of this DestinationEndPoint.  # noqa: E501
+
+
+        :return: The links of this DestinationEndPoint.  # noqa: E501
+        :rtype: Links
+        """
+        return self._links
+
+    @links.setter
+    def links(self, links):
+        """Sets the links of this DestinationEndPoint.
+
+
+        :param links: The links of this DestinationEndPoint.  # noqa: E501
+        :type: Links
+        """
+
+        self._links = links
+
+    @property
+    def name(self):
+        """Gets the name of this DestinationEndPoint.  # noqa: E501
+
+        Logical name of multiple video source URLS  # noqa: E501
+
+        :return: The name of this DestinationEndPoint.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this DestinationEndPoint.
+
+        Logical name of multiple video source URLS  # noqa: E501
+
+        :param name: The name of this DestinationEndPoint.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def destination_list(self):

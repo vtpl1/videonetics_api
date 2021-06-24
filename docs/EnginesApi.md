@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**engines_get**](EnginesApi.md#engines_get) | **GET** /engines | Get all engine details
 [**engines_id_delete**](EnginesApi.md#engines_id_delete) | **DELETE** /engines/{id} | Delete an engine
 [**engines_id_get**](EnginesApi.md#engines_id_get) | **GET** /engines/{id} | Get engine by id
+[**engines_id_patch**](EnginesApi.md#engines_id_patch) | **PATCH** /engines/{id} | Patch
 [**engines_post**](EnginesApi.md#engines_post) | **POST** /engines | Create an engine
 [**event_snaps_get**](EnginesApi.md#event_snaps_get) | **GET** /eventSnaps | Get all eventSnaps
 [**event_snaps_id_get**](EnginesApi.md#event_snaps_id_get) | **GET** /eventSnaps/{id} | Get eventSnap by id
@@ -35,6 +36,11 @@ Method | HTTP request | Description
 [**inferencers_id_get**](EnginesApi.md#inferencers_id_get) | **GET** /inferencers/{id} | Get inferencer by id
 [**inferencers_id_patch**](EnginesApi.md#inferencers_id_patch) | **PATCH** /inferencers/{id} | Patch
 [**inferencers_post**](EnginesApi.md#inferencers_post) | **POST** /inferencers | Create an inferencer
+[**media_sources_get**](EnginesApi.md#media_sources_get) | **GET** /mediaSources | Get all media sources
+[**media_sources_id_delete**](EnginesApi.md#media_sources_id_delete) | **DELETE** /mediaSources/{id} | Delete a media source
+[**media_sources_id_get**](EnginesApi.md#media_sources_id_get) | **GET** /mediaSources/{id} | Get media source by id
+[**media_sources_id_patch**](EnginesApi.md#media_sources_id_patch) | **PATCH** /mediaSources/{id} | Patch
+[**media_sources_post**](EnginesApi.md#media_sources_post) | **POST** /mediaSources | Create a media source
 [**motion_detectors_get**](EnginesApi.md#motion_detectors_get) | **GET** /motionDetectors | Get all motionDetectors details
 [**motion_detectors_id_delete**](EnginesApi.md#motion_detectors_id_delete) | **DELETE** /motionDetectors/{id} | Delete an motionDetector
 [**motion_detectors_id_get**](EnginesApi.md#motion_detectors_id_get) | **GET** /motionDetectors/{id} | Get motionDetector by id
@@ -54,7 +60,9 @@ Method | HTTP request | Description
 [**snaps_id_get**](EnginesApi.md#snaps_id_get) | **GET** /snaps/{id} | Get snap by id
 [**snaps_post**](EnginesApi.md#snaps_post) | **POST** /snaps | Create a unprocesed snap
 [**va_events_get**](EnginesApi.md#va_events_get) | **GET** /vaEvents | Get all vaEvents
+[**va_events_id_delete**](EnginesApi.md#va_events_id_delete) | **DELETE** /vaEvents/{id} | Delete an event
 [**va_events_id_get**](EnginesApi.md#va_events_id_get) | **GET** /vaEvents/{id} | Get vaEvent by id
+[**va_events_id_patch**](EnginesApi.md#va_events_id_patch) | **PATCH** /vaEvents/{id} | Patch
 [**va_events_post**](EnginesApi.md#va_events_post) | **POST** /vaEvents | Create an vaEvent
 
 # **anpr_events_get**
@@ -753,7 +761,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engine_tasks_get**
-> EngineTasksResponse engine_tasks_get(where=where, page=page, sort=sort, max_results=max_results)
+> EngineTasksResponse engine_tasks_get(where=where, page=page, sort=sort, max_results=max_results, embedded=embedded)
 
 Get all engineTasks
 
@@ -773,10 +781,11 @@ where = 'where_example' # str | The where clause takes a JSON as a string with o
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engines?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTasks?sort=created   * To sort engineTasks by created IN DECENDING order, use /engineTasks?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
 max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /engineTasks?maxResults=1   * To limit engineTasks to 2, use /engineTasks?maxResults=2 (optional)
+embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with sourceEndPoint argument. Example:   * 'To find engineTasks with sourceEndPoint object. use /engineTasks?embedded={\"sourceEndPoint\":1}' (optional)
 
 try:
     # Get all engineTasks
-    api_response = api_instance.engine_tasks_get(where=where, page=page, sort=sort, max_results=max_results)
+    api_response = api_instance.engine_tasks_get(where=where, page=page, sort=sort, max_results=max_results, embedded=embedded)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_tasks_get: %s\n" % e)
@@ -790,6 +799,7 @@ Name | Type | Description  | Notes
  **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engines?page&#x3D;4 | [optional] 
  **sort** | **str**| The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTasks?sort&#x3D;created   * To sort engineTasks by created IN DECENDING order, use /engineTasks?sort&#x3D;-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING | [optional] 
  **max_results** | **int**| The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /engineTasks?maxResults&#x3D;1   * To limit engineTasks to 2, use /engineTasks?maxResults&#x3D;2 | [optional] 
+ **embedded** | **str**| The embedded clause takes a JSON as a string with sourceEndPoint argument. Example:   * &#x27;To find engineTasks with sourceEndPoint object. use /engineTasks?embedded&#x3D;{\&quot;sourceEndPoint\&quot;:1}&#x27; | [optional] 
 
 ### Return type
 
@@ -1004,7 +1014,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **engines_get**
-> EnginesResponse engines_get(page=page, where=where, max_results=max_results)
+> EnginesResponse engines_get(where=where, page=page, sort=sort, max_results=max_results)
 
 Get all engine details
 
@@ -1020,13 +1030,14 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi()
-page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /engines?page=4 (optional)
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /engines?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /engines?page=4 (optional)
+sort = 'sort_example' # str |  (optional)
 max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first registeredFace among all registeredFaces, use /engines?maxResults=1   * To limit registeredFaces to 5, use /engines?maxResults=5 (optional)
 
 try:
     # Get all engine details
-    api_response = api_instance.engines_get(page=page, where=where, max_results=max_results)
+    api_response = api_instance.engines_get(where=where, page=page, sort=sort, max_results=max_results)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engines_get: %s\n" % e)
@@ -1036,8 +1047,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /engines?page&#x3D;4 | [optional] 
  **where** | **str**| The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /engines?where&#x3D;{\&quot;capabilities\&quot;:{\&quot;$in\&quot;:[206,211]}} | [optional] 
+ **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /engines?page&#x3D;4 | [optional] 
+ **sort** | **str**|  | [optional] 
  **max_results** | **int**| The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first registeredFace among all registeredFaces, use /engines?maxResults&#x3D;1   * To limit registeredFaces to 5, use /engines?maxResults&#x3D;5 | [optional] 
 
 ### Return type
@@ -1148,6 +1160,58 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **engines_id_patch**
+> DefaultResponse engines_id_patch(if_match, id, body=body)
+
+Patch
+
+Patch
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.Engine() # Engine |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.engines_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engines_id_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_match** | **str**|  | 
+ **id** | **str**| Unique ID | 
+ **body** | [**Engine**](Engine.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1575,6 +1639,257 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Inferencer**](Inferencer.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **media_sources_get**
+> MediaSourceResponse media_sources_get(where=where, page=page, sort=sort, max_results=max_results)
+
+Get all media sources
+
+Get all media sources
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+where = 'where_example' # str | Media sources (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /mediaSources?page=4 (optional)
+sort = 'sort_example' # str |  (optional)
+max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first pipeline among all mediaSources, use /mediaSources?maxResults=1   * To limit mediaSources to 5, use /mediaSources?maxResults=5 (optional)
+
+try:
+    # Get all media sources
+    api_response = api_instance.media_sources_get(where=where, page=page, sort=sort, max_results=max_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->media_sources_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **where** | **str**| Media sources | [optional] 
+ **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /mediaSources?page&#x3D;4 | [optional] 
+ **sort** | **str**|  | [optional] 
+ **max_results** | **int**| The maxResults query parameter limits results equal to # of maxResults. Example:   * To get first pipeline among all mediaSources, use /mediaSources?maxResults&#x3D;1   * To limit mediaSources to 5, use /mediaSources?maxResults&#x3D;5 | [optional] 
+
+### Return type
+
+[**MediaSourceResponse**](MediaSourceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **media_sources_id_delete**
+> media_sources_id_delete(id, if_match)
+
+Delete a media source
+
+Delete a media source
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete a media source
+    api_instance.media_sources_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->media_sources_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+ **if_match** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **media_sources_id_get**
+> SourceEndPoint media_sources_id_get(id)
+
+Get media source by id
+
+Get media source by id
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+
+try:
+    # Get media source by id
+    api_response = api_instance.media_sources_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->media_sources_id_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+
+### Return type
+
+[**SourceEndPoint**](SourceEndPoint.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **media_sources_id_patch**
+> DefaultResponse media_sources_id_patch(if_match, id, body=body)
+
+Patch
+
+Patch
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.SourceEndPoint() # SourceEndPoint |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.media_sources_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->media_sources_id_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_match** | **str**|  | 
+ **id** | **str**| Unique ID | 
+ **body** | [**SourceEndPoint**](SourceEndPoint.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **media_sources_post**
+> DefaultResponse media_sources_post(body=body)
+
+Create a media source
+
+Create a media source
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+body = vtpl_api.SourceEndPoint() # SourceEndPoint |  (optional)
+
+try:
+    # Create a media source
+    api_response = api_instance.media_sources_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->media_sources_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SourceEndPoint**](SourceEndPoint.md)|  | [optional] 
 
 ### Return type
 
@@ -2485,7 +2800,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **va_events_get**
-> VaEventsResponse va_events_get(where=where, sort=sort, max_results=max_results, embedded=embedded)
+> VaEventsResponse va_events_get(where=where, page=page, sort=sort, max_results=max_results, embedded=embedded)
 
 Get all vaEvents
 
@@ -2502,13 +2817,14 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi()
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the vaEvent model. Example:   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort vaEvents by startTimeStamp in eventDetails IN ASCEDING order, use /vaEvents?sort=eventDetails.startTimeStamp   * To sort vaEvents by startTimeStamp in eventDetails IN DECENDING order, use /vaEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING (optional)
 max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest vaEvent among whole vaEvents, use /vaEvents?maxResults=1   * To limit vaEvents to 5, use /vaEvents?maxResults=5 (optional)
 embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find vaEvents with eventSnap object. use /vaEvents?embedded={\"eventSnaps\":1}' (optional)
 
 try:
     # Get all vaEvents
-    api_response = api_instance.va_events_get(where=where, sort=sort, max_results=max_results, embedded=embedded)
+    api_response = api_instance.va_events_get(where=where, page=page, sort=sort, max_results=max_results, embedded=embedded)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->va_events_get: %s\n" % e)
@@ -2519,6 +2835,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **str**| The where clause takes a JSON as a string with one or many properties of the vaEvent model. Example:   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /vaEvents?where&#x3D;{\&quot;eventDetails.engineTaskId\&quot;:\&quot;5c1956e925b6b30001103eaa\&quot;}   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /vaEvents?where&#x3D;{\&quot;eventDetails.engineTaskId\&quot;:\&quot;5c1956e925b6b30001103eaa\&quot;,\&quot;eventDetails.sourceId\&quot;:\&quot;5c1956e925b6b30001103eab\&quot;} | [optional] 
+ **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page&#x3D;4 | [optional] 
  **sort** | **str**| The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort vaEvents by startTimeStamp in eventDetails IN ASCEDING order, use /vaEvents?sort&#x3D;eventDetails.startTimeStamp   * To sort vaEvents by startTimeStamp in eventDetails IN DECENDING order, use /vaEvents?sort&#x3D;-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING | [optional] 
  **max_results** | **int**| The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest vaEvent among whole vaEvents, use /vaEvents?maxResults&#x3D;1   * To limit vaEvents to 5, use /vaEvents?maxResults&#x3D;5 | [optional] 
  **embedded** | **str**| The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * &#x27;To find vaEvents with eventSnap object. use /vaEvents?embedded&#x3D;{\&quot;eventSnaps\&quot;:1}&#x27; | [optional] 
@@ -2535,6 +2852,55 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **va_events_id_delete**
+> va_events_id_delete(id, if_match)
+
+Delete an event
+
+Delete an pipeline
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an event
+    api_instance.va_events_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->va_events_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+ **if_match** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2584,6 +2950,58 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **va_events_id_patch**
+> DefaultResponse va_events_id_patch(if_match, id, body=body)
+
+Patch
+
+Patch
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi()
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.Pipeline() # Pipeline |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.va_events_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->va_events_id_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_match** | **str**|  | 
+ **id** | **str**| Unique ID | 
+ **body** | [**Pipeline**](Pipeline.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
