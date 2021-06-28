@@ -29,6 +29,7 @@ class EngineTaskStatus(object):
     """
     swagger_types = {
         'id': 'str',
+        'user_id': 'str',
         'engine_task_id': 'str',
         'progress': 'EngineTaskStatusProgress',
         'failure': 'EngineTaskStatusFailure',
@@ -40,6 +41,7 @@ class EngineTaskStatus(object):
 
     attribute_map = {
         'id': '_id',
+        'user_id': 'userId',
         'engine_task_id': 'engineTaskId',
         'progress': 'progress',
         'failure': 'failure',
@@ -49,9 +51,10 @@ class EngineTaskStatus(object):
         'links': 'links'
     }
 
-    def __init__(self, id=None, engine_task_id=None, progress=None, failure=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
+    def __init__(self, id=None, user_id=None, engine_task_id=None, progress=None, failure=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
         """EngineTaskStatus - a model defined in Swagger"""  # noqa: E501
         self._id = None
+        self._user_id = None
         self._engine_task_id = None
         self._progress = None
         self._failure = None
@@ -62,6 +65,8 @@ class EngineTaskStatus(object):
         self.discriminator = None
         if id is not None:
             self.id = id
+        if user_id is not None:
+            self.user_id = user_id
         if engine_task_id is not None:
             self.engine_task_id = engine_task_id
         if progress is not None:
@@ -97,6 +102,27 @@ class EngineTaskStatus(object):
         """
 
         self._id = id
+
+    @property
+    def user_id(self):
+        """Gets the user_id of this EngineTaskStatus.  # noqa: E501
+
+
+        :return: The user_id of this EngineTaskStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, user_id):
+        """Sets the user_id of this EngineTaskStatus.
+
+
+        :param user_id: The user_id of this EngineTaskStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._user_id = user_id
 
     @property
     def engine_task_id(self):

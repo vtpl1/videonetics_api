@@ -79,9 +79,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the anprEvent model. Example:   * To find anprEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /anprEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find anprEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /anprEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"} (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort anprEvents by startTimeStamp in eventDetails IN ASCEDING order, use /anprEvents?sort=eventDetails.startTimeStamp   * To sort anprEvents by startTimeStamp in eventDetails IN DECENDING order, use /anprEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING (optional)
 max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest anprEvent among whole anprEvents, use /anprEvents?maxResults=1   * To limit anprEvents to 5, use /anprEvents?maxResults=5 (optional)
@@ -110,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -133,9 +137,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find anprEvents with eventSnap object. use /anprEvents/{id}?embedded={\"eventSnaps\":1}' (optional)
 
@@ -160,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -183,9 +191,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.AnprEvent() # AnprEvent |  (optional)
 
 try:
@@ -208,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -231,9 +243,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the attributeEvent model. Example:   * To find attributeEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /attributeEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find attributeEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /attributeEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"} (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort attributeEvents by startTimeStamp in eventDetails IN ASCEDING order, use /attributeEvents?sort=eventDetails.startTimeStamp   * To sort attributeEvents by startTimeStamp in eventDetails IN DECENDING order, use /attributeEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING (optional)
 max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest attributeEvent among whole attributeEvents, use /attributeEvents?maxResults=1   * To limit attributeEvents to 5, use /attributeEvents?maxResults=5 (optional)
@@ -262,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -285,9 +301,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find attributeEvents with eventSnap object. use /attributeEvents/{id}?embedded={\"eventSnaps\":1}' (optional)
 
@@ -312,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -335,9 +355,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.AttributeEvent() # AttributeEvent |  (optional)
 
 try:
@@ -360,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -383,9 +407,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 
 try:
     # Get all unprocesed clips
@@ -404,7 +432,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -427,9 +455,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -452,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -475,9 +507,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.Clip() # Clip |  (optional)
 
 try:
@@ -500,7 +536,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -523,9 +559,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the engineTaskStatus model. Example:   * To find engineTaskStatus with engineTaskId equal \"11\", use /engineTaskStatus?where={\"engineTaskId\":\"11\"} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engineTaskStatus?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTaskStatus?sort=created   * To sort engineTasks by created IN DECENDING order, use /engineTaskStatus?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
@@ -554,7 +594,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -577,9 +617,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -603,7 +647,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -626,9 +670,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -651,7 +699,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -674,9 +722,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
 body = vtpl_api.EngineTaskStatus() # EngineTaskStatus |  (optional)
@@ -703,7 +755,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -726,9 +778,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.EngineTaskStatus() # EngineTaskStatus |  (optional)
 
 try:
@@ -751,7 +807,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -774,9 +830,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the engineTask model. Example:   * To find engineTasks with capbilitiesType equal 211 and sourceId equal \"4\", use /engineTasks?where={\"capbilitiesType\":322,\"source.sourceId\":\"4\"}   * To find engineTasks with destination.extras.value equal \"1553774721506487\", use /engineTasks?where={\"destination.extras.value\":\"1553774721506487\"} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engines?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTasks?sort=created   * To sort engineTasks by created IN DECENDING order, use /engineTasks?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
@@ -807,7 +867,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -830,9 +890,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -856,7 +920,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -879,9 +943,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -904,7 +972,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -927,9 +995,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
 body = vtpl_api.EngineTask() # EngineTask |  (optional)
@@ -956,7 +1028,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -979,9 +1051,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.EngineTask() # EngineTask |  (optional)
 
 try:
@@ -1004,7 +1080,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1027,9 +1103,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /engines?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /engines?page=4 (optional)
 sort = 'sort_example' # str |  (optional)
@@ -1058,7 +1138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1081,9 +1161,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -1107,7 +1191,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1130,9 +1214,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -1155,7 +1243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1178,9 +1266,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
 body = vtpl_api.Engine() # Engine |  (optional)
@@ -1207,7 +1299,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1230,9 +1322,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.Engine() # Engine |  (optional)
 
 try:
@@ -1255,7 +1351,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1278,9 +1374,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 
 try:
     # Get all eventSnaps
@@ -1299,7 +1399,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1322,9 +1422,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -1347,7 +1451,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1370,9 +1474,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.Snap() # Snap |  (optional)
 
 try:
@@ -1395,7 +1503,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1418,9 +1526,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /inferencers?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /inferencers?page=4 (optional)
 sort = 'sort_example' # str |  (optional)
@@ -1449,7 +1561,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1472,9 +1584,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -1498,7 +1614,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1521,9 +1637,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -1546,7 +1666,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1569,9 +1689,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
 body = vtpl_api.Inferencer() # Inferencer |  (optional)
@@ -1598,7 +1722,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1621,9 +1745,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.Inferencer() # Inferencer |  (optional)
 
 try:
@@ -1646,7 +1774,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1669,9 +1797,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | Media sources (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /mediaSources?page=4 (optional)
 sort = 'sort_example' # str |  (optional)
@@ -1700,7 +1832,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1723,9 +1855,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -1749,7 +1885,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1772,9 +1908,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -1797,7 +1937,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1820,9 +1960,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
 body = vtpl_api.SourceEndPoint() # SourceEndPoint |  (optional)
@@ -1849,7 +1993,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1872,9 +2016,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.SourceEndPoint() # SourceEndPoint |  (optional)
 
 try:
@@ -1897,7 +2045,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1920,9 +2068,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /motionDetectors?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /motionDetectors?page=4 (optional)
 sort = 'sort_example' # str |  (optional)
@@ -1951,7 +2103,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1974,9 +2126,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -2000,7 +2156,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2023,9 +2179,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -2048,7 +2208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2071,9 +2231,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
 body = vtpl_api.MotionDetector() # MotionDetector |  (optional)
@@ -2100,7 +2264,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2123,9 +2287,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.MotionDetector() # MotionDetector |  (optional)
 
 try:
@@ -2148,7 +2316,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2171,9 +2339,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /pipelines?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page=4 (optional)
 sort = 'sort_example' # str |  (optional)
@@ -2202,7 +2374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2225,9 +2397,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -2251,7 +2427,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2274,9 +2450,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -2299,7 +2479,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2322,9 +2502,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
 body = vtpl_api.Pipeline() # Pipeline |  (optional)
@@ -2351,7 +2535,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2374,9 +2558,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.Pipeline() # Pipeline |  (optional)
 
 try:
@@ -2399,7 +2587,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2422,9 +2610,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /preProcesses?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /preProcesses?page=4 (optional)
 sort = 'sort_example' # str |  (optional)
@@ -2453,7 +2645,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2476,9 +2668,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -2502,7 +2698,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2525,9 +2721,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -2550,7 +2750,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2573,9 +2773,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
 body = vtpl_api.PreProcess() # PreProcess |  (optional)
@@ -2602,7 +2806,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2625,9 +2829,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.PreProcess() # PreProcess |  (optional)
 
 try:
@@ -2650,7 +2858,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2673,9 +2881,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 
 try:
     # Get all unprocesed snaps
@@ -2694,7 +2906,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2717,9 +2929,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -2742,7 +2958,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2765,9 +2981,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.Snap() # Snap |  (optional)
 
 try:
@@ -2790,7 +3010,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2813,9 +3033,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the vaEvent model. Example:   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort vaEvents by startTimeStamp in eventDetails IN ASCEDING order, use /vaEvents?sort=eventDetails.startTimeStamp   * To sort vaEvents by startTimeStamp in eventDetails IN DECENDING order, use /vaEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING (optional)
@@ -2846,7 +3070,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2869,9 +3093,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -2895,7 +3123,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2918,9 +3146,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find vaEvents with eventSnap object. use /vaEvents/{id}?embedded={\"eventSnaps\":1}' (optional)
 
@@ -2945,7 +3177,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2968,9 +3200,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
 body = vtpl_api.Pipeline() # Pipeline |  (optional)
@@ -2997,7 +3233,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -3020,9 +3256,13 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi()
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.VaEvent() # VaEvent |  (optional)
 
 try:
@@ -3045,7 +3285,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 

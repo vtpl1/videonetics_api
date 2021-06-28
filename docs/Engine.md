@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 **machine_id** | **str** |  | [optional] 
 **capabilities** | [**list[Capability]**](Capability.md) |  | [optional] 
 **updated** | **datetime** |  | [optional] 

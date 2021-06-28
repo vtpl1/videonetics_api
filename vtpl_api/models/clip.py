@@ -29,6 +29,7 @@ class Clip(object):
     """
     swagger_types = {
         'id': 'str',
+        'user_id': 'str',
         'clip': 'str',
         'clip_id': 'str',
         'starp_time_stamp': 'int',
@@ -41,6 +42,7 @@ class Clip(object):
 
     attribute_map = {
         'id': '_id',
+        'user_id': 'userId',
         'clip': 'clip',
         'clip_id': 'clipId',
         'starp_time_stamp': 'starpTimeStamp',
@@ -51,9 +53,10 @@ class Clip(object):
         'links': 'links'
     }
 
-    def __init__(self, id=None, clip=None, clip_id=None, starp_time_stamp=None, end_time_stamp=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
+    def __init__(self, id=None, user_id=None, clip=None, clip_id=None, starp_time_stamp=None, end_time_stamp=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
         """Clip - a model defined in Swagger"""  # noqa: E501
         self._id = None
+        self._user_id = None
         self._clip = None
         self._clip_id = None
         self._starp_time_stamp = None
@@ -65,6 +68,8 @@ class Clip(object):
         self.discriminator = None
         if id is not None:
             self.id = id
+        if user_id is not None:
+            self.user_id = user_id
         if clip is not None:
             self.clip = clip
         if clip_id is not None:
@@ -102,6 +107,27 @@ class Clip(object):
         """
 
         self._id = id
+
+    @property
+    def user_id(self):
+        """Gets the user_id of this Clip.  # noqa: E501
+
+
+        :return: The user_id of this Clip.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, user_id):
+        """Sets the user_id of this Clip.
+
+
+        :param user_id: The user_id of this Clip.  # noqa: E501
+        :type: str
+        """
+
+        self._user_id = user_id
 
     @property
     def clip(self):

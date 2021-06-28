@@ -50,6 +50,10 @@ import time
 import vtpl_api
 from vtpl_api.rest import ApiException
 from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -64,6 +68,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->anpr_events_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -76,6 +84,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->anpr_events_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -87,6 +99,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->anpr_events_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -101,6 +117,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->attribute_events_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -113,6 +133,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->attribute_events_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -124,6 +148,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->attribute_events_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -134,6 +162,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->clips_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -145,6 +177,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->clips_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -156,6 +192,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->clips_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -170,6 +210,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_task_status_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -181,6 +225,10 @@ try:
     api_instance.engine_task_status_id_delete(id, if_match)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_task_status_id_delete: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -192,6 +240,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_task_status_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -205,6 +257,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_task_status_id_patch: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -216,6 +272,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_task_status_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -231,6 +291,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_tasks_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -242,6 +306,10 @@ try:
     api_instance.engine_tasks_id_delete(id, if_match)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_tasks_id_delete: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -253,6 +321,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_tasks_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -266,6 +338,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_tasks_id_patch: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -277,6 +353,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engine_tasks_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -291,6 +371,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engines_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -302,6 +386,10 @@ try:
     api_instance.engines_id_delete(id, if_match)
 except ApiException as e:
     print("Exception when calling EnginesApi->engines_id_delete: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -313,6 +401,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engines_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -326,6 +418,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engines_id_patch: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -337,6 +433,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->engines_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -347,6 +447,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->event_snaps_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -358,6 +462,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->event_snaps_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -369,6 +477,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->event_snaps_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -383,6 +495,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->inferencers_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -394,6 +510,10 @@ try:
     api_instance.inferencers_id_delete(id, if_match)
 except ApiException as e:
     print("Exception when calling EnginesApi->inferencers_id_delete: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -405,6 +525,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->inferencers_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -418,6 +542,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->inferencers_id_patch: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -429,6 +557,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->inferencers_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -443,6 +575,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->media_sources_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -454,6 +590,10 @@ try:
     api_instance.media_sources_id_delete(id, if_match)
 except ApiException as e:
     print("Exception when calling EnginesApi->media_sources_id_delete: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -465,6 +605,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->media_sources_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -478,6 +622,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->media_sources_id_patch: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -489,6 +637,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->media_sources_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -503,6 +655,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->motion_detectors_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -514,6 +670,10 @@ try:
     api_instance.motion_detectors_id_delete(id, if_match)
 except ApiException as e:
     print("Exception when calling EnginesApi->motion_detectors_id_delete: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -525,6 +685,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->motion_detectors_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -538,6 +702,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->motion_detectors_id_patch: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -549,6 +717,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->motion_detectors_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -563,6 +735,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->pipelines_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -574,6 +750,10 @@ try:
     api_instance.pipelines_id_delete(id, if_match)
 except ApiException as e:
     print("Exception when calling EnginesApi->pipelines_id_delete: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -585,6 +765,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->pipelines_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -598,6 +782,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->pipelines_id_patch: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -609,6 +797,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->pipelines_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -623,6 +815,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->pre_processes_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -634,6 +830,10 @@ try:
     api_instance.pre_processes_id_delete(id, if_match)
 except ApiException as e:
     print("Exception when calling EnginesApi->pre_processes_id_delete: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -645,6 +845,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->pre_processes_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -658,6 +862,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->pre_processes_id_patch: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -669,6 +877,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->pre_processes_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -679,6 +891,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->snaps_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -690,6 +906,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->snaps_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -701,6 +921,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->snaps_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -716,6 +940,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->va_events_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -727,6 +955,10 @@ try:
     api_instance.va_events_id_delete(id, if_match)
 except ApiException as e:
     print("Exception when calling EnginesApi->va_events_id_delete: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -739,6 +971,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->va_events_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -752,6 +988,10 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->va_events_id_patch: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
@@ -908,7 +1148,10 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
- All endpoints do not require authorization.
+
+## basicAuth
+
+- **Type**: HTTP basic authentication
 
 
 ## Author

@@ -29,6 +29,7 @@ class Snap(object):
     """
     swagger_types = {
         'id': 'str',
+        'user_id': 'str',
         'snap': 'str',
         'full_snap': 'str',
         'snap_id': 'str',
@@ -46,6 +47,7 @@ class Snap(object):
 
     attribute_map = {
         'id': '_id',
+        'user_id': 'userId',
         'snap': 'snap',
         'full_snap': 'fullSnap',
         'snap_id': 'snapId',
@@ -61,9 +63,10 @@ class Snap(object):
         'links': 'links'
     }
 
-    def __init__(self, id=None, snap=None, full_snap=None, snap_id=None, snap_time_stamp=None, process_count=None, registered_face_id=None, feature_vector1=None, feature_vector2=None, confidence=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
+    def __init__(self, id=None, user_id=None, snap=None, full_snap=None, snap_id=None, snap_time_stamp=None, process_count=None, registered_face_id=None, feature_vector1=None, feature_vector2=None, confidence=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
         """Snap - a model defined in Swagger"""  # noqa: E501
         self._id = None
+        self._user_id = None
         self._snap = None
         self._full_snap = None
         self._snap_id = None
@@ -80,6 +83,8 @@ class Snap(object):
         self.discriminator = None
         if id is not None:
             self.id = id
+        if user_id is not None:
+            self.user_id = user_id
         if snap is not None:
             self.snap = snap
         if full_snap is not None:
@@ -127,6 +132,27 @@ class Snap(object):
         """
 
         self._id = id
+
+    @property
+    def user_id(self):
+        """Gets the user_id of this Snap.  # noqa: E501
+
+
+        :return: The user_id of this Snap.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, user_id):
+        """Sets the user_id of this Snap.
+
+
+        :param user_id: The user_id of this Snap.  # noqa: E501
+        :type: str
+        """
+
+        self._user_id = user_id
 
     @property
     def snap(self):

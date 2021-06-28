@@ -29,6 +29,7 @@ class SourceEndPoint(object):
     """
     swagger_types = {
         'id': 'str',
+        'user_id': 'str',
         'updated': 'datetime',
         'created': 'datetime',
         'etag': 'str',
@@ -44,6 +45,7 @@ class SourceEndPoint(object):
 
     attribute_map = {
         'id': '_id',
+        'user_id': 'userId',
         'updated': 'updated',
         'created': 'created',
         'etag': 'etag',
@@ -57,9 +59,10 @@ class SourceEndPoint(object):
         'schedule': 'schedule'
     }
 
-    def __init__(self, id=None, updated=None, created=None, etag=None, links=None, name=None, source_list=None, start_time_stamp=None, end_time_stamp=None, snaps=None, clips=None, schedule=None):  # noqa: E501
+    def __init__(self, id=None, user_id=None, updated=None, created=None, etag=None, links=None, name=None, source_list=None, start_time_stamp=None, end_time_stamp=None, snaps=None, clips=None, schedule=None):  # noqa: E501
         """SourceEndPoint - a model defined in Swagger"""  # noqa: E501
         self._id = None
+        self._user_id = None
         self._updated = None
         self._created = None
         self._etag = None
@@ -74,6 +77,8 @@ class SourceEndPoint(object):
         self.discriminator = None
         if id is not None:
             self.id = id
+        if user_id is not None:
+            self.user_id = user_id
         if updated is not None:
             self.updated = updated
         if created is not None:
@@ -117,6 +122,27 @@ class SourceEndPoint(object):
         """
 
         self._id = id
+
+    @property
+    def user_id(self):
+        """Gets the user_id of this SourceEndPoint.  # noqa: E501
+
+
+        :return: The user_id of this SourceEndPoint.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, user_id):
+        """Sets the user_id of this SourceEndPoint.
+
+
+        :param user_id: The user_id of this SourceEndPoint.  # noqa: E501
+        :type: str
+        """
+
+        self._user_id = user_id
 
     @property
     def updated(self):

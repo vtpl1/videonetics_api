@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 **updated** | **datetime** |  | [optional] 
 **created** | **datetime** |  | [optional] 
 **etag** | **str** |  | [optional] 

@@ -29,6 +29,7 @@ class EngineTask(object):
     """
     swagger_types = {
         'id': 'str',
+        'user_id': 'str',
         'capbilities_type': 'Capability',
         'event_type': 'EventType',
         'engine_machine_id': 'str',
@@ -49,6 +50,7 @@ class EngineTask(object):
 
     attribute_map = {
         'id': '_id',
+        'user_id': 'userId',
         'capbilities_type': 'capbilitiesType',
         'event_type': 'eventType',
         'engine_machine_id': 'engineMachineId',
@@ -67,9 +69,10 @@ class EngineTask(object):
         'links': 'links'
     }
 
-    def __init__(self, id=None, capbilities_type=None, event_type=None, engine_machine_id=None, is_expired=False, children=None, time_to_live=-1, source_end_point_id=None, destination=None, extras=None, zone_setting=None, line_setting=None, config=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
+    def __init__(self, id=None, user_id=None, capbilities_type=None, event_type=None, engine_machine_id=None, is_expired=False, children=None, time_to_live=-1, source_end_point_id=None, destination=None, extras=None, zone_setting=None, line_setting=None, config=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
         """EngineTask - a model defined in Swagger"""  # noqa: E501
         self._id = None
+        self._user_id = None
         self._capbilities_type = None
         self._event_type = None
         self._engine_machine_id = None
@@ -89,6 +92,8 @@ class EngineTask(object):
         self.discriminator = None
         if id is not None:
             self.id = id
+        if user_id is not None:
+            self.user_id = user_id
         if capbilities_type is not None:
             self.capbilities_type = capbilities_type
         if event_type is not None:
@@ -142,6 +147,27 @@ class EngineTask(object):
         """
 
         self._id = id
+
+    @property
+    def user_id(self):
+        """Gets the user_id of this EngineTask.  # noqa: E501
+
+
+        :return: The user_id of this EngineTask.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, user_id):
+        """Sets the user_id of this EngineTask.
+
+
+        :param user_id: The user_id of this EngineTask.  # noqa: E501
+        :type: str
+        """
+
+        self._user_id = user_id
 
     @property
     def capbilities_type(self):

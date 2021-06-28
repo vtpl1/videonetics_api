@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
+**user_id** | **str** |  | [optional] 
 **capbilities_type** | [**Capability**](Capability.md) |  | [optional] 
 **event_type** | [**EventType**](EventType.md) |  | [optional] 
 **engine_machine_id** | **str** |  | [optional] 
