@@ -22,6 +22,7 @@ RUN pip3 --disable-pip-version-check --no-cache-dir install pytest
 RUN pip3 --disable-pip-version-check --no-cache-dir install requests
 RUN pip3 --disable-pip-version-check --no-cache-dir install mkdocs
 RUN pip3 --disable-pip-version-check --no-cache-dir install mkdocs-material mkdocs-macros-plugin pymdown-extensions mkdocs-snippet-plugin
+RUN pip3 --disable-pip-version-check --no-cache-dir install mkdocs-include-markdown-plugin
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>

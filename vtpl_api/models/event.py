@@ -29,7 +29,6 @@ class Event(object):
     """
     swagger_types = {
         'id': 'str',
-        'user_id': 'str',
         'capbilities_type': 'Capability',
         'event_type': 'EventType',
         'event_details': 'EventDetails',
@@ -43,7 +42,6 @@ class Event(object):
 
     attribute_map = {
         'id': '_id',
-        'user_id': 'userId',
         'capbilities_type': 'capbilitiesType',
         'event_type': 'eventType',
         'event_details': 'eventDetails',
@@ -60,10 +58,9 @@ class Event(object):
 'anprEvent': 'AnprEvent',
 'vaEvent': 'VaEvent'    }
 
-    def __init__(self, id=None, user_id=None, capbilities_type=None, event_type=None, event_details=None, event_snaps=None, event_clips=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
+    def __init__(self, id=None, capbilities_type=None, event_type=None, event_details=None, event_snaps=None, event_clips=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
         """Event - a model defined in Swagger"""  # noqa: E501
         self._id = None
-        self._user_id = None
         self._capbilities_type = None
         self._event_type = None
         self._event_details = None
@@ -76,8 +73,6 @@ class Event(object):
         self.discriminator = 'eventType'
         if id is not None:
             self.id = id
-        if user_id is not None:
-            self.user_id = user_id
         if capbilities_type is not None:
             self.capbilities_type = capbilities_type
         if event_type is not None:
@@ -117,27 +112,6 @@ class Event(object):
         """
 
         self._id = id
-
-    @property
-    def user_id(self):
-        """Gets the user_id of this Event.  # noqa: E501
-
-
-        :return: The user_id of this Event.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_id
-
-    @user_id.setter
-    def user_id(self, user_id):
-        """Sets the user_id of this Event.
-
-
-        :param user_id: The user_id of this Event.  # noqa: E501
-        :type: str
-        """
-
-        self._user_id = user_id
 
     @property
     def capbilities_type(self):

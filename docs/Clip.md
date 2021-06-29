@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
-**user_id** | **str** |  | [optional] 
 **clip** | **str** |  | [optional] 
 **clip_id** | **str** |  | [optional] 
 **starp_time_stamp** | **int** | Unix timestamp from when clip is recorded | [optional] 

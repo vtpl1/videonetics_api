@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
-**user_id** | **str** |  | [optional] 
 **snap** | **str** |  | [optional] 
 **full_snap** | **str** |  | [optional] 
 **snap_id** | **str** |  | [optional] 

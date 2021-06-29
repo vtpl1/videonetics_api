@@ -29,6 +29,7 @@ class EventDetails(object):
     """
     swagger_types = {
         'engine_task_id': 'str',
+        'source_end_point_id': 'str',
         'start_time_stamp': 'int',
         'end_time_stamp': 'int',
         'zone_id': 'int',
@@ -39,6 +40,7 @@ class EventDetails(object):
 
     attribute_map = {
         'engine_task_id': 'engineTaskId',
+        'source_end_point_id': 'sourceEndPointId',
         'start_time_stamp': 'startTimeStamp',
         'end_time_stamp': 'endTimeStamp',
         'zone_id': 'zoneId',
@@ -47,9 +49,10 @@ class EventDetails(object):
         'extras': 'extras'
     }
 
-    def __init__(self, engine_task_id=None, start_time_stamp=None, end_time_stamp=None, zone_id=0, confidence=0, capture_time_in_video=None, extras=None):  # noqa: E501
+    def __init__(self, engine_task_id=None, source_end_point_id=None, start_time_stamp=None, end_time_stamp=None, zone_id=0, confidence=0, capture_time_in_video=None, extras=None):  # noqa: E501
         """EventDetails - a model defined in Swagger"""  # noqa: E501
         self._engine_task_id = None
+        self._source_end_point_id = None
         self._start_time_stamp = None
         self._end_time_stamp = None
         self._zone_id = None
@@ -59,6 +62,8 @@ class EventDetails(object):
         self.discriminator = None
         if engine_task_id is not None:
             self.engine_task_id = engine_task_id
+        if source_end_point_id is not None:
+            self.source_end_point_id = source_end_point_id
         if start_time_stamp is not None:
             self.start_time_stamp = start_time_stamp
         if end_time_stamp is not None:
@@ -94,6 +99,27 @@ class EventDetails(object):
         """
 
         self._engine_task_id = engine_task_id
+
+    @property
+    def source_end_point_id(self):
+        """Gets the source_end_point_id of this EventDetails.  # noqa: E501
+
+
+        :return: The source_end_point_id of this EventDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._source_end_point_id
+
+    @source_end_point_id.setter
+    def source_end_point_id(self, source_end_point_id):
+        """Sets the source_end_point_id of this EventDetails.
+
+
+        :param source_end_point_id: The source_end_point_id of this EventDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._source_end_point_id = source_end_point_id
 
     @property
     def start_time_stamp(self):

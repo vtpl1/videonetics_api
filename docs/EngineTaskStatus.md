@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
-**user_id** | **str** |  | [optional] 
 **engine_task_id** | **str** |  | [optional] 
 **progress** | [**EngineTaskStatusProgress**](EngineTaskStatusProgress.md) |  | [optional] 
 **failure** | [**EngineTaskStatusFailure**](EngineTaskStatusFailure.md) |  | [optional] 

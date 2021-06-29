@@ -29,7 +29,6 @@ class Engine(object):
     """
     swagger_types = {
         'id': 'str',
-        'user_id': 'str',
         'machine_id': 'str',
         'capabilities': 'list[Capability]',
         'updated': 'datetime',
@@ -40,7 +39,6 @@ class Engine(object):
 
     attribute_map = {
         'id': '_id',
-        'user_id': 'userId',
         'machine_id': 'machineId',
         'capabilities': 'capabilities',
         'updated': 'updated',
@@ -49,10 +47,9 @@ class Engine(object):
         'links': 'links'
     }
 
-    def __init__(self, id=None, user_id=None, machine_id=None, capabilities=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
+    def __init__(self, id=None, machine_id=None, capabilities=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
         """Engine - a model defined in Swagger"""  # noqa: E501
         self._id = None
-        self._user_id = None
         self._machine_id = None
         self._capabilities = None
         self._updated = None
@@ -62,8 +59,6 @@ class Engine(object):
         self.discriminator = None
         if id is not None:
             self.id = id
-        if user_id is not None:
-            self.user_id = user_id
         if machine_id is not None:
             self.machine_id = machine_id
         if capabilities is not None:
@@ -97,27 +92,6 @@ class Engine(object):
         """
 
         self._id = id
-
-    @property
-    def user_id(self):
-        """Gets the user_id of this Engine.  # noqa: E501
-
-
-        :return: The user_id of this Engine.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_id
-
-    @user_id.setter
-    def user_id(self, user_id):
-        """Sets the user_id of this Engine.
-
-
-        :param user_id: The user_id of this Engine.  # noqa: E501
-        :type: str
-        """
-
-        self._user_id = user_id
 
     @property
     def machine_id(self):

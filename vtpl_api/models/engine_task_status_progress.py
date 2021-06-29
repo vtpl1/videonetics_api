@@ -30,20 +30,26 @@ class EngineTaskStatusProgress(object):
     swagger_types = {
         'percentage': 'float',
         'start_time_stamp': 'int',
-        'end_time_stamp': 'int'
+        'end_time_stamp': 'int',
+        'frame_number': 'int',
+        'live_url': 'str'
     }
 
     attribute_map = {
         'percentage': 'percentage',
         'start_time_stamp': 'startTimeStamp',
-        'end_time_stamp': 'endTimeStamp'
+        'end_time_stamp': 'endTimeStamp',
+        'frame_number': 'frameNumber',
+        'live_url': 'liveUrl'
     }
 
-    def __init__(self, percentage=0, start_time_stamp=None, end_time_stamp=None):  # noqa: E501
+    def __init__(self, percentage=0, start_time_stamp=None, end_time_stamp=None, frame_number=None, live_url=None):  # noqa: E501
         """EngineTaskStatusProgress - a model defined in Swagger"""  # noqa: E501
         self._percentage = None
         self._start_time_stamp = None
         self._end_time_stamp = None
+        self._frame_number = None
+        self._live_url = None
         self.discriminator = None
         if percentage is not None:
             self.percentage = percentage
@@ -51,6 +57,10 @@ class EngineTaskStatusProgress(object):
             self.start_time_stamp = start_time_stamp
         if end_time_stamp is not None:
             self.end_time_stamp = end_time_stamp
+        if frame_number is not None:
+            self.frame_number = frame_number
+        if live_url is not None:
+            self.live_url = live_url
 
     @property
     def percentage(self):
@@ -120,6 +130,48 @@ class EngineTaskStatusProgress(object):
         """
 
         self._end_time_stamp = end_time_stamp
+
+    @property
+    def frame_number(self):
+        """Gets the frame_number of this EngineTaskStatusProgress.  # noqa: E501
+
+
+        :return: The frame_number of this EngineTaskStatusProgress.  # noqa: E501
+        :rtype: int
+        """
+        return self._frame_number
+
+    @frame_number.setter
+    def frame_number(self, frame_number):
+        """Sets the frame_number of this EngineTaskStatusProgress.
+
+
+        :param frame_number: The frame_number of this EngineTaskStatusProgress.  # noqa: E501
+        :type: int
+        """
+
+        self._frame_number = frame_number
+
+    @property
+    def live_url(self):
+        """Gets the live_url of this EngineTaskStatusProgress.  # noqa: E501
+
+
+        :return: The live_url of this EngineTaskStatusProgress.  # noqa: E501
+        :rtype: str
+        """
+        return self._live_url
+
+    @live_url.setter
+    def live_url(self, live_url):
+        """Sets the live_url of this EngineTaskStatusProgress.
+
+
+        :param live_url: The live_url of this EngineTaskStatusProgress.  # noqa: E501
+        :type: str
+        """
+
+        self._live_url = live_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""
