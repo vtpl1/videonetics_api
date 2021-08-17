@@ -35,10 +35,24 @@ class TestEnginesApi(unittest.TestCase):
         """
         pass
 
+    def test_anpr_events_id_delete(self):
+        """Test case for anpr_events_id_delete
+
+        Delete an event  # noqa: E501
+        """
+        pass
+
     def test_anpr_events_id_get(self):
         """Test case for anpr_events_id_get
 
         Get anprEvent by id  # noqa: E501
+        """
+        pass
+
+    def test_anpr_events_id_patch(self):
+        """Test case for anpr_events_id_patch
+
+        Patch  # noqa: E501
         """
         pass
 
@@ -56,10 +70,24 @@ class TestEnginesApi(unittest.TestCase):
         """
         pass
 
+    def test_attribute_events_id_delete(self):
+        """Test case for attribute_events_id_delete
+
+        Delete an event  # noqa: E501
+        """
+        pass
+
     def test_attribute_events_id_get(self):
         """Test case for attribute_events_id_get
 
         Get attributeEvent by id  # noqa: E501
+        """
+        pass
+
+    def test_attribute_events_id_patch(self):
+        """Test case for attribute_events_id_patch
+
+        Patch  # noqa: E501
         """
         pass
 
@@ -88,6 +116,13 @@ class TestEnginesApi(unittest.TestCase):
         """Test case for clips_post
 
         Create an unprocesed clip  # noqa: E501
+        """
+        pass
+
+    def test_engine_task_status_cumulative_get(self):
+        """Test case for engine_task_status_cumulative_get
+
+        Get task status response  # noqa: E501
         """
         pass
 

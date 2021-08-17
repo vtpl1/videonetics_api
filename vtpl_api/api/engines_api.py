@@ -43,6 +43,7 @@ class EnginesApi(object):
 
         :param async_req bool
         :param str where: The where clause takes a JSON as a string with one or many properties of the anprEvent model. Example:   * To find anprEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /anprEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find anprEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /anprEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /anprEvents?page=4
         :param str sort: The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort anprEvents by startTimeStamp in eventDetails IN ASCEDING order, use /anprEvents?sort=eventDetails.startTimeStamp   * To sort anprEvents by startTimeStamp in eventDetails IN DECENDING order, use /anprEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING
         :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest anprEvent among whole anprEvents, use /anprEvents?maxResults=1   * To limit anprEvents to 5, use /anprEvents?maxResults=5
         :param str embedded: The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find anprEvents with eventSnap object. use /anprEvents?embedded={\"eventSnaps\":1}'
@@ -68,6 +69,7 @@ class EnginesApi(object):
 
         :param async_req bool
         :param str where: The where clause takes a JSON as a string with one or many properties of the anprEvent model. Example:   * To find anprEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /anprEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find anprEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /anprEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /anprEvents?page=4
         :param str sort: The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort anprEvents by startTimeStamp in eventDetails IN ASCEDING order, use /anprEvents?sort=eventDetails.startTimeStamp   * To sort anprEvents by startTimeStamp in eventDetails IN DECENDING order, use /anprEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING
         :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest anprEvent among whole anprEvents, use /anprEvents?maxResults=1   * To limit anprEvents to 5, use /anprEvents?maxResults=5
         :param str embedded: The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find anprEvents with eventSnap object. use /anprEvents?embedded={\"eventSnaps\":1}'
@@ -76,7 +78,7 @@ class EnginesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['where', 'sort', 'max_results', 'embedded']  # noqa: E501
+        all_params = ['where', 'page', 'sort', 'max_results', 'embedded']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -99,6 +101,8 @@ class EnginesApi(object):
         query_params = []
         if 'where' in params:
             query_params.append(('where', params['where']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
         if 'sort' in params:
             query_params.append(('sort', params['sort']))  # noqa: E501
         if 'max_results' in params:
@@ -128,6 +132,105 @@ class EnginesApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='AnprEventsResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def anpr_events_id_delete(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an event  # noqa: E501
+
+        Delete an anprEvent  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.anpr_events_id_delete(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.anpr_events_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+        else:
+            (data) = self.anpr_events_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+            return data
+
+    def anpr_events_id_delete_with_http_info(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an event  # noqa: E501
+
+        Delete an anprEvent  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.anpr_events_id_delete_with_http_info(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'if_match']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method anpr_events_id_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `anpr_events_id_delete`")  # noqa: E501
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `anpr_events_id_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/anprEvents/{id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -227,6 +330,117 @@ class EnginesApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='AnprEvent',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def anpr_events_id_patch(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch  # noqa: E501
+
+        Patch  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.anpr_events_id_patch(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param AnprEvent body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.anpr_events_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.anpr_events_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+            return data
+
+    def anpr_events_id_patch_with_http_info(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch  # noqa: E501
+
+        Patch  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.anpr_events_id_patch_with_http_info(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param AnprEvent body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['if_match', 'id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method anpr_events_id_patch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `anpr_events_id_patch`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `anpr_events_id_patch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/anprEvents/{id}', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -340,6 +554,7 @@ class EnginesApi(object):
 
         :param async_req bool
         :param str where: The where clause takes a JSON as a string with one or many properties of the attributeEvent model. Example:   * To find attributeEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /attributeEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find attributeEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /attributeEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /attributeEvents?page=4
         :param str sort: The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort attributeEvents by startTimeStamp in eventDetails IN ASCEDING order, use /attributeEvents?sort=eventDetails.startTimeStamp   * To sort attributeEvents by startTimeStamp in eventDetails IN DECENDING order, use /attributeEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING
         :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest attributeEvent among whole attributeEvents, use /attributeEvents?maxResults=1   * To limit attributeEvents to 5, use /attributeEvents?maxResults=5
         :param str embedded: The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find attributeEvents with eventSnap object. use /attributeEvents?embedded={\"eventSnaps\":1}'
@@ -365,6 +580,7 @@ class EnginesApi(object):
 
         :param async_req bool
         :param str where: The where clause takes a JSON as a string with one or many properties of the attributeEvent model. Example:   * To find attributeEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /attributeEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find attributeEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /attributeEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /attributeEvents?page=4
         :param str sort: The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort attributeEvents by startTimeStamp in eventDetails IN ASCEDING order, use /attributeEvents?sort=eventDetails.startTimeStamp   * To sort attributeEvents by startTimeStamp in eventDetails IN DECENDING order, use /attributeEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING
         :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest attributeEvent among whole attributeEvents, use /attributeEvents?maxResults=1   * To limit attributeEvents to 5, use /attributeEvents?maxResults=5
         :param str embedded: The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find attributeEvents with eventSnap object. use /attributeEvents?embedded={\"eventSnaps\":1}'
@@ -373,7 +589,7 @@ class EnginesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['where', 'sort', 'max_results', 'embedded']  # noqa: E501
+        all_params = ['where', 'page', 'sort', 'max_results', 'embedded']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -396,6 +612,8 @@ class EnginesApi(object):
         query_params = []
         if 'where' in params:
             query_params.append(('where', params['where']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
         if 'sort' in params:
             query_params.append(('sort', params['sort']))  # noqa: E501
         if 'max_results' in params:
@@ -425,6 +643,105 @@ class EnginesApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='AttributeEventsResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def attribute_events_id_delete(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an event  # noqa: E501
+
+        Delete an attributeEvent  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.attribute_events_id_delete(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.attribute_events_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+        else:
+            (data) = self.attribute_events_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+            return data
+
+    def attribute_events_id_delete_with_http_info(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an event  # noqa: E501
+
+        Delete an attributeEvent  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.attribute_events_id_delete_with_http_info(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'if_match']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method attribute_events_id_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `attribute_events_id_delete`")  # noqa: E501
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `attribute_events_id_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/attributeEvents/{id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -524,6 +841,117 @@ class EnginesApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='AttributeEvent',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def attribute_events_id_patch(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch  # noqa: E501
+
+        Patch  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.attribute_events_id_patch(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param AttributeEvent body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.attribute_events_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.attribute_events_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+            return data
+
+    def attribute_events_id_patch_with_http_info(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch  # noqa: E501
+
+        Patch  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.attribute_events_id_patch_with_http_info(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param AttributeEvent body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['if_match', 'id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method attribute_events_id_patch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `attribute_events_id_patch`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `attribute_events_id_patch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/attributeEvents/{id}', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -896,6 +1324,93 @@ class EnginesApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def engine_task_status_cumulative_get(self, **kwargs):  # noqa: E501
+        """Get task status response  # noqa: E501
+
+        Get task status response  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.engine_task_status_cumulative_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: EngineTaskStatusCumulative
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.engine_task_status_cumulative_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.engine_task_status_cumulative_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def engine_task_status_cumulative_get_with_http_info(self, **kwargs):  # noqa: E501
+        """Get task status response  # noqa: E501
+
+        Get task status response  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.engine_task_status_cumulative_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: EngineTaskStatusCumulative
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method engine_task_status_cumulative_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/engineTaskStatusCumulative', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='EngineTaskStatusCumulative',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -5496,7 +6011,7 @@ class EnginesApi(object):
 
         :param async_req bool
         :param str where: The where clause takes a JSON as a string with one or many properties of the vaEvent model. Example:   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"}
-        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page=4
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /vaEvents?page=4
         :param str sort: The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort vaEvents by startTimeStamp in eventDetails IN ASCEDING order, use /vaEvents?sort=eventDetails.startTimeStamp   * To sort vaEvents by startTimeStamp in eventDetails IN DECENDING order, use /vaEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING
         :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest vaEvent among whole vaEvents, use /vaEvents?maxResults=1   * To limit vaEvents to 5, use /vaEvents?maxResults=5
         :param str embedded: The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find vaEvents with eventSnap object. use /vaEvents?embedded={\"eventSnaps\":1}'
@@ -5522,7 +6037,7 @@ class EnginesApi(object):
 
         :param async_req bool
         :param str where: The where clause takes a JSON as a string with one or many properties of the vaEvent model. Example:   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"}
-        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page=4
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /vaEvents?page=4
         :param str sort: The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort vaEvents by startTimeStamp in eventDetails IN ASCEDING order, use /vaEvents?sort=eventDetails.startTimeStamp   * To sort vaEvents by startTimeStamp in eventDetails IN DECENDING order, use /vaEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING
         :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest vaEvent among whole vaEvents, use /vaEvents?maxResults=1   * To limit vaEvents to 5, use /vaEvents?maxResults=5
         :param str embedded: The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find vaEvents with eventSnap object. use /vaEvents?embedded={\"eventSnaps\":1}'
@@ -5595,7 +6110,7 @@ class EnginesApi(object):
     def va_events_id_delete(self, id, if_match, **kwargs):  # noqa: E501
         """Delete an event  # noqa: E501
 
-        Delete an pipeline  # noqa: E501
+        Delete an vaEvent  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.va_events_id_delete(id, if_match, async_req=True)
@@ -5618,7 +6133,7 @@ class EnginesApi(object):
     def va_events_id_delete_with_http_info(self, id, if_match, **kwargs):  # noqa: E501
         """Delete an event  # noqa: E501
 
-        Delete an pipeline  # noqa: E501
+        Delete an vaEvent  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.va_events_id_delete_with_http_info(id, if_match, async_req=True)
@@ -5802,7 +6317,7 @@ class EnginesApi(object):
         :param async_req bool
         :param str if_match: (required)
         :param str id: Unique ID (required)
-        :param Pipeline body:
+        :param VaEvent body:
         :return: DefaultResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5826,7 +6341,7 @@ class EnginesApi(object):
         :param async_req bool
         :param str if_match: (required)
         :param str id: Unique ID (required)
-        :param Pipeline body:
+        :param VaEvent body:
         :return: DefaultResponse
                  If the method is called asynchronously,
                  returns the request thread.

@@ -58,16 +58,32 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the anprEvent model. Example:   * To find anprEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /anprEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find anprEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /anprEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /anprEvents?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort anprEvents by startTimeStamp in eventDetails IN ASCEDING order, use /anprEvents?sort=eventDetails.startTimeStamp   * To sort anprEvents by startTimeStamp in eventDetails IN DECENDING order, use /anprEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING (optional)
 max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest anprEvent among whole anprEvents, use /anprEvents?maxResults=1   * To limit anprEvents to 5, use /anprEvents?maxResults=5 (optional)
 embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find anprEvents with eventSnap object. use /anprEvents?embedded={\"eventSnaps\":1}' (optional)
 
 try:
     # Get all anprEvents
-    api_response = api_instance.anpr_events_get(where=where, sort=sort, max_results=max_results, embedded=embedded)
+    api_response = api_instance.anpr_events_get(where=where, page=page, sort=sort, max_results=max_results, embedded=embedded)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->anpr_events_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an event
+    api_instance.anpr_events_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->anpr_events_id_delete: %s\n" % e)
 # Configure HTTP basic authorization: basicAuth
 configuration = vtpl_api.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -91,6 +107,23 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.AnprEvent() # AnprEvent |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.anpr_events_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->anpr_events_id_patch: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 body = vtpl_api.AnprEvent() # AnprEvent |  (optional)
 
 try:
@@ -107,16 +140,32 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the attributeEvent model. Example:   * To find attributeEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /attributeEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find attributeEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /attributeEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /attributeEvents?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort attributeEvents by startTimeStamp in eventDetails IN ASCEDING order, use /attributeEvents?sort=eventDetails.startTimeStamp   * To sort attributeEvents by startTimeStamp in eventDetails IN DECENDING order, use /attributeEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING (optional)
 max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest attributeEvent among whole attributeEvents, use /attributeEvents?maxResults=1   * To limit attributeEvents to 5, use /attributeEvents?maxResults=5 (optional)
 embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find attributeEvents with eventSnap object. use /attributeEvents?embedded={\"eventSnaps\":1}' (optional)
 
 try:
     # Get all attributeEvents
-    api_response = api_instance.attribute_events_get(where=where, sort=sort, max_results=max_results, embedded=embedded)
+    api_response = api_instance.attribute_events_get(where=where, page=page, sort=sort, max_results=max_results, embedded=embedded)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->attribute_events_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an event
+    api_instance.attribute_events_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->attribute_events_id_delete: %s\n" % e)
 # Configure HTTP basic authorization: basicAuth
 configuration = vtpl_api.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -133,6 +182,23 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->attribute_events_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.AttributeEvent() # AttributeEvent |  (optional)
+
+try:
+    # Patch
+    api_response = api_instance.attribute_events_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->attribute_events_id_patch: %s\n" % e)
 # Configure HTTP basic authorization: basicAuth
 configuration = vtpl_api.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -192,6 +258,20 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EnginesApi->clips_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+
+try:
+    # Get task status response
+    api_response = api_instance.engine_task_status_cumulative_get()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->engine_task_status_cumulative_get: %s\n" % e)
 # Configure HTTP basic authorization: basicAuth
 configuration = vtpl_api.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -929,7 +1009,7 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the vaEvent model. Example:   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"} (optional)
-page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page=4 (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /vaEvents?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort vaEvents by startTimeStamp in eventDetails IN ASCEDING order, use /vaEvents?sort=eventDetails.startTimeStamp   * To sort vaEvents by startTimeStamp in eventDetails IN DECENDING order, use /vaEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING (optional)
 max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest vaEvent among whole vaEvents, use /vaEvents?maxResults=1   * To limit vaEvents to 5, use /vaEvents?maxResults=5 (optional)
 embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find vaEvents with eventSnap object. use /vaEvents?embedded={\"eventSnaps\":1}' (optional)
@@ -980,7 +1060,7 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.Pipeline() # Pipeline |  (optional)
+body = vtpl_api.VaEvent() # VaEvent |  (optional)
 
 try:
     # Patch
@@ -1012,14 +1092,19 @@ All URIs are relative to *http://v2.videonetics.com:5000*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EnginesApi* | [**anpr_events_get**](docs/EnginesApi.md#anpr_events_get) | **GET** /anprEvents | Get all anprEvents
+*EnginesApi* | [**anpr_events_id_delete**](docs/EnginesApi.md#anpr_events_id_delete) | **DELETE** /anprEvents/{id} | Delete an event
 *EnginesApi* | [**anpr_events_id_get**](docs/EnginesApi.md#anpr_events_id_get) | **GET** /anprEvents/{id} | Get anprEvent by id
+*EnginesApi* | [**anpr_events_id_patch**](docs/EnginesApi.md#anpr_events_id_patch) | **PATCH** /anprEvents/{id} | Patch
 *EnginesApi* | [**anpr_events_post**](docs/EnginesApi.md#anpr_events_post) | **POST** /anprEvents | Create an anprEvent
 *EnginesApi* | [**attribute_events_get**](docs/EnginesApi.md#attribute_events_get) | **GET** /attributeEvents | Get all attributeEvents
+*EnginesApi* | [**attribute_events_id_delete**](docs/EnginesApi.md#attribute_events_id_delete) | **DELETE** /attributeEvents/{id} | Delete an event
 *EnginesApi* | [**attribute_events_id_get**](docs/EnginesApi.md#attribute_events_id_get) | **GET** /attributeEvents/{id} | Get attributeEvent by id
+*EnginesApi* | [**attribute_events_id_patch**](docs/EnginesApi.md#attribute_events_id_patch) | **PATCH** /attributeEvents/{id} | Patch
 *EnginesApi* | [**attribute_events_post**](docs/EnginesApi.md#attribute_events_post) | **POST** /attributeEvents | Create an attributeEvent
 *EnginesApi* | [**clips_get**](docs/EnginesApi.md#clips_get) | **GET** /clips | Get all unprocesed clips
 *EnginesApi* | [**clips_id_get**](docs/EnginesApi.md#clips_id_get) | **GET** /clips/{id} | Get clip by id
 *EnginesApi* | [**clips_post**](docs/EnginesApi.md#clips_post) | **POST** /clips | Create an unprocesed clip
+*EnginesApi* | [**engine_task_status_cumulative_get**](docs/EnginesApi.md#engine_task_status_cumulative_get) | **GET** /engineTaskStatusCumulative | Get task status response
 *EnginesApi* | [**engine_task_status_get**](docs/EnginesApi.md#engine_task_status_get) | **GET** /engineTaskStatus | Get all engineTaskStatus
 *EnginesApi* | [**engine_task_status_id_delete**](docs/EnginesApi.md#engine_task_status_id_delete) | **DELETE** /engineTaskStatus/{id} | Delete an engineTaskStatus
 *EnginesApi* | [**engine_task_status_id_get**](docs/EnginesApi.md#engine_task_status_id_get) | **GET** /engineTaskStatus/{id} | Get engineTaskStatus by id
@@ -1092,6 +1177,7 @@ Class | Method | HTTP request | Description
  - [EngineTask](docs/EngineTask.md)
  - [EngineTaskLineSetting](docs/EngineTaskLineSetting.md)
  - [EngineTaskStatus](docs/EngineTaskStatus.md)
+ - [EngineTaskStatusCumulative](docs/EngineTaskStatusCumulative.md)
  - [EngineTaskStatusFailure](docs/EngineTaskStatusFailure.md)
  - [EngineTaskStatusProgress](docs/EngineTaskStatusProgress.md)
  - [EngineTaskStatusResponse](docs/EngineTaskStatusResponse.md)

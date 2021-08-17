@@ -32,6 +32,7 @@ from vtpl_api.models.engine import Engine
 from vtpl_api.models.engine_task import EngineTask
 from vtpl_api.models.engine_task_line_setting import EngineTaskLineSetting
 from vtpl_api.models.engine_task_status import EngineTaskStatus
+from vtpl_api.models.engine_task_status_cumulative import EngineTaskStatusCumulative
 from vtpl_api.models.engine_task_status_failure import EngineTaskStatusFailure
 from vtpl_api.models.engine_task_status_progress import EngineTaskStatusProgress
 from vtpl_api.models.engine_task_status_response import EngineTaskStatusResponse
