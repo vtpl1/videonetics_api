@@ -17,12 +17,14 @@ from vtpl_api.models.engine_task_status_progress import \
     EngineTaskStatusProgress
 from vtpl_api.models.event_details import EventDetails
 from vtpl_api.models.meta_va_event import MetaVaEvent
+from vtpl_api.models.meta_attribute_event import MetaAttributeEvent
 from vtpl_api.models.snap import Snap
 from vtpl_api.models.source_end_point import SourceEndPoint
 from vtpl_api.models.source_end_point_source_list import \
     SourceEndPointSourceList
 from vtpl_api.models.source_type import SourceType
 from vtpl_api.models.va_event import VaEvent
+from vtpl_api.models.attribute_event import AttributeEvent
 from vtpl_api.rest import ApiException
 
 # LOGGER.addHandler(logging.StreamHandler())
@@ -236,7 +238,7 @@ class DeeperLookApi:
             logging.error("event_snaps_post returned None")
             return False
 
-        try:
+        try:            
             api_response = self.__api.va_events_post(body=VaEvent(meta_va_event=MetaVaEvent(count=1), capbilities_type=capbilities_type, event_details=EventDetails(
                 engine_task_id=job_id, start_time_stamp=start_time_stamp, end_time_stamp=end_time_stamp),
                 event_snaps=[api_response.id], event_clips=[]))
@@ -251,6 +253,41 @@ class DeeperLookApi:
 
         return ret
 
+    def send_attribute_event(self, job_id, start_time_stamp,  end_time_stamp, jpeg_image_bytes: bytes, event_data) -> bool:
+        capbilities_type = 201
+        assert jpeg_image_bytes is not None
+        image_name = "dog.jpg"
+        snap_url = self.upload_image(jpeg_image_bytes, image_name)
+        ret = False
+        api_response = None
+        if snap_url is None:
+            logging.error("Snap url is None")
+            return False
+
+        try:
+            api_response = self.__api.event_snaps_post(body=Snap(snap=snap_url, snap_id=image_name))
+        except ApiException as e:
+            logging.error("Exception when calling EnginesApi->engine_tasks_id_get: %s\n" % e)
+        except urllib3.exceptions.MaxRetryError as e:
+            logging.error("Exception when calling EnginesApi->engine_tasks_id_get: %s\n" % type(e))
+        if api_response is None:
+            logging.error("event_snaps_post returned None")
+            return False
+
+        try:            
+            api_response = self.__api.attribute_events_post(body=AttributeEvent(meta_va_event=MetaAttributeEvent(), capbilities_type=capbilities_type, event_details=EventDetails(
+                engine_task_id=job_id, start_time_stamp=start_time_stamp, end_time_stamp=end_time_stamp),
+                event_snaps=[api_response.id], event_clips=[]))
+            ret = True
+        except ApiException as e:
+            logging.error("Exception when calling EnginesApi->engine_tasks_id_get: %s\n" % e)
+        except urllib3.exceptions.MaxRetryError as e:
+            logging.error("Exception when calling EnginesApi->engine_tasks_id_get: %s\n" % type(e))
+        if api_response is None:
+            logging.error("va_events_post returned None")
+            return False
+
+        return ret
 
 class DeeperLookTaskSubmitterApi:
     def __init__(self) -> None:
