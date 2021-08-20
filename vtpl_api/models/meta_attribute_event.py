@@ -28,6 +28,7 @@ class MetaAttributeEvent(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'object_type': 'int',
         'estimated_height': 'int',
         'top_type': 'str',
         'top_color': 'str',
@@ -39,10 +40,14 @@ class MetaAttributeEvent(object):
         'clothing_pattern': 'str',
         'presence_of_heade_dress': 'bool',
         'type_of_head_dress': 'str',
-        'associated_object': 'str'
+        'associated_object': 'str',
+        'presence_of_long_sleeve': 'bool',
+        'vehicle_type': 'str',
+        'vehicle_color': 'str'
     }
 
     attribute_map = {
+        'object_type': 'objectType',
         'estimated_height': 'estimatedHeight',
         'top_type': 'topType',
         'top_color': 'topColor',
@@ -54,11 +59,15 @@ class MetaAttributeEvent(object):
         'clothing_pattern': 'clothingPattern',
         'presence_of_heade_dress': 'presenceOfHeadeDress',
         'type_of_head_dress': 'typeOfHeadDress',
-        'associated_object': 'associatedObject'
+        'associated_object': 'associatedObject',
+        'presence_of_long_sleeve': 'presenceOfLongSleeve',
+        'vehicle_type': 'vehicleType',
+        'vehicle_color': 'vehicleColor'
     }
 
-    def __init__(self, estimated_height=0, top_type=None, top_color=None, bottom_type=None, bottom_color=None, sex=None, presence_of_bag=None, type_of_bag=None, clothing_pattern=None, presence_of_heade_dress=None, type_of_head_dress=None, associated_object=None):  # noqa: E501
+    def __init__(self, object_type=0, estimated_height=0, top_type=None, top_color=None, bottom_type=None, bottom_color=None, sex=None, presence_of_bag=None, type_of_bag=None, clothing_pattern=None, presence_of_heade_dress=None, type_of_head_dress=None, associated_object=None, presence_of_long_sleeve=None, vehicle_type=None, vehicle_color=None):  # noqa: E501
         """MetaAttributeEvent - a model defined in Swagger"""  # noqa: E501
+        self._object_type = None
         self._estimated_height = None
         self._top_type = None
         self._top_color = None
@@ -71,7 +80,12 @@ class MetaAttributeEvent(object):
         self._presence_of_heade_dress = None
         self._type_of_head_dress = None
         self._associated_object = None
+        self._presence_of_long_sleeve = None
+        self._vehicle_type = None
+        self._vehicle_color = None
         self.discriminator = None
+        if object_type is not None:
+            self.object_type = object_type
         if estimated_height is not None:
             self.estimated_height = estimated_height
         if top_type is not None:
@@ -96,6 +110,33 @@ class MetaAttributeEvent(object):
             self.type_of_head_dress = type_of_head_dress
         if associated_object is not None:
             self.associated_object = associated_object
+        if presence_of_long_sleeve is not None:
+            self.presence_of_long_sleeve = presence_of_long_sleeve
+        if vehicle_type is not None:
+            self.vehicle_type = vehicle_type
+        if vehicle_color is not None:
+            self.vehicle_color = vehicle_color
+
+    @property
+    def object_type(self):
+        """Gets the object_type of this MetaAttributeEvent.  # noqa: E501
+
+
+        :return: The object_type of this MetaAttributeEvent.  # noqa: E501
+        :rtype: int
+        """
+        return self._object_type
+
+    @object_type.setter
+    def object_type(self, object_type):
+        """Sets the object_type of this MetaAttributeEvent.
+
+
+        :param object_type: The object_type of this MetaAttributeEvent.  # noqa: E501
+        :type: int
+        """
+
+        self._object_type = object_type
 
     @property
     def estimated_height(self):
@@ -348,6 +389,69 @@ class MetaAttributeEvent(object):
         """
 
         self._associated_object = associated_object
+
+    @property
+    def presence_of_long_sleeve(self):
+        """Gets the presence_of_long_sleeve of this MetaAttributeEvent.  # noqa: E501
+
+
+        :return: The presence_of_long_sleeve of this MetaAttributeEvent.  # noqa: E501
+        :rtype: bool
+        """
+        return self._presence_of_long_sleeve
+
+    @presence_of_long_sleeve.setter
+    def presence_of_long_sleeve(self, presence_of_long_sleeve):
+        """Sets the presence_of_long_sleeve of this MetaAttributeEvent.
+
+
+        :param presence_of_long_sleeve: The presence_of_long_sleeve of this MetaAttributeEvent.  # noqa: E501
+        :type: bool
+        """
+
+        self._presence_of_long_sleeve = presence_of_long_sleeve
+
+    @property
+    def vehicle_type(self):
+        """Gets the vehicle_type of this MetaAttributeEvent.  # noqa: E501
+
+
+        :return: The vehicle_type of this MetaAttributeEvent.  # noqa: E501
+        :rtype: str
+        """
+        return self._vehicle_type
+
+    @vehicle_type.setter
+    def vehicle_type(self, vehicle_type):
+        """Sets the vehicle_type of this MetaAttributeEvent.
+
+
+        :param vehicle_type: The vehicle_type of this MetaAttributeEvent.  # noqa: E501
+        :type: str
+        """
+
+        self._vehicle_type = vehicle_type
+
+    @property
+    def vehicle_color(self):
+        """Gets the vehicle_color of this MetaAttributeEvent.  # noqa: E501
+
+
+        :return: The vehicle_color of this MetaAttributeEvent.  # noqa: E501
+        :rtype: str
+        """
+        return self._vehicle_color
+
+    @vehicle_color.setter
+    def vehicle_color(self, vehicle_color):
+        """Sets the vehicle_color of this MetaAttributeEvent.
+
+
+        :param vehicle_color: The vehicle_color of this MetaAttributeEvent.  # noqa: E501
+        :type: str
+        """
+
+        self._vehicle_color = vehicle_color
 
     def to_dict(self):
         """Returns the model properties as a dict"""
