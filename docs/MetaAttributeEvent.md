@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**object_type** | **int** |  | [optional] [default to 0]
+**object_type** | **str** |  | [optional] 
 **estimated_height** | **int** |  | [optional] [default to 0]
 **top_type** | **str** |  | [optional] 
 **top_color** | **str** |  | [optional] 

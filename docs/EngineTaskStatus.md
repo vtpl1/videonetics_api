@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **engine_task_id** | **str** |  | [optional] 
+**media_url** | **str** |  | [optional] 
 **progress** | [**EngineTaskStatusProgress**](EngineTaskStatusProgress.md) |  | [optional] 
 **failure** | [**EngineTaskStatusFailure**](EngineTaskStatusFailure.md) |  | [optional] 
 **updated** | **datetime** |  | [optional] 

@@ -30,6 +30,7 @@ class EngineTaskStatus(object):
     swagger_types = {
         'id': 'str',
         'engine_task_id': 'str',
+        'media_url': 'str',
         'progress': 'EngineTaskStatusProgress',
         'failure': 'EngineTaskStatusFailure',
         'updated': 'datetime',
@@ -41,6 +42,7 @@ class EngineTaskStatus(object):
     attribute_map = {
         'id': '_id',
         'engine_task_id': 'engineTaskId',
+        'media_url': 'mediaUrl',
         'progress': 'progress',
         'failure': 'failure',
         'updated': 'updated',
@@ -49,10 +51,11 @@ class EngineTaskStatus(object):
         'links': 'links'
     }
 
-    def __init__(self, id=None, engine_task_id=None, progress=None, failure=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
+    def __init__(self, id=None, engine_task_id=None, media_url=None, progress=None, failure=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
         """EngineTaskStatus - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._engine_task_id = None
+        self._media_url = None
         self._progress = None
         self._failure = None
         self._updated = None
@@ -64,6 +67,8 @@ class EngineTaskStatus(object):
             self.id = id
         if engine_task_id is not None:
             self.engine_task_id = engine_task_id
+        if media_url is not None:
+            self.media_url = media_url
         if progress is not None:
             self.progress = progress
         if failure is not None:
@@ -118,6 +123,27 @@ class EngineTaskStatus(object):
         """
 
         self._engine_task_id = engine_task_id
+
+    @property
+    def media_url(self):
+        """Gets the media_url of this EngineTaskStatus.  # noqa: E501
+
+
+        :return: The media_url of this EngineTaskStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._media_url
+
+    @media_url.setter
+    def media_url(self, media_url):
+        """Sets the media_url of this EngineTaskStatus.
+
+
+        :param media_url: The media_url of this EngineTaskStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._media_url = media_url
 
     @property
     def progress(self):

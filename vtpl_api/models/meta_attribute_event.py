@@ -28,7 +28,7 @@ class MetaAttributeEvent(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'object_type': 'int',
+        'object_type': 'str',
         'estimated_height': 'int',
         'top_type': 'str',
         'top_color': 'str',
@@ -65,7 +65,7 @@ class MetaAttributeEvent(object):
         'vehicle_color': 'vehicleColor'
     }
 
-    def __init__(self, object_type=0, estimated_height=0, top_type=None, top_color=None, bottom_type=None, bottom_color=None, sex=None, presence_of_bag=None, type_of_bag=None, clothing_pattern=None, presence_of_heade_dress=None, type_of_head_dress=None, associated_object=None, presence_of_long_sleeve=None, vehicle_type=None, vehicle_color=None):  # noqa: E501
+    def __init__(self, object_type=None, estimated_height=0, top_type=None, top_color=None, bottom_type=None, bottom_color=None, sex=None, presence_of_bag=None, type_of_bag=None, clothing_pattern=None, presence_of_heade_dress=None, type_of_head_dress=None, associated_object=None, presence_of_long_sleeve=None, vehicle_type=None, vehicle_color=None):  # noqa: E501
         """MetaAttributeEvent - a model defined in Swagger"""  # noqa: E501
         self._object_type = None
         self._estimated_height = None
@@ -123,7 +123,7 @@ class MetaAttributeEvent(object):
 
 
         :return: The object_type of this MetaAttributeEvent.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._object_type
 
@@ -133,7 +133,7 @@ class MetaAttributeEvent(object):
 
 
         :param object_type: The object_type of this MetaAttributeEvent.  # noqa: E501
-        :type: int
+        :type: str
         """
 
         self._object_type = object_type
