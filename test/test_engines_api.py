@@ -427,6 +427,76 @@ class TestEnginesApi(unittest.TestCase):
         """
         pass
 
+    def test_precis_engine_task_status_get(self):
+        """Test case for precis_engine_task_status_get
+
+        Get all precisEngineTaskStatus  # noqa: E501
+        """
+        pass
+
+    def test_precis_engine_task_status_id_delete(self):
+        """Test case for precis_engine_task_status_id_delete
+
+        Delete an precisEngineTaskStatus  # noqa: E501
+        """
+        pass
+
+    def test_precis_engine_task_status_id_get(self):
+        """Test case for precis_engine_task_status_id_get
+
+        Get precisEngineTaskStatus by id  # noqa: E501
+        """
+        pass
+
+    def test_precis_engine_task_status_id_patch(self):
+        """Test case for precis_engine_task_status_id_patch
+
+        Patch an precisEngineTaskStatus  # noqa: E501
+        """
+        pass
+
+    def test_precis_engine_task_status_post(self):
+        """Test case for precis_engine_task_status_post
+
+        Create an precisEngineTaskStatus  # noqa: E501
+        """
+        pass
+
+    def test_precis_engine_tasks_get(self):
+        """Test case for precis_engine_tasks_get
+
+        Get all precisEngineTasks  # noqa: E501
+        """
+        pass
+
+    def test_precis_engine_tasks_id_delete(self):
+        """Test case for precis_engine_tasks_id_delete
+
+        Delete an precis engine task  # noqa: E501
+        """
+        pass
+
+    def test_precis_engine_tasks_id_get(self):
+        """Test case for precis_engine_tasks_id_get
+
+        Get precis engine task by id  # noqa: E501
+        """
+        pass
+
+    def test_precis_engine_tasks_id_patch(self):
+        """Test case for precis_engine_tasks_id_patch
+
+        Patch an precis engine task  # noqa: E501
+        """
+        pass
+
+    def test_precis_engine_tasks_post(self):
+        """Test case for precis_engine_tasks_post
+
+        Create an precisEngineTasks  # noqa: E501
+        """
+        pass
+
     def test_snaps_get(self):
         """Test case for snaps_get
 

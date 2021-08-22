@@ -12,6 +12,8 @@ from vtpl_api.configuration import Configuration
 from vtpl_api.models import engine_task, engine_task_status_failure
 from vtpl_api.models.engine_task import EngineTask
 from vtpl_api.models.engine_task_status import EngineTaskStatus
+from vtpl_api.models.precis_engine_task import PrecisEngineTask
+from vtpl_api.models.precis_engine_task_status import PrecisEngineTaskStatus
 from vtpl_api.models.engine_task_status_failure import EngineTaskStatusFailure
 from vtpl_api.models.engine_task_status_progress import \
     EngineTaskStatusProgress
@@ -36,6 +38,8 @@ class DeeperLookApi:
         api_host = f"{host_name}:5000"
         config = Configuration()
         config.host = api_host
+        config.username = "dhiraj"
+        config.password = "dhiraj"
         self.vs3_host = f"{host_name}:9983"
         self.__api = EnginesApi(api_client=ApiClient(config))
 
@@ -289,6 +293,190 @@ class DeeperLookApi:
 
         return ret
 
+
+    def upload_fsbq(self, video_file_path: str, video_name: str) -> Tuple[str, str]:
+        content_type = "application/x-fsbq"
+        bucket_name = "deeperlook3"
+        key_name = "dd-aa"
+        api_url = f"{self.vs3_host}/api/vs3/test"
+        ret = (None, None)
+        try:
+            files = {"file": (video_name, open(video_file_path, 'rb'), content_type)}
+            payload = {"Bucket": bucket_name, "Key": key_name, "ContentType": content_type}
+            r = requests.request(method="POST", url=api_url, data=payload, files=files)
+            logging.info(f"upload_fsbq, status: {r.status_code}, text: {r.text}")
+
+            if r.status_code == 201 or r.status_code == 200:
+                json_response = r.json()
+                logging.info(json_response)
+                ret1 = json_response["items"][0]["Location"]
+                ret = (ret1, f"{self.vs3_host}{ret1}")
+        except requests.exceptions.ConnectionError:
+            logging.error("upload_fsbq connection error")
+        return ret
+
+    def get_precis_jobs(self, my_id) -> List[PrecisEngineTask]:
+        capabilties = [267]
+        assert my_id is not None
+        items = []
+        try:
+            # Get all engineTasks
+            # where={"$or": [ { "$and": [{"capbilitiesType": { "$in": [201, 207] } }, {"engineMachineId": { "$exists": false } }] }, {"engineMachineId": "monotosh"} ]}
+            # where={"$and": [{"$or": [ { "$and": [{"capbilitiesType": { "$in": [201, 207] } }, {"engineMachineId": { "$exists": false } }] }, {"engineMachineId": "monotosh"} ]}, { "isExpired": false }]}
+            # &sort=[('created', -1)]
+            # &maxResults=1
+
+            where = {
+                "$and": [
+                    {
+                        "$or": [
+                            {
+                                "$and": [
+                                    {"capbilitiesType": {"$in": capabilties}},
+                                    {"engineMachineId": {"$exists": False}},
+                                ]
+                            },
+                            {"engineMachineId": my_id},
+                        ]
+                    },
+                    {"isExpired": False},
+                ]
+            }
+            logging.info(f"The where clause: {json.dumps(where)}")
+            sort = [("created", -1)]
+            max_results = 1
+            api_response = self.__api.precis_engine_tasks_get(
+                where=json.dumps(where),
+                sort=json.dumps(sort),
+                max_results=json.dumps(max_results),
+            )
+            assert len(api_response.items) <= 1
+            items = api_response.items
+        except ApiException as e:
+            logging.error("Exception when calling EnginesApi->precis_engine_tasks_get: %s\n" % e)
+        except urllib3.exceptions.MaxRetryError as e:
+            logging.error("Monotosh Exception when calling EnginesApi->precis_engine_tasks_get: %s\n" % type(e))
+        return items
+
+    def flag_precis_start_job(self, job_id: str, my_id: str) -> bool:
+        assert job_id is not None
+        assert len(job_id) > 0
+
+        assert my_id is not None
+        assert len(my_id) > 0
+        ret = False
+        etag = None
+
+        try:
+            api_response = self.__api.precis_engine_tasks_id_get(job_id)
+            assert api_response.id == job_id
+            etag = api_response.etag
+            # logging.info(api_response)
+
+        except ApiException as e:
+            logging.error("Exception when calling EnginesApi->precis_engine_tasks_id_get: %s\n" % e)
+        except urllib3.exceptions.MaxRetryError as e:
+            logging.error("Exception when calling EnginesApi->precis_engine_tasks_id_get: %s\n" % type(e))
+        assert etag is not None
+        try:
+            api_response = self.__api.precis_engine_tasks_id_patch(
+                if_match=etag, id=job_id, body=json.dumps({"engineMachineId": my_id})
+            )
+            ret = True
+        except ApiException as e:
+            logging.error("Exception when calling EnginesApi->precis_engine_tasks_id_patch: %s\n" % e)
+        except urllib3.exceptions.MaxRetryError as e:
+            logging.error("Exception when calling EnginesApi->precis_engine_tasks_id_patch: %s\n" % type(e))
+
+        return ret
+
+    def flag_precis_finish_job(self, job_id: str, my_id: str, media_url: str) -> bool:
+        assert job_id is not None
+        assert len(job_id) > 0
+
+        assert my_id is not None
+        assert len(my_id) > 0
+        ret = False
+        etag = None
+
+        try:
+            api_response = self.__api.precis_engine_tasks_id_get(job_id)
+            assert api_response.id == job_id
+            etag = api_response.etag
+            # logging.info(api_response)
+
+        except ApiException as e:
+            logging.error("Exception when calling EnginesApi->precis_engine_tasks_id_get: %s\n" % e)
+        except urllib3.exceptions.MaxRetryError as e:
+            logging.error("Exception when calling EnginesApi->precis_engine_tasks_id_get: %s\n" % type(e))
+        assert etag is not None
+        try:
+            api_response = self.__api.precis_engine_tasks_id_patch(
+                if_match=etag,
+                id=job_id,
+                body=json.dumps({"engineMachineId": my_id, "isExpired": True, "resultUrl": media_url}),
+            )
+            ret = True
+        except ApiException as e:
+            logging.error("Exception when calling EnginesApi->precis_engine_tasks_id_patch: %s\n" % e)
+        except urllib3.exceptions.MaxRetryError as e:
+            logging.error("Exception when calling EnginesApi->precis_engine_tasks_id_patch: %s\n" % type(e))
+
+        return ret
+
+    def send_precis_job_status(self, job_id: str, percent: float, start_time_stamp: float, end_time_stamp: float, media_url: str = None) -> bool:
+        assert job_id is not None
+        assert len(job_id) > 0
+
+        ret = False
+        status_id = None
+        etag = None
+
+        try:
+            api_response = self.__api.precis_engine_task_status_get(
+                where=json.dumps({"engineTaskId": job_id}),
+                sort=json.dumps([("created", -1)]),
+                max_results=json.dumps(1),
+            )
+            # assert api_response.id == job_id
+            # etag = api_response.etag
+            if len(api_response.items) > 0:
+                etag = api_response.items[0].etag
+                status_id = api_response.items[0].id
+        except ApiException as e:
+            logging.error("Exception when calling EnginesApi->engine_tasks_id_get: %s\n" % e)
+        except urllib3.exceptions.MaxRetryError as e:
+            logging.error("Exception when calling EnginesApi->engine_tasks_id_get: %s\n" % type(e))
+        progress = EngineTaskStatusProgress(
+            percentage=percent,
+            start_time_stamp=start_time_stamp,
+            end_time_stamp=end_time_stamp,
+        )
+        # failure = EngineTaskStatusFailure()
+        failure = None
+        if media_url is not None:
+            body = PrecisEngineTaskStatus(engine_task_id=job_id, progress=progress, failure=failure, media_url=media_url)
+        else:
+            body = PrecisEngineTaskStatus(engine_task_id=job_id, progress=progress, failure=failure)
+        try:
+            if status_id is None or etag is None:
+                api_response = self.__api.precis_engine_task_status_post(body=body)
+            else:
+                api_response = self.__api.precis_engine_task_status_id_patch(if_match=etag, id=status_id, body=body)
+        except ApiException as e:
+            logging.error(
+                "Exception when calling EnginesApi->engine_task_status_post or precis_engine_task_status_id_patch: %s\n" % e
+            )
+        except urllib3.exceptions.MaxRetryError as e:
+            logging.error(
+                "Exception when calling EnginesApi->engine_task_status_post or precis_engine_task_status_id_patch: %s\n"
+                % type(e)
+            )
+
+        # assert etag is not None
+        return ret
+
+
 class DeeperLookTaskSubmitterApi:
     def __init__(self) -> None:
         host_name = "http://192.168.1.198"
@@ -424,3 +612,25 @@ def test_job_submitter(caplog):
 
     logging.info("End")
     assert False
+
+
+def test_precis_job_executor(caplog):
+    caplog.set_level(logging.INFO)
+    logging.info("Started")
+    my_id = "precis-server-1"
+    x = DeeperLookApi()
+    items = x.get_precis_jobs(my_id)
+    assert items is not None
+    assert len(items) > 0
+    for item in items:
+        x.flag_precis_start_job(item.id, my_id)
+        for i in range(10, 101, 10):
+            x.send_precis_job_status(item.id, i, int(time.time()*1000), int(time.time()*1000))
+            time.sleep(1)
+        media_url = x.upload_fsbq("a.fsbq", "a.fsbq")
+        x.send_precis_job_status(item.id, i, int(time.time()*1000), int(time.time()*1000), media_url=media_url[0])
+        
+        x.flag_precis_finish_job(item.id, my_id, media_url[0])
+    # logging.info(f"{items}")
+    logging.info("End")
+

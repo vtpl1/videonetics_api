@@ -76,6 +76,10 @@ from vtpl_api.models.pipeline import Pipeline
 from vtpl_api.models.pipelines_response import PipelinesResponse
 from vtpl_api.models.pre_process import PreProcess
 from vtpl_api.models.pre_processes_response import PreProcessesResponse
+from vtpl_api.models.precis_engine_task import PrecisEngineTask
+from vtpl_api.models.precis_engine_task_status import PrecisEngineTaskStatus
+from vtpl_api.models.precis_engine_task_status_response import PrecisEngineTaskStatusResponse
+from vtpl_api.models.precis_engine_tasks_response import PrecisEngineTasksResponse
 from vtpl_api.models.schedule_source import ScheduleSource
 from vtpl_api.models.snap import Snap
 from vtpl_api.models.snaps_response import SnapsResponse

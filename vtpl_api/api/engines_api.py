@@ -5723,6 +5723,1016 @@ class EnginesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def precis_engine_task_status_get(self, **kwargs):  # noqa: E501
+        """Get all precisEngineTaskStatus  # noqa: E501
+
+        Get all precisEngineTaskStatus  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_task_status_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the precisEngineTaskStatus model. Example:   * To find precisEngineTaskStatus with engineTaskId equal \"11\", use /precisEngineTaskStatus?where={\"engineTaskId\":\"11\"}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /precisEngineTaskStatus?page=4
+        :param str sort: The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /precisEngineTaskStatus?sort=created   * To sort engineTasks by created IN DECENDING order, use /precisEngineTaskStatus?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING
+        :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole precisEngineTask, use /precisEngineTaskStatus?maxResults=1   * To limit engineTasks to 2, use /precisEngineTaskStatus?maxResults=2
+        :return: PrecisEngineTaskStatusResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.precis_engine_task_status_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.precis_engine_task_status_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def precis_engine_task_status_get_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all precisEngineTaskStatus  # noqa: E501
+
+        Get all precisEngineTaskStatus  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_task_status_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the precisEngineTaskStatus model. Example:   * To find precisEngineTaskStatus with engineTaskId equal \"11\", use /precisEngineTaskStatus?where={\"engineTaskId\":\"11\"}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /precisEngineTaskStatus?page=4
+        :param str sort: The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /precisEngineTaskStatus?sort=created   * To sort engineTasks by created IN DECENDING order, use /precisEngineTaskStatus?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING
+        :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole precisEngineTask, use /precisEngineTaskStatus?maxResults=1   * To limit engineTasks to 2, use /precisEngineTaskStatus?maxResults=2
+        :return: PrecisEngineTaskStatusResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['where', 'page', 'sort', 'max_results']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method precis_engine_task_status_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'where' in params:
+            query_params.append(('where', params['where']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/precisEngineTaskStatus', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PrecisEngineTaskStatusResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def precis_engine_task_status_id_delete(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an precisEngineTaskStatus  # noqa: E501
+
+        Delete an precisEngineTaskStatus  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_task_status_id_delete(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.precis_engine_task_status_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+        else:
+            (data) = self.precis_engine_task_status_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+            return data
+
+    def precis_engine_task_status_id_delete_with_http_info(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an precisEngineTaskStatus  # noqa: E501
+
+        Delete an precisEngineTaskStatus  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_task_status_id_delete_with_http_info(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'if_match']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method precis_engine_task_status_id_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `precis_engine_task_status_id_delete`")  # noqa: E501
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `precis_engine_task_status_id_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/precisEngineTaskStatus/{id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def precis_engine_task_status_id_get(self, id, **kwargs):  # noqa: E501
+        """Get precisEngineTaskStatus by id  # noqa: E501
+
+        Get precisEngineTaskStatus for a given id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_task_status_id_get(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :return: PrecisEngineTaskStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.precis_engine_task_status_id_get_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.precis_engine_task_status_id_get_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def precis_engine_task_status_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Get precisEngineTaskStatus by id  # noqa: E501
+
+        Get precisEngineTaskStatus for a given id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_task_status_id_get_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :return: PrecisEngineTaskStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method precis_engine_task_status_id_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `precis_engine_task_status_id_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/precisEngineTaskStatus/{id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PrecisEngineTaskStatus',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def precis_engine_task_status_id_patch(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch an precisEngineTaskStatus  # noqa: E501
+
+        Patch an engineTaskStatus. Submit an object with one or more properties of the precisEngineTaskStatus model.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_task_status_id_patch(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param PrecisEngineTaskStatus body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.precis_engine_task_status_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.precis_engine_task_status_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+            return data
+
+    def precis_engine_task_status_id_patch_with_http_info(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch an precisEngineTaskStatus  # noqa: E501
+
+        Patch an engineTaskStatus. Submit an object with one or more properties of the precisEngineTaskStatus model.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_task_status_id_patch_with_http_info(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param PrecisEngineTaskStatus body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['if_match', 'id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method precis_engine_task_status_id_patch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `precis_engine_task_status_id_patch`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `precis_engine_task_status_id_patch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/precisEngineTaskStatus/{id}', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def precis_engine_task_status_post(self, **kwargs):  # noqa: E501
+        """Create an precisEngineTaskStatus  # noqa: E501
+
+        Create a precisEngineTaskStatus.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_task_status_post(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param PrecisEngineTaskStatus body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.precis_engine_task_status_post_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.precis_engine_task_status_post_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def precis_engine_task_status_post_with_http_info(self, **kwargs):  # noqa: E501
+        """Create an precisEngineTaskStatus  # noqa: E501
+
+        Create a precisEngineTaskStatus.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_task_status_post_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param PrecisEngineTaskStatus body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method precis_engine_task_status_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/precisEngineTaskStatus', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def precis_engine_tasks_get(self, **kwargs):  # noqa: E501
+        """Get all precisEngineTasks  # noqa: E501
+
+        Get all engineTasks details  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_tasks_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the engineTask model. Example:   * To find precisEngineTasks with capbilitiesType equal 211 and sourceId equal \"4\", use /precisEngineTasks?where={\"capbilitiesType\":322,\"source.sourceId\":\"4\"}   * To find precisEngineTasks with destination.extras.value equal \"1553774721506487\", use /precisEngineTasks?where={\"destination.extras.value\":\"1553774721506487\"}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engines?page=4
+        :param str sort: The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /precisEngineTasks?sort=created   * To sort engineTasks by created IN DECENDING order, use /precisEngineTasks?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING
+        :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /precisEngineTasks?maxResults=1   * To limit engineTasks to 2, use /precisEngineTasks?maxResults=2
+        :param str embedded: The embedded clause takes a JSON as a string with sourceEndPoint argument. Example:   * 'To find engineTasks with sourceEndPoint object. use /precisEngineTasks?embedded={\"sourceEndPoint\":1}'
+        :return: PrecisEngineTasksResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.precis_engine_tasks_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.precis_engine_tasks_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def precis_engine_tasks_get_with_http_info(self, **kwargs):  # noqa: E501
+        """Get all precisEngineTasks  # noqa: E501
+
+        Get all engineTasks details  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_tasks_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str where: The where clause takes a JSON as a string with one or many properties of the engineTask model. Example:   * To find precisEngineTasks with capbilitiesType equal 211 and sourceId equal \"4\", use /precisEngineTasks?where={\"capbilitiesType\":322,\"source.sourceId\":\"4\"}   * To find precisEngineTasks with destination.extras.value equal \"1553774721506487\", use /precisEngineTasks?where={\"destination.extras.value\":\"1553774721506487\"}
+        :param int page: The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engines?page=4
+        :param str sort: The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /precisEngineTasks?sort=created   * To sort engineTasks by created IN DECENDING order, use /precisEngineTasks?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING
+        :param int max_results: The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /precisEngineTasks?maxResults=1   * To limit engineTasks to 2, use /precisEngineTasks?maxResults=2
+        :param str embedded: The embedded clause takes a JSON as a string with sourceEndPoint argument. Example:   * 'To find engineTasks with sourceEndPoint object. use /precisEngineTasks?embedded={\"sourceEndPoint\":1}'
+        :return: PrecisEngineTasksResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['where', 'page', 'sort', 'max_results', 'embedded']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method precis_engine_tasks_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'where' in params:
+            query_params.append(('where', params['where']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))  # noqa: E501
+        if 'embedded' in params:
+            query_params.append(('embedded', params['embedded']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/precisEngineTasks', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PrecisEngineTasksResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def precis_engine_tasks_id_delete(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an precis engine task  # noqa: E501
+
+        Delete an precis engine task  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_tasks_id_delete(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.precis_engine_tasks_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+        else:
+            (data) = self.precis_engine_tasks_id_delete_with_http_info(id, if_match, **kwargs)  # noqa: E501
+            return data
+
+    def precis_engine_tasks_id_delete_with_http_info(self, id, if_match, **kwargs):  # noqa: E501
+        """Delete an precis engine task  # noqa: E501
+
+        Delete an precis engine task  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_tasks_id_delete_with_http_info(id, if_match, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :param str if_match: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'if_match']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method precis_engine_tasks_id_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `precis_engine_tasks_id_delete`")  # noqa: E501
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `precis_engine_tasks_id_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/precisEngineTasks/{id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def precis_engine_tasks_id_get(self, id, **kwargs):  # noqa: E501
+        """Get precis engine task by id  # noqa: E501
+
+        Get precis engine task for a given id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_tasks_id_get(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :return: PrecisEngineTask
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.precis_engine_tasks_id_get_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.precis_engine_tasks_id_get_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def precis_engine_tasks_id_get_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Get precis engine task by id  # noqa: E501
+
+        Get precis engine task for a given id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_tasks_id_get_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: Unique ID (required)
+        :return: PrecisEngineTask
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method precis_engine_tasks_id_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `precis_engine_tasks_id_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/precisEngineTasks/{id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PrecisEngineTask',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def precis_engine_tasks_id_patch(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch an precis engine task  # noqa: E501
+
+        Patch an engine task. Submit an object with one or more properties of the engineTask model. 'Ex. {\"capbilitiesType\": [211, 206]} or {\"capbilitiesType\": [211, 206], \"source\": {\"sourceId\":\"\", .....}}'  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_tasks_id_patch(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param PrecisEngineTask body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.precis_engine_tasks_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.precis_engine_tasks_id_patch_with_http_info(if_match, id, **kwargs)  # noqa: E501
+            return data
+
+    def precis_engine_tasks_id_patch_with_http_info(self, if_match, id, **kwargs):  # noqa: E501
+        """Patch an precis engine task  # noqa: E501
+
+        Patch an engine task. Submit an object with one or more properties of the engineTask model. 'Ex. {\"capbilitiesType\": [211, 206]} or {\"capbilitiesType\": [211, 206], \"source\": {\"sourceId\":\"\", .....}}'  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_tasks_id_patch_with_http_info(if_match, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str if_match: (required)
+        :param str id: Unique ID (required)
+        :param PrecisEngineTask body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['if_match', 'id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method precis_engine_tasks_id_patch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'if_match' is set
+        if ('if_match' not in params or
+                params['if_match'] is None):
+            raise ValueError("Missing the required parameter `if_match` when calling `precis_engine_tasks_id_patch`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `precis_engine_tasks_id_patch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'if_match' in params:
+            header_params['If-Match'] = params['if_match']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/precisEngineTasks/{id}', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def precis_engine_tasks_post(self, **kwargs):  # noqa: E501
+        """Create an precisEngineTasks  # noqa: E501
+
+        Create a engineTasks.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_tasks_post(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param PrecisEngineTask body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.precis_engine_tasks_post_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.precis_engine_tasks_post_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def precis_engine_tasks_post_with_http_info(self, **kwargs):  # noqa: E501
+        """Create an precisEngineTasks  # noqa: E501
+
+        Create a engineTasks.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.precis_engine_tasks_post_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param PrecisEngineTask body:
+        :return: DefaultResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method precis_engine_tasks_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/precisEngineTasks', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DefaultResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def snaps_get(self, **kwargs):  # noqa: E501
         """Get all unprocesed snaps  # noqa: E501
 

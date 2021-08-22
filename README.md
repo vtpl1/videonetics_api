@@ -964,6 +964,167 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the precisEngineTaskStatus model. Example:   * To find precisEngineTaskStatus with engineTaskId equal \"11\", use /precisEngineTaskStatus?where={\"engineTaskId\":\"11\"} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /precisEngineTaskStatus?page=4 (optional)
+sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /precisEngineTaskStatus?sort=created   * To sort engineTasks by created IN DECENDING order, use /precisEngineTaskStatus?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
+max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole precisEngineTask, use /precisEngineTaskStatus?maxResults=1   * To limit engineTasks to 2, use /precisEngineTaskStatus?maxResults=2 (optional)
+
+try:
+    # Get all precisEngineTaskStatus
+    api_response = api_instance.precis_engine_task_status_get(where=where, page=page, sort=sort, max_results=max_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_task_status_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an precisEngineTaskStatus
+    api_instance.precis_engine_task_status_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_task_status_id_delete: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+
+try:
+    # Get precisEngineTaskStatus by id
+    api_response = api_instance.precis_engine_task_status_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_task_status_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.PrecisEngineTaskStatus() # PrecisEngineTaskStatus |  (optional)
+
+try:
+    # Patch an precisEngineTaskStatus
+    api_response = api_instance.precis_engine_task_status_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_task_status_id_patch: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+body = vtpl_api.PrecisEngineTaskStatus() # PrecisEngineTaskStatus |  (optional)
+
+try:
+    # Create an precisEngineTaskStatus
+    api_response = api_instance.precis_engine_task_status_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_task_status_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the engineTask model. Example:   * To find precisEngineTasks with capbilitiesType equal 211 and sourceId equal \"4\", use /precisEngineTasks?where={\"capbilitiesType\":322,\"source.sourceId\":\"4\"}   * To find precisEngineTasks with destination.extras.value equal \"1553774721506487\", use /precisEngineTasks?where={\"destination.extras.value\":\"1553774721506487\"} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engines?page=4 (optional)
+sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /precisEngineTasks?sort=created   * To sort engineTasks by created IN DECENDING order, use /precisEngineTasks?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
+max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /precisEngineTasks?maxResults=1   * To limit engineTasks to 2, use /precisEngineTasks?maxResults=2 (optional)
+embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with sourceEndPoint argument. Example:   * 'To find engineTasks with sourceEndPoint object. use /precisEngineTasks?embedded={\"sourceEndPoint\":1}' (optional)
+
+try:
+    # Get all precisEngineTasks
+    api_response = api_instance.precis_engine_tasks_get(where=where, page=page, sort=sort, max_results=max_results, embedded=embedded)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_tasks_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an precis engine task
+    api_instance.precis_engine_tasks_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_tasks_id_delete: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+
+try:
+    # Get precis engine task by id
+    api_response = api_instance.precis_engine_tasks_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_tasks_id_get: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.PrecisEngineTask() # PrecisEngineTask |  (optional)
+
+try:
+    # Patch an precis engine task
+    api_response = api_instance.precis_engine_tasks_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_tasks_id_patch: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+body = vtpl_api.PrecisEngineTask() # PrecisEngineTask |  (optional)
+
+try:
+    # Create an precisEngineTasks
+    api_response = api_instance.precis_engine_tasks_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_tasks_post: %s\n" % e)
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
 
 try:
     # Get all unprocesed snaps
@@ -1148,6 +1309,16 @@ Class | Method | HTTP request | Description
 *EnginesApi* | [**pre_processes_id_get**](docs/EnginesApi.md#pre_processes_id_get) | **GET** /preProcesses/{id} | Get preProcess by id
 *EnginesApi* | [**pre_processes_id_patch**](docs/EnginesApi.md#pre_processes_id_patch) | **PATCH** /preProcesses/{id} | Patch
 *EnginesApi* | [**pre_processes_post**](docs/EnginesApi.md#pre_processes_post) | **POST** /preProcesses | Create an preProcess
+*EnginesApi* | [**precis_engine_task_status_get**](docs/EnginesApi.md#precis_engine_task_status_get) | **GET** /precisEngineTaskStatus | Get all precisEngineTaskStatus
+*EnginesApi* | [**precis_engine_task_status_id_delete**](docs/EnginesApi.md#precis_engine_task_status_id_delete) | **DELETE** /precisEngineTaskStatus/{id} | Delete an precisEngineTaskStatus
+*EnginesApi* | [**precis_engine_task_status_id_get**](docs/EnginesApi.md#precis_engine_task_status_id_get) | **GET** /precisEngineTaskStatus/{id} | Get precisEngineTaskStatus by id
+*EnginesApi* | [**precis_engine_task_status_id_patch**](docs/EnginesApi.md#precis_engine_task_status_id_patch) | **PATCH** /precisEngineTaskStatus/{id} | Patch an precisEngineTaskStatus
+*EnginesApi* | [**precis_engine_task_status_post**](docs/EnginesApi.md#precis_engine_task_status_post) | **POST** /precisEngineTaskStatus | Create an precisEngineTaskStatus
+*EnginesApi* | [**precis_engine_tasks_get**](docs/EnginesApi.md#precis_engine_tasks_get) | **GET** /precisEngineTasks | Get all precisEngineTasks
+*EnginesApi* | [**precis_engine_tasks_id_delete**](docs/EnginesApi.md#precis_engine_tasks_id_delete) | **DELETE** /precisEngineTasks/{id} | Delete an precis engine task
+*EnginesApi* | [**precis_engine_tasks_id_get**](docs/EnginesApi.md#precis_engine_tasks_id_get) | **GET** /precisEngineTasks/{id} | Get precis engine task by id
+*EnginesApi* | [**precis_engine_tasks_id_patch**](docs/EnginesApi.md#precis_engine_tasks_id_patch) | **PATCH** /precisEngineTasks/{id} | Patch an precis engine task
+*EnginesApi* | [**precis_engine_tasks_post**](docs/EnginesApi.md#precis_engine_tasks_post) | **POST** /precisEngineTasks | Create an precisEngineTasks
 *EnginesApi* | [**snaps_get**](docs/EnginesApi.md#snaps_get) | **GET** /snaps | Get all unprocesed snaps
 *EnginesApi* | [**snaps_id_get**](docs/EnginesApi.md#snaps_id_get) | **GET** /snaps/{id} | Get snap by id
 *EnginesApi* | [**snaps_post**](docs/EnginesApi.md#snaps_post) | **POST** /snaps | Create a unprocesed snap
@@ -1215,6 +1386,10 @@ Class | Method | HTTP request | Description
  - [PipelinesResponse](docs/PipelinesResponse.md)
  - [PreProcess](docs/PreProcess.md)
  - [PreProcessesResponse](docs/PreProcessesResponse.md)
+ - [PrecisEngineTask](docs/PrecisEngineTask.md)
+ - [PrecisEngineTaskStatus](docs/PrecisEngineTaskStatus.md)
+ - [PrecisEngineTaskStatusResponse](docs/PrecisEngineTaskStatusResponse.md)
+ - [PrecisEngineTasksResponse](docs/PrecisEngineTasksResponse.md)
  - [ScheduleSource](docs/ScheduleSource.md)
  - [Snap](docs/Snap.md)
  - [SnapsResponse](docs/SnapsResponse.md)

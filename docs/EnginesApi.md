@@ -61,6 +61,16 @@ Method | HTTP request | Description
 [**pre_processes_id_get**](EnginesApi.md#pre_processes_id_get) | **GET** /preProcesses/{id} | Get preProcess by id
 [**pre_processes_id_patch**](EnginesApi.md#pre_processes_id_patch) | **PATCH** /preProcesses/{id} | Patch
 [**pre_processes_post**](EnginesApi.md#pre_processes_post) | **POST** /preProcesses | Create an preProcess
+[**precis_engine_task_status_get**](EnginesApi.md#precis_engine_task_status_get) | **GET** /precisEngineTaskStatus | Get all precisEngineTaskStatus
+[**precis_engine_task_status_id_delete**](EnginesApi.md#precis_engine_task_status_id_delete) | **DELETE** /precisEngineTaskStatus/{id} | Delete an precisEngineTaskStatus
+[**precis_engine_task_status_id_get**](EnginesApi.md#precis_engine_task_status_id_get) | **GET** /precisEngineTaskStatus/{id} | Get precisEngineTaskStatus by id
+[**precis_engine_task_status_id_patch**](EnginesApi.md#precis_engine_task_status_id_patch) | **PATCH** /precisEngineTaskStatus/{id} | Patch an precisEngineTaskStatus
+[**precis_engine_task_status_post**](EnginesApi.md#precis_engine_task_status_post) | **POST** /precisEngineTaskStatus | Create an precisEngineTaskStatus
+[**precis_engine_tasks_get**](EnginesApi.md#precis_engine_tasks_get) | **GET** /precisEngineTasks | Get all precisEngineTasks
+[**precis_engine_tasks_id_delete**](EnginesApi.md#precis_engine_tasks_id_delete) | **DELETE** /precisEngineTasks/{id} | Delete an precis engine task
+[**precis_engine_tasks_id_get**](EnginesApi.md#precis_engine_tasks_id_get) | **GET** /precisEngineTasks/{id} | Get precis engine task by id
+[**precis_engine_tasks_id_patch**](EnginesApi.md#precis_engine_tasks_id_patch) | **PATCH** /precisEngineTasks/{id} | Patch an precis engine task
+[**precis_engine_tasks_post**](EnginesApi.md#precis_engine_tasks_post) | **POST** /precisEngineTasks | Create an precisEngineTasks
 [**snaps_get**](EnginesApi.md#snaps_get) | **GET** /snaps | Get all unprocesed snaps
 [**snaps_id_get**](EnginesApi.md#snaps_id_get) | **GET** /snaps/{id} | Get snap by id
 [**snaps_post**](EnginesApi.md#snaps_post) | **POST** /snaps | Create a unprocesed snap
@@ -3126,6 +3136,550 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**PreProcess**](PreProcess.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **precis_engine_task_status_get**
+> PrecisEngineTaskStatusResponse precis_engine_task_status_get(where=where, page=page, sort=sort, max_results=max_results)
+
+Get all precisEngineTaskStatus
+
+Get all precisEngineTaskStatus
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the precisEngineTaskStatus model. Example:   * To find precisEngineTaskStatus with engineTaskId equal \"11\", use /precisEngineTaskStatus?where={\"engineTaskId\":\"11\"} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /precisEngineTaskStatus?page=4 (optional)
+sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /precisEngineTaskStatus?sort=created   * To sort engineTasks by created IN DECENDING order, use /precisEngineTaskStatus?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
+max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole precisEngineTask, use /precisEngineTaskStatus?maxResults=1   * To limit engineTasks to 2, use /precisEngineTaskStatus?maxResults=2 (optional)
+
+try:
+    # Get all precisEngineTaskStatus
+    api_response = api_instance.precis_engine_task_status_get(where=where, page=page, sort=sort, max_results=max_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_task_status_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **where** | **str**| The where clause takes a JSON as a string with one or many properties of the precisEngineTaskStatus model. Example:   * To find precisEngineTaskStatus with engineTaskId equal \&quot;11\&quot;, use /precisEngineTaskStatus?where&#x3D;{\&quot;engineTaskId\&quot;:\&quot;11\&quot;} | [optional] 
+ **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /precisEngineTaskStatus?page&#x3D;4 | [optional] 
+ **sort** | **str**| The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /precisEngineTaskStatus?sort&#x3D;created   * To sort engineTasks by created IN DECENDING order, use /precisEngineTaskStatus?sort&#x3D;-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING | [optional] 
+ **max_results** | **int**| The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole precisEngineTask, use /precisEngineTaskStatus?maxResults&#x3D;1   * To limit engineTasks to 2, use /precisEngineTaskStatus?maxResults&#x3D;2 | [optional] 
+
+### Return type
+
+[**PrecisEngineTaskStatusResponse**](PrecisEngineTaskStatusResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **precis_engine_task_status_id_delete**
+> precis_engine_task_status_id_delete(id, if_match)
+
+Delete an precisEngineTaskStatus
+
+Delete an precisEngineTaskStatus
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an precisEngineTaskStatus
+    api_instance.precis_engine_task_status_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_task_status_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+ **if_match** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **precis_engine_task_status_id_get**
+> PrecisEngineTaskStatus precis_engine_task_status_id_get(id)
+
+Get precisEngineTaskStatus by id
+
+Get precisEngineTaskStatus for a given id
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+
+try:
+    # Get precisEngineTaskStatus by id
+    api_response = api_instance.precis_engine_task_status_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_task_status_id_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+
+### Return type
+
+[**PrecisEngineTaskStatus**](PrecisEngineTaskStatus.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **precis_engine_task_status_id_patch**
+> DefaultResponse precis_engine_task_status_id_patch(if_match, id, body=body)
+
+Patch an precisEngineTaskStatus
+
+Patch an engineTaskStatus. Submit an object with one or more properties of the precisEngineTaskStatus model.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.PrecisEngineTaskStatus() # PrecisEngineTaskStatus |  (optional)
+
+try:
+    # Patch an precisEngineTaskStatus
+    api_response = api_instance.precis_engine_task_status_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_task_status_id_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_match** | **str**|  | 
+ **id** | **str**| Unique ID | 
+ **body** | [**PrecisEngineTaskStatus**](PrecisEngineTaskStatus.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **precis_engine_task_status_post**
+> DefaultResponse precis_engine_task_status_post(body=body)
+
+Create an precisEngineTaskStatus
+
+Create a precisEngineTaskStatus.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+body = vtpl_api.PrecisEngineTaskStatus() # PrecisEngineTaskStatus |  (optional)
+
+try:
+    # Create an precisEngineTaskStatus
+    api_response = api_instance.precis_engine_task_status_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_task_status_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PrecisEngineTaskStatus**](PrecisEngineTaskStatus.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **precis_engine_tasks_get**
+> PrecisEngineTasksResponse precis_engine_tasks_get(where=where, page=page, sort=sort, max_results=max_results, embedded=embedded)
+
+Get all precisEngineTasks
+
+Get all engineTasks details
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the engineTask model. Example:   * To find precisEngineTasks with capbilitiesType equal 211 and sourceId equal \"4\", use /precisEngineTasks?where={\"capbilitiesType\":322,\"source.sourceId\":\"4\"}   * To find precisEngineTasks with destination.extras.value equal \"1553774721506487\", use /precisEngineTasks?where={\"destination.extras.value\":\"1553774721506487\"} (optional)
+page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engines?page=4 (optional)
+sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /precisEngineTasks?sort=created   * To sort engineTasks by created IN DECENDING order, use /precisEngineTasks?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
+max_results = 56 # int | The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /precisEngineTasks?maxResults=1   * To limit engineTasks to 2, use /precisEngineTasks?maxResults=2 (optional)
+embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with sourceEndPoint argument. Example:   * 'To find engineTasks with sourceEndPoint object. use /precisEngineTasks?embedded={\"sourceEndPoint\":1}' (optional)
+
+try:
+    # Get all precisEngineTasks
+    api_response = api_instance.precis_engine_tasks_get(where=where, page=page, sort=sort, max_results=max_results, embedded=embedded)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_tasks_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **where** | **str**| The where clause takes a JSON as a string with one or many properties of the engineTask model. Example:   * To find precisEngineTasks with capbilitiesType equal 211 and sourceId equal \&quot;4\&quot;, use /precisEngineTasks?where&#x3D;{\&quot;capbilitiesType\&quot;:322,\&quot;source.sourceId\&quot;:\&quot;4\&quot;}   * To find precisEngineTasks with destination.extras.value equal \&quot;1553774721506487\&quot;, use /precisEngineTasks?where&#x3D;{\&quot;destination.extras.value\&quot;:\&quot;1553774721506487\&quot;} | [optional] 
+ **page** | **int**| The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engines?page&#x3D;4 | [optional] 
+ **sort** | **str**| The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /precisEngineTasks?sort&#x3D;created   * To sort engineTasks by created IN DECENDING order, use /precisEngineTasks?sort&#x3D;-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING | [optional] 
+ **max_results** | **int**| The maxResults query parameter limits results equal to # of maxResults. Example:   * To get latest engineTask among whole engineTasks, use /precisEngineTasks?maxResults&#x3D;1   * To limit engineTasks to 2, use /precisEngineTasks?maxResults&#x3D;2 | [optional] 
+ **embedded** | **str**| The embedded clause takes a JSON as a string with sourceEndPoint argument. Example:   * &#x27;To find engineTasks with sourceEndPoint object. use /precisEngineTasks?embedded&#x3D;{\&quot;sourceEndPoint\&quot;:1}&#x27; | [optional] 
+
+### Return type
+
+[**PrecisEngineTasksResponse**](PrecisEngineTasksResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **precis_engine_tasks_id_delete**
+> precis_engine_tasks_id_delete(id, if_match)
+
+Delete an precis engine task
+
+Delete an precis engine task
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+if_match = 'if_match_example' # str | 
+
+try:
+    # Delete an precis engine task
+    api_instance.precis_engine_tasks_id_delete(id, if_match)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_tasks_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+ **if_match** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **precis_engine_tasks_id_get**
+> PrecisEngineTask precis_engine_tasks_id_get(id)
+
+Get precis engine task by id
+
+Get precis engine task for a given id
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+id = 'id_example' # str | Unique ID
+
+try:
+    # Get precis engine task by id
+    api_response = api_instance.precis_engine_tasks_id_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_tasks_id_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique ID | 
+
+### Return type
+
+[**PrecisEngineTask**](PrecisEngineTask.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **precis_engine_tasks_id_patch**
+> DefaultResponse precis_engine_tasks_id_patch(if_match, id, body=body)
+
+Patch an precis engine task
+
+Patch an engine task. Submit an object with one or more properties of the engineTask model. 'Ex. {\"capbilitiesType\": [211, 206]} or {\"capbilitiesType\": [211, 206], \"source\": {\"sourceId\":\"\", .....}}'
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+if_match = 'if_match_example' # str | 
+id = 'id_example' # str | Unique ID
+body = vtpl_api.PrecisEngineTask() # PrecisEngineTask |  (optional)
+
+try:
+    # Patch an precis engine task
+    api_response = api_instance.precis_engine_tasks_id_patch(if_match, id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_tasks_id_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_match** | **str**|  | 
+ **id** | **str**| Unique ID | 
+ **body** | [**PrecisEngineTask**](PrecisEngineTask.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **precis_engine_tasks_post**
+> DefaultResponse precis_engine_tasks_post(body=body)
+
+Create an precisEngineTasks
+
+Create a engineTasks.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import vtpl_api
+from vtpl_api.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = vtpl_api.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+body = vtpl_api.PrecisEngineTask() # PrecisEngineTask |  (optional)
+
+try:
+    # Create an precisEngineTasks
+    api_response = api_instance.precis_engine_tasks_post(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_tasks_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PrecisEngineTask**](PrecisEngineTask.md)|  | [optional] 
 
 ### Return type
 
