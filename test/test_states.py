@@ -455,7 +455,7 @@ class DeeperLookApi:
         # failure = EngineTaskStatusFailure()
         failure = None
         if media_url is not None:
-            body = PrecisEngineTaskStatus(engine_task_id=job_id, progress=progress, failure=failure, media_url=media_url)
+            body = PrecisEngineTaskStatus(engine_task_id=job_id, progress=progress, failure=failure, result_url=media_url)
         else:
             body = PrecisEngineTaskStatus(engine_task_id=job_id, progress=progress, failure=failure)
         try:
