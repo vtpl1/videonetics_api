@@ -28,7 +28,7 @@ class MetaAttributeEvent(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'object_type': 'str',
+        'object_type': 'int',
         'estimated_height': 'int',
         'top_type': 'str',
         'top_color': 'str',
@@ -43,7 +43,12 @@ class MetaAttributeEvent(object):
         'associated_object': 'str',
         'presence_of_long_sleeve': 'bool',
         'vehicle_type': 'str',
-        'vehicle_color': 'str'
+        'vehicle_color': 'str',
+        'event_time': 'int',
+        'channel_id': 'int',
+        'app_id': 'int',
+        'track_id': 'int',
+        'unique_event_id': 'str'
     }
 
     attribute_map = {
@@ -62,10 +67,15 @@ class MetaAttributeEvent(object):
         'associated_object': 'associatedObject',
         'presence_of_long_sleeve': 'presenceOfLongSleeve',
         'vehicle_type': 'vehicleType',
-        'vehicle_color': 'vehicleColor'
+        'vehicle_color': 'vehicleColor',
+        'event_time': 'eventTime',
+        'channel_id': 'channelId',
+        'app_id': 'appId',
+        'track_id': 'trackId',
+        'unique_event_id': 'uniqueEventId'
     }
 
-    def __init__(self, object_type=None, estimated_height=0, top_type=None, top_color=None, bottom_type=None, bottom_color=None, sex=None, presence_of_bag=None, type_of_bag=None, clothing_pattern=None, presence_of_heade_dress=None, type_of_head_dress=None, associated_object=None, presence_of_long_sleeve=None, vehicle_type=None, vehicle_color=None):  # noqa: E501
+    def __init__(self, object_type=1, estimated_height=0, top_type=None, top_color=None, bottom_type=None, bottom_color=None, sex=None, presence_of_bag=None, type_of_bag=None, clothing_pattern=None, presence_of_heade_dress=None, type_of_head_dress=None, associated_object=None, presence_of_long_sleeve=None, vehicle_type=None, vehicle_color=None, event_time=None, channel_id=None, app_id=None, track_id=None, unique_event_id=None):  # noqa: E501
         """MetaAttributeEvent - a model defined in Swagger"""  # noqa: E501
         self._object_type = None
         self._estimated_height = None
@@ -83,6 +93,11 @@ class MetaAttributeEvent(object):
         self._presence_of_long_sleeve = None
         self._vehicle_type = None
         self._vehicle_color = None
+        self._event_time = None
+        self._channel_id = None
+        self._app_id = None
+        self._track_id = None
+        self._unique_event_id = None
         self.discriminator = None
         if object_type is not None:
             self.object_type = object_type
@@ -116,14 +131,25 @@ class MetaAttributeEvent(object):
             self.vehicle_type = vehicle_type
         if vehicle_color is not None:
             self.vehicle_color = vehicle_color
+        if event_time is not None:
+            self.event_time = event_time
+        if channel_id is not None:
+            self.channel_id = channel_id
+        if app_id is not None:
+            self.app_id = app_id
+        if track_id is not None:
+            self.track_id = track_id
+        if unique_event_id is not None:
+            self.unique_event_id = unique_event_id
 
     @property
     def object_type(self):
         """Gets the object_type of this MetaAttributeEvent.  # noqa: E501
 
+        0 - Undefined 1 - Human, 2 - Vehicle, 3 - Animal  # noqa: E501
 
         :return: The object_type of this MetaAttributeEvent.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._object_type
 
@@ -131,9 +157,10 @@ class MetaAttributeEvent(object):
     def object_type(self, object_type):
         """Sets the object_type of this MetaAttributeEvent.
 
+        0 - Undefined 1 - Human, 2 - Vehicle, 3 - Animal  # noqa: E501
 
         :param object_type: The object_type of this MetaAttributeEvent.  # noqa: E501
-        :type: str
+        :type: int
         """
 
         self._object_type = object_type
@@ -452,6 +479,111 @@ class MetaAttributeEvent(object):
         """
 
         self._vehicle_color = vehicle_color
+
+    @property
+    def event_time(self):
+        """Gets the event_time of this MetaAttributeEvent.  # noqa: E501
+
+
+        :return: The event_time of this MetaAttributeEvent.  # noqa: E501
+        :rtype: int
+        """
+        return self._event_time
+
+    @event_time.setter
+    def event_time(self, event_time):
+        """Sets the event_time of this MetaAttributeEvent.
+
+
+        :param event_time: The event_time of this MetaAttributeEvent.  # noqa: E501
+        :type: int
+        """
+
+        self._event_time = event_time
+
+    @property
+    def channel_id(self):
+        """Gets the channel_id of this MetaAttributeEvent.  # noqa: E501
+
+
+        :return: The channel_id of this MetaAttributeEvent.  # noqa: E501
+        :rtype: int
+        """
+        return self._channel_id
+
+    @channel_id.setter
+    def channel_id(self, channel_id):
+        """Sets the channel_id of this MetaAttributeEvent.
+
+
+        :param channel_id: The channel_id of this MetaAttributeEvent.  # noqa: E501
+        :type: int
+        """
+
+        self._channel_id = channel_id
+
+    @property
+    def app_id(self):
+        """Gets the app_id of this MetaAttributeEvent.  # noqa: E501
+
+
+        :return: The app_id of this MetaAttributeEvent.  # noqa: E501
+        :rtype: int
+        """
+        return self._app_id
+
+    @app_id.setter
+    def app_id(self, app_id):
+        """Sets the app_id of this MetaAttributeEvent.
+
+
+        :param app_id: The app_id of this MetaAttributeEvent.  # noqa: E501
+        :type: int
+        """
+
+        self._app_id = app_id
+
+    @property
+    def track_id(self):
+        """Gets the track_id of this MetaAttributeEvent.  # noqa: E501
+
+
+        :return: The track_id of this MetaAttributeEvent.  # noqa: E501
+        :rtype: int
+        """
+        return self._track_id
+
+    @track_id.setter
+    def track_id(self, track_id):
+        """Sets the track_id of this MetaAttributeEvent.
+
+
+        :param track_id: The track_id of this MetaAttributeEvent.  # noqa: E501
+        :type: int
+        """
+
+        self._track_id = track_id
+
+    @property
+    def unique_event_id(self):
+        """Gets the unique_event_id of this MetaAttributeEvent.  # noqa: E501
+
+
+        :return: The unique_event_id of this MetaAttributeEvent.  # noqa: E501
+        :rtype: str
+        """
+        return self._unique_event_id
+
+    @unique_event_id.setter
+    def unique_event_id(self, unique_event_id):
+        """Sets the unique_event_id of this MetaAttributeEvent.
+
+
+        :param unique_event_id: The unique_event_id of this MetaAttributeEvent.  # noqa: E501
+        :type: str
+        """
+
+        self._unique_event_id = unique_event_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

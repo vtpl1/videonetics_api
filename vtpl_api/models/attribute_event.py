@@ -29,23 +29,28 @@ class AttributeEvent(Event):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'meta_attribute_event': 'MetaAttributeEvent'
+        'meta_attribute_event': 'MetaAttributeEvent',
+        'meta_attribute_event_original': 'MetaAttributeEvent'
     }
     if hasattr(Event, "swagger_types"):
         swagger_types.update(Event.swagger_types)
 
     attribute_map = {
-        'meta_attribute_event': 'metaAttributeEvent'
+        'meta_attribute_event': 'metaAttributeEvent',
+        'meta_attribute_event_original': 'metaAttributeEventOriginal'
     }
     if hasattr(Event, "attribute_map"):
         attribute_map.update(Event.attribute_map)
 
-    def __init__(self, meta_attribute_event=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, meta_attribute_event=None, meta_attribute_event_original=None, *args, **kwargs):  # noqa: E501
         """AttributeEvent - a model defined in Swagger"""  # noqa: E501
         self._meta_attribute_event = None
+        self._meta_attribute_event_original = None
         self.discriminator = None
         if meta_attribute_event is not None:
             self.meta_attribute_event = meta_attribute_event
+        if meta_attribute_event_original is not None:
+            self.meta_attribute_event_original = meta_attribute_event_original
         Event.__init__(self, *args, **kwargs)
 
     @property
@@ -68,6 +73,27 @@ class AttributeEvent(Event):
         """
 
         self._meta_attribute_event = meta_attribute_event
+
+    @property
+    def meta_attribute_event_original(self):
+        """Gets the meta_attribute_event_original of this AttributeEvent.  # noqa: E501
+
+
+        :return: The meta_attribute_event_original of this AttributeEvent.  # noqa: E501
+        :rtype: MetaAttributeEvent
+        """
+        return self._meta_attribute_event_original
+
+    @meta_attribute_event_original.setter
+    def meta_attribute_event_original(self, meta_attribute_event_original):
+        """Sets the meta_attribute_event_original of this AttributeEvent.
+
+
+        :param meta_attribute_event_original: The meta_attribute_event_original of this AttributeEvent.  # noqa: E501
+        :type: MetaAttributeEvent
+        """
+
+        self._meta_attribute_event_original = meta_attribute_event_original
 
     def to_dict(self):
         """Returns the model properties as a dict"""
