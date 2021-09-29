@@ -33,7 +33,9 @@ class Event(object):
         'event_type': 'EventType',
         'event_details': 'EventDetails',
         'event_snaps': 'list[str]',
+        'event_snap_time_stamps': 'list[int]',
         'event_clips': 'list[str]',
+        'event_clip_time_stamps': 'list[int]',
         'updated': 'datetime',
         'created': 'datetime',
         'etag': 'str',
@@ -46,7 +48,9 @@ class Event(object):
         'event_type': 'eventType',
         'event_details': 'eventDetails',
         'event_snaps': 'eventSnaps',
+        'event_snap_time_stamps': 'eventSnapTimeStamps',
         'event_clips': 'eventClips',
+        'event_clip_time_stamps': 'eventClipTimeStamps',
         'updated': 'updated',
         'created': 'created',
         'etag': 'etag',
@@ -58,14 +62,16 @@ class Event(object):
 'anprEvent': 'AnprEvent',
 'vaEvent': 'VaEvent'    }
 
-    def __init__(self, id=None, capbilities_type=None, event_type=None, event_details=None, event_snaps=None, event_clips=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
+    def __init__(self, id=None, capbilities_type=None, event_type=None, event_details=None, event_snaps=None, event_snap_time_stamps=None, event_clips=None, event_clip_time_stamps=None, updated=None, created=None, etag=None, links=None):  # noqa: E501
         """Event - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._capbilities_type = None
         self._event_type = None
         self._event_details = None
         self._event_snaps = None
+        self._event_snap_time_stamps = None
         self._event_clips = None
+        self._event_clip_time_stamps = None
         self._updated = None
         self._created = None
         self._etag = None
@@ -81,8 +87,12 @@ class Event(object):
             self.event_details = event_details
         if event_snaps is not None:
             self.event_snaps = event_snaps
+        if event_snap_time_stamps is not None:
+            self.event_snap_time_stamps = event_snap_time_stamps
         if event_clips is not None:
             self.event_clips = event_clips
+        if event_clip_time_stamps is not None:
+            self.event_clip_time_stamps = event_clip_time_stamps
         if updated is not None:
             self.updated = updated
         if created is not None:
@@ -200,6 +210,27 @@ class Event(object):
         self._event_snaps = event_snaps
 
     @property
+    def event_snap_time_stamps(self):
+        """Gets the event_snap_time_stamps of this Event.  # noqa: E501
+
+
+        :return: The event_snap_time_stamps of this Event.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._event_snap_time_stamps
+
+    @event_snap_time_stamps.setter
+    def event_snap_time_stamps(self, event_snap_time_stamps):
+        """Sets the event_snap_time_stamps of this Event.
+
+
+        :param event_snap_time_stamps: The event_snap_time_stamps of this Event.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._event_snap_time_stamps = event_snap_time_stamps
+
+    @property
     def event_clips(self):
         """Gets the event_clips of this Event.  # noqa: E501
 
@@ -221,6 +252,27 @@ class Event(object):
         """
 
         self._event_clips = event_clips
+
+    @property
+    def event_clip_time_stamps(self):
+        """Gets the event_clip_time_stamps of this Event.  # noqa: E501
+
+
+        :return: The event_clip_time_stamps of this Event.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._event_clip_time_stamps
+
+    @event_clip_time_stamps.setter
+    def event_clip_time_stamps(self, event_clip_time_stamps):
+        """Sets the event_clip_time_stamps of this Event.
+
+
+        :param event_clip_time_stamps: The event_clip_time_stamps of this Event.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._event_clip_time_stamps = event_clip_time_stamps
 
     @property
     def updated(self):

@@ -49,6 +49,7 @@ from vtpl_api.models.href import Href
 from vtpl_api.models.human_properties import HumanProperties
 from vtpl_api.models.inferencer import Inferencer
 from vtpl_api.models.inferencers_response import InferencersResponse
+from vtpl_api.models.license_plate_details import LicensePlateDetails
 from vtpl_api.models.line import Line
 from vtpl_api.models.line_type import LineType
 from vtpl_api.models.links import Links
@@ -66,12 +67,14 @@ from vtpl_api.models.object_direct_properties import ObjectDirectProperties
 from vtpl_api.models.object_indirect_properties import ObjectIndirectProperties
 from vtpl_api.models.object_info import ObjectInfo
 from vtpl_api.models.object_rect import ObjectRect
+from vtpl_api.models.object_rect_with_time_stamp_and_event_snap_reference import ObjectRectWithTimeStampAndEventSnapReference
 from vtpl_api.models.pipeline import Pipeline
 from vtpl_api.models.pipelines_response import PipelinesResponse
 from vtpl_api.models.pre_process import PreProcess
 from vtpl_api.models.pre_processes_response import PreProcessesResponse
 from vtpl_api.models.precis_engine_task import PrecisEngineTask
 from vtpl_api.models.precis_engine_task_status import PrecisEngineTaskStatus
+from vtpl_api.models.precis_engine_task_status_progress import PrecisEngineTaskStatusProgress
 from vtpl_api.models.precis_engine_task_status_response import PrecisEngineTaskStatusResponse
 from vtpl_api.models.precis_engine_tasks_response import PrecisEngineTasksResponse
 from vtpl_api.models.schedule_source import ScheduleSource

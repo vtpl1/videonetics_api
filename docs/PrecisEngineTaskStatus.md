@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **engine_task_id** | **str** |  | [optional] 
 **result_url** | **str** |  | [optional] 
-**progress** | [**EngineTaskStatusProgress**](EngineTaskStatusProgress.md) |  | [optional] 
+**progress** | [**PrecisEngineTaskStatusProgress**](PrecisEngineTaskStatusProgress.md) |  | [optional] 
 **failure** | [**EngineTaskStatusFailure**](EngineTaskStatusFailure.md) |  | [optional] 
 **updated** | **datetime** |  | [optional] 
 **created** | **datetime** |  | [optional] 

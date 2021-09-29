@@ -28,87 +28,110 @@ class MetaAnprEvent(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'vehicle_number': 'str',
+        'license_plate_information': 'LicensePlateDetails',
         'vehicle_type': 'VehicleType',
         'vehicle_color': 'Color',
+        'speed': 'float',
+        'is_wrong_way': 'bool',
+        'is_wrong_turn': 'bool',
+        'is_red_light_violation': 'bool',
+        'is_stop_light_violation': 'bool',
         'vehicle_make': 'str',
         'vehicle_model': 'str',
-        'count_of_vehicle': 'int',
-        'count_of_two_wheeler': 'int',
-        'count_of_helmet': 'int',
-        'count_of_no_helmet': 'int',
-        'count_of_triple_ride': 'int'
+        'driver_on_call_rectangle': 'ObjectRectWithTimeStampAndEventSnapReference',
+        'no_seat_belt_rectangles': 'list[ObjectRectWithTimeStampAndEventSnapReference]',
+        'no_helmet_rectangles': 'list[ObjectRectWithTimeStampAndEventSnapReference]',
+        'triple_ride_rectangles': 'ObjectRectWithTimeStampAndEventSnapReference',
+        'pillion_ride_rectangles': 'list[ObjectRectWithTimeStampAndEventSnapReference]'
     }
 
     attribute_map = {
-        'vehicle_number': 'vehicleNumber',
+        'license_plate_information': 'licensePlateInformation',
         'vehicle_type': 'vehicleType',
         'vehicle_color': 'vehicleColor',
+        'speed': 'speed',
+        'is_wrong_way': 'isWrongWay',
+        'is_wrong_turn': 'isWrongTurn',
+        'is_red_light_violation': 'isRedLightViolation',
+        'is_stop_light_violation': 'isStopLightViolation',
         'vehicle_make': 'vehicleMake',
         'vehicle_model': 'vehicleModel',
-        'count_of_vehicle': 'countOfVehicle',
-        'count_of_two_wheeler': 'countOfTwoWheeler',
-        'count_of_helmet': 'countOfHelmet',
-        'count_of_no_helmet': 'countOfNoHelmet',
-        'count_of_triple_ride': 'countOfTripleRide'
+        'driver_on_call_rectangle': 'driverOnCallRectangle',
+        'no_seat_belt_rectangles': 'noSeatBeltRectangles',
+        'no_helmet_rectangles': 'noHelmetRectangles',
+        'triple_ride_rectangles': 'tripleRideRectangles',
+        'pillion_ride_rectangles': 'pillionRideRectangles'
     }
 
-    def __init__(self, vehicle_number=None, vehicle_type=None, vehicle_color=None, vehicle_make=None, vehicle_model=None, count_of_vehicle=0, count_of_two_wheeler=0, count_of_helmet=0, count_of_no_helmet=0, count_of_triple_ride=0):  # noqa: E501
+    def __init__(self, license_plate_information=None, vehicle_type=None, vehicle_color=None, speed=None, is_wrong_way=False, is_wrong_turn=False, is_red_light_violation=False, is_stop_light_violation=False, vehicle_make=None, vehicle_model=None, driver_on_call_rectangle=None, no_seat_belt_rectangles=None, no_helmet_rectangles=None, triple_ride_rectangles=None, pillion_ride_rectangles=None):  # noqa: E501
         """MetaAnprEvent - a model defined in Swagger"""  # noqa: E501
-        self._vehicle_number = None
+        self._license_plate_information = None
         self._vehicle_type = None
         self._vehicle_color = None
+        self._speed = None
+        self._is_wrong_way = None
+        self._is_wrong_turn = None
+        self._is_red_light_violation = None
+        self._is_stop_light_violation = None
         self._vehicle_make = None
         self._vehicle_model = None
-        self._count_of_vehicle = None
-        self._count_of_two_wheeler = None
-        self._count_of_helmet = None
-        self._count_of_no_helmet = None
-        self._count_of_triple_ride = None
+        self._driver_on_call_rectangle = None
+        self._no_seat_belt_rectangles = None
+        self._no_helmet_rectangles = None
+        self._triple_ride_rectangles = None
+        self._pillion_ride_rectangles = None
         self.discriminator = None
-        if vehicle_number is not None:
-            self.vehicle_number = vehicle_number
+        if license_plate_information is not None:
+            self.license_plate_information = license_plate_information
         if vehicle_type is not None:
             self.vehicle_type = vehicle_type
         if vehicle_color is not None:
             self.vehicle_color = vehicle_color
+        if speed is not None:
+            self.speed = speed
+        if is_wrong_way is not None:
+            self.is_wrong_way = is_wrong_way
+        if is_wrong_turn is not None:
+            self.is_wrong_turn = is_wrong_turn
+        if is_red_light_violation is not None:
+            self.is_red_light_violation = is_red_light_violation
+        if is_stop_light_violation is not None:
+            self.is_stop_light_violation = is_stop_light_violation
         if vehicle_make is not None:
             self.vehicle_make = vehicle_make
         if vehicle_model is not None:
             self.vehicle_model = vehicle_model
-        if count_of_vehicle is not None:
-            self.count_of_vehicle = count_of_vehicle
-        if count_of_two_wheeler is not None:
-            self.count_of_two_wheeler = count_of_two_wheeler
-        if count_of_helmet is not None:
-            self.count_of_helmet = count_of_helmet
-        if count_of_no_helmet is not None:
-            self.count_of_no_helmet = count_of_no_helmet
-        if count_of_triple_ride is not None:
-            self.count_of_triple_ride = count_of_triple_ride
+        if driver_on_call_rectangle is not None:
+            self.driver_on_call_rectangle = driver_on_call_rectangle
+        if no_seat_belt_rectangles is not None:
+            self.no_seat_belt_rectangles = no_seat_belt_rectangles
+        if no_helmet_rectangles is not None:
+            self.no_helmet_rectangles = no_helmet_rectangles
+        if triple_ride_rectangles is not None:
+            self.triple_ride_rectangles = triple_ride_rectangles
+        if pillion_ride_rectangles is not None:
+            self.pillion_ride_rectangles = pillion_ride_rectangles
 
     @property
-    def vehicle_number(self):
-        """Gets the vehicle_number of this MetaAnprEvent.  # noqa: E501
+    def license_plate_information(self):
+        """Gets the license_plate_information of this MetaAnprEvent.  # noqa: E501
 
-        Vehicle number detected in OCR  # noqa: E501
 
-        :return: The vehicle_number of this MetaAnprEvent.  # noqa: E501
-        :rtype: str
+        :return: The license_plate_information of this MetaAnprEvent.  # noqa: E501
+        :rtype: LicensePlateDetails
         """
-        return self._vehicle_number
+        return self._license_plate_information
 
-    @vehicle_number.setter
-    def vehicle_number(self, vehicle_number):
-        """Sets the vehicle_number of this MetaAnprEvent.
+    @license_plate_information.setter
+    def license_plate_information(self, license_plate_information):
+        """Sets the license_plate_information of this MetaAnprEvent.
 
-        Vehicle number detected in OCR  # noqa: E501
 
-        :param vehicle_number: The vehicle_number of this MetaAnprEvent.  # noqa: E501
-        :type: str
+        :param license_plate_information: The license_plate_information of this MetaAnprEvent.  # noqa: E501
+        :type: LicensePlateDetails
         """
 
-        self._vehicle_number = vehicle_number
+        self._license_plate_information = license_plate_information
 
     @property
     def vehicle_type(self):
@@ -153,6 +176,111 @@ class MetaAnprEvent(object):
         self._vehicle_color = vehicle_color
 
     @property
+    def speed(self):
+        """Gets the speed of this MetaAnprEvent.  # noqa: E501
+
+
+        :return: The speed of this MetaAnprEvent.  # noqa: E501
+        :rtype: float
+        """
+        return self._speed
+
+    @speed.setter
+    def speed(self, speed):
+        """Sets the speed of this MetaAnprEvent.
+
+
+        :param speed: The speed of this MetaAnprEvent.  # noqa: E501
+        :type: float
+        """
+
+        self._speed = speed
+
+    @property
+    def is_wrong_way(self):
+        """Gets the is_wrong_way of this MetaAnprEvent.  # noqa: E501
+
+
+        :return: The is_wrong_way of this MetaAnprEvent.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_wrong_way
+
+    @is_wrong_way.setter
+    def is_wrong_way(self, is_wrong_way):
+        """Sets the is_wrong_way of this MetaAnprEvent.
+
+
+        :param is_wrong_way: The is_wrong_way of this MetaAnprEvent.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_wrong_way = is_wrong_way
+
+    @property
+    def is_wrong_turn(self):
+        """Gets the is_wrong_turn of this MetaAnprEvent.  # noqa: E501
+
+
+        :return: The is_wrong_turn of this MetaAnprEvent.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_wrong_turn
+
+    @is_wrong_turn.setter
+    def is_wrong_turn(self, is_wrong_turn):
+        """Sets the is_wrong_turn of this MetaAnprEvent.
+
+
+        :param is_wrong_turn: The is_wrong_turn of this MetaAnprEvent.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_wrong_turn = is_wrong_turn
+
+    @property
+    def is_red_light_violation(self):
+        """Gets the is_red_light_violation of this MetaAnprEvent.  # noqa: E501
+
+
+        :return: The is_red_light_violation of this MetaAnprEvent.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_red_light_violation
+
+    @is_red_light_violation.setter
+    def is_red_light_violation(self, is_red_light_violation):
+        """Sets the is_red_light_violation of this MetaAnprEvent.
+
+
+        :param is_red_light_violation: The is_red_light_violation of this MetaAnprEvent.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_red_light_violation = is_red_light_violation
+
+    @property
+    def is_stop_light_violation(self):
+        """Gets the is_stop_light_violation of this MetaAnprEvent.  # noqa: E501
+
+
+        :return: The is_stop_light_violation of this MetaAnprEvent.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_stop_light_violation
+
+    @is_stop_light_violation.setter
+    def is_stop_light_violation(self, is_stop_light_violation):
+        """Sets the is_stop_light_violation of this MetaAnprEvent.
+
+
+        :param is_stop_light_violation: The is_stop_light_violation of this MetaAnprEvent.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_stop_light_violation = is_stop_light_violation
+
+    @property
     def vehicle_make(self):
         """Gets the vehicle_make of this MetaAnprEvent.  # noqa: E501
 
@@ -195,109 +323,109 @@ class MetaAnprEvent(object):
         self._vehicle_model = vehicle_model
 
     @property
-    def count_of_vehicle(self):
-        """Gets the count_of_vehicle of this MetaAnprEvent.  # noqa: E501
+    def driver_on_call_rectangle(self):
+        """Gets the driver_on_call_rectangle of this MetaAnprEvent.  # noqa: E501
 
 
-        :return: The count_of_vehicle of this MetaAnprEvent.  # noqa: E501
-        :rtype: int
+        :return: The driver_on_call_rectangle of this MetaAnprEvent.  # noqa: E501
+        :rtype: ObjectRectWithTimeStampAndEventSnapReference
         """
-        return self._count_of_vehicle
+        return self._driver_on_call_rectangle
 
-    @count_of_vehicle.setter
-    def count_of_vehicle(self, count_of_vehicle):
-        """Sets the count_of_vehicle of this MetaAnprEvent.
+    @driver_on_call_rectangle.setter
+    def driver_on_call_rectangle(self, driver_on_call_rectangle):
+        """Sets the driver_on_call_rectangle of this MetaAnprEvent.
 
 
-        :param count_of_vehicle: The count_of_vehicle of this MetaAnprEvent.  # noqa: E501
-        :type: int
+        :param driver_on_call_rectangle: The driver_on_call_rectangle of this MetaAnprEvent.  # noqa: E501
+        :type: ObjectRectWithTimeStampAndEventSnapReference
         """
 
-        self._count_of_vehicle = count_of_vehicle
+        self._driver_on_call_rectangle = driver_on_call_rectangle
 
     @property
-    def count_of_two_wheeler(self):
-        """Gets the count_of_two_wheeler of this MetaAnprEvent.  # noqa: E501
+    def no_seat_belt_rectangles(self):
+        """Gets the no_seat_belt_rectangles of this MetaAnprEvent.  # noqa: E501
 
 
-        :return: The count_of_two_wheeler of this MetaAnprEvent.  # noqa: E501
-        :rtype: int
+        :return: The no_seat_belt_rectangles of this MetaAnprEvent.  # noqa: E501
+        :rtype: list[ObjectRectWithTimeStampAndEventSnapReference]
         """
-        return self._count_of_two_wheeler
+        return self._no_seat_belt_rectangles
 
-    @count_of_two_wheeler.setter
-    def count_of_two_wheeler(self, count_of_two_wheeler):
-        """Sets the count_of_two_wheeler of this MetaAnprEvent.
+    @no_seat_belt_rectangles.setter
+    def no_seat_belt_rectangles(self, no_seat_belt_rectangles):
+        """Sets the no_seat_belt_rectangles of this MetaAnprEvent.
 
 
-        :param count_of_two_wheeler: The count_of_two_wheeler of this MetaAnprEvent.  # noqa: E501
-        :type: int
+        :param no_seat_belt_rectangles: The no_seat_belt_rectangles of this MetaAnprEvent.  # noqa: E501
+        :type: list[ObjectRectWithTimeStampAndEventSnapReference]
         """
 
-        self._count_of_two_wheeler = count_of_two_wheeler
+        self._no_seat_belt_rectangles = no_seat_belt_rectangles
 
     @property
-    def count_of_helmet(self):
-        """Gets the count_of_helmet of this MetaAnprEvent.  # noqa: E501
+    def no_helmet_rectangles(self):
+        """Gets the no_helmet_rectangles of this MetaAnprEvent.  # noqa: E501
 
 
-        :return: The count_of_helmet of this MetaAnprEvent.  # noqa: E501
-        :rtype: int
+        :return: The no_helmet_rectangles of this MetaAnprEvent.  # noqa: E501
+        :rtype: list[ObjectRectWithTimeStampAndEventSnapReference]
         """
-        return self._count_of_helmet
+        return self._no_helmet_rectangles
 
-    @count_of_helmet.setter
-    def count_of_helmet(self, count_of_helmet):
-        """Sets the count_of_helmet of this MetaAnprEvent.
+    @no_helmet_rectangles.setter
+    def no_helmet_rectangles(self, no_helmet_rectangles):
+        """Sets the no_helmet_rectangles of this MetaAnprEvent.
 
 
-        :param count_of_helmet: The count_of_helmet of this MetaAnprEvent.  # noqa: E501
-        :type: int
+        :param no_helmet_rectangles: The no_helmet_rectangles of this MetaAnprEvent.  # noqa: E501
+        :type: list[ObjectRectWithTimeStampAndEventSnapReference]
         """
 
-        self._count_of_helmet = count_of_helmet
+        self._no_helmet_rectangles = no_helmet_rectangles
 
     @property
-    def count_of_no_helmet(self):
-        """Gets the count_of_no_helmet of this MetaAnprEvent.  # noqa: E501
+    def triple_ride_rectangles(self):
+        """Gets the triple_ride_rectangles of this MetaAnprEvent.  # noqa: E501
 
 
-        :return: The count_of_no_helmet of this MetaAnprEvent.  # noqa: E501
-        :rtype: int
+        :return: The triple_ride_rectangles of this MetaAnprEvent.  # noqa: E501
+        :rtype: ObjectRectWithTimeStampAndEventSnapReference
         """
-        return self._count_of_no_helmet
+        return self._triple_ride_rectangles
 
-    @count_of_no_helmet.setter
-    def count_of_no_helmet(self, count_of_no_helmet):
-        """Sets the count_of_no_helmet of this MetaAnprEvent.
+    @triple_ride_rectangles.setter
+    def triple_ride_rectangles(self, triple_ride_rectangles):
+        """Sets the triple_ride_rectangles of this MetaAnprEvent.
 
 
-        :param count_of_no_helmet: The count_of_no_helmet of this MetaAnprEvent.  # noqa: E501
-        :type: int
+        :param triple_ride_rectangles: The triple_ride_rectangles of this MetaAnprEvent.  # noqa: E501
+        :type: ObjectRectWithTimeStampAndEventSnapReference
         """
 
-        self._count_of_no_helmet = count_of_no_helmet
+        self._triple_ride_rectangles = triple_ride_rectangles
 
     @property
-    def count_of_triple_ride(self):
-        """Gets the count_of_triple_ride of this MetaAnprEvent.  # noqa: E501
+    def pillion_ride_rectangles(self):
+        """Gets the pillion_ride_rectangles of this MetaAnprEvent.  # noqa: E501
 
 
-        :return: The count_of_triple_ride of this MetaAnprEvent.  # noqa: E501
-        :rtype: int
+        :return: The pillion_ride_rectangles of this MetaAnprEvent.  # noqa: E501
+        :rtype: list[ObjectRectWithTimeStampAndEventSnapReference]
         """
-        return self._count_of_triple_ride
+        return self._pillion_ride_rectangles
 
-    @count_of_triple_ride.setter
-    def count_of_triple_ride(self, count_of_triple_ride):
-        """Sets the count_of_triple_ride of this MetaAnprEvent.
+    @pillion_ride_rectangles.setter
+    def pillion_ride_rectangles(self, pillion_ride_rectangles):
+        """Sets the pillion_ride_rectangles of this MetaAnprEvent.
 
 
-        :param count_of_triple_ride: The count_of_triple_ride of this MetaAnprEvent.  # noqa: E501
-        :type: int
+        :param pillion_ride_rectangles: The pillion_ride_rectangles of this MetaAnprEvent.  # noqa: E501
+        :type: list[ObjectRectWithTimeStampAndEventSnapReference]
         """
 
-        self._count_of_triple_ride = count_of_triple_ride
+        self._pillion_ride_rectangles = pillion_ride_rectangles
 
     def to_dict(self):
         """Returns the model properties as a dict"""

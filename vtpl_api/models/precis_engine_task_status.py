@@ -31,7 +31,7 @@ class PrecisEngineTaskStatus(object):
         'id': 'str',
         'engine_task_id': 'str',
         'result_url': 'str',
-        'progress': 'EngineTaskStatusProgress',
+        'progress': 'PrecisEngineTaskStatusProgress',
         'failure': 'EngineTaskStatusFailure',
         'updated': 'datetime',
         'created': 'datetime',
@@ -151,7 +151,7 @@ class PrecisEngineTaskStatus(object):
 
 
         :return: The progress of this PrecisEngineTaskStatus.  # noqa: E501
-        :rtype: EngineTaskStatusProgress
+        :rtype: PrecisEngineTaskStatusProgress
         """
         return self._progress
 
@@ -161,7 +161,7 @@ class PrecisEngineTaskStatus(object):
 
 
         :param progress: The progress of this PrecisEngineTaskStatus.  # noqa: E501
-        :type: EngineTaskStatusProgress
+        :type: PrecisEngineTaskStatusProgress
         """
 
         self._progress = progress
