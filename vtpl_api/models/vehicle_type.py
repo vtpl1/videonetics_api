@@ -35,6 +35,7 @@ class VehicleType(object):
     CAR_TAXI = "Car-Taxi"
     BUS = "Bus"
     TUK_TUK = "Tuk-tuk"
+    CARRIER = "Carrier"
     UNDETERMINED = "Undetermined"
     OTHER = "Other"
     """
