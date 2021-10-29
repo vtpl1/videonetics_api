@@ -41,6 +41,7 @@ class MetaAnprEvent(object):
         'vehicle_model': 'str',
         'driver_on_call_rectangle': 'ObjectRectWithTimeStampAndEventSnapReference',
         'no_seat_belt_rectangles': 'list[ObjectRectWithTimeStampAndEventSnapReference]',
+        'passenger_no_seat_belt_rectangles': 'list[ObjectRectWithTimeStampAndEventSnapReference]',
         'no_helmet_rectangles': 'list[ObjectRectWithTimeStampAndEventSnapReference]',
         'triple_ride_rectangles': 'ObjectRectWithTimeStampAndEventSnapReference',
         'pillion_ride_rectangles': 'list[ObjectRectWithTimeStampAndEventSnapReference]'
@@ -60,12 +61,13 @@ class MetaAnprEvent(object):
         'vehicle_model': 'vehicleModel',
         'driver_on_call_rectangle': 'driverOnCallRectangle',
         'no_seat_belt_rectangles': 'noSeatBeltRectangles',
+        'passenger_no_seat_belt_rectangles': 'passengerNoSeatBeltRectangles',
         'no_helmet_rectangles': 'noHelmetRectangles',
         'triple_ride_rectangles': 'tripleRideRectangles',
         'pillion_ride_rectangles': 'pillionRideRectangles'
     }
 
-    def __init__(self, license_plate_information=None, vehicle_type=None, vehicle_color=None, speed=None, is_wrong_lane=False, is_wrong_way=False, is_wrong_turn=False, is_red_light_violation=False, is_stop_light_violation=False, vehicle_make=None, vehicle_model=None, driver_on_call_rectangle=None, no_seat_belt_rectangles=None, no_helmet_rectangles=None, triple_ride_rectangles=None, pillion_ride_rectangles=None):  # noqa: E501
+    def __init__(self, license_plate_information=None, vehicle_type=None, vehicle_color=None, speed=None, is_wrong_lane=False, is_wrong_way=False, is_wrong_turn=False, is_red_light_violation=False, is_stop_light_violation=False, vehicle_make=None, vehicle_model=None, driver_on_call_rectangle=None, no_seat_belt_rectangles=None, passenger_no_seat_belt_rectangles=None, no_helmet_rectangles=None, triple_ride_rectangles=None, pillion_ride_rectangles=None):  # noqa: E501
         """MetaAnprEvent - a model defined in Swagger"""  # noqa: E501
         self._license_plate_information = None
         self._vehicle_type = None
@@ -80,6 +82,7 @@ class MetaAnprEvent(object):
         self._vehicle_model = None
         self._driver_on_call_rectangle = None
         self._no_seat_belt_rectangles = None
+        self._passenger_no_seat_belt_rectangles = None
         self._no_helmet_rectangles = None
         self._triple_ride_rectangles = None
         self._pillion_ride_rectangles = None
@@ -110,6 +113,8 @@ class MetaAnprEvent(object):
             self.driver_on_call_rectangle = driver_on_call_rectangle
         if no_seat_belt_rectangles is not None:
             self.no_seat_belt_rectangles = no_seat_belt_rectangles
+        if passenger_no_seat_belt_rectangles is not None:
+            self.passenger_no_seat_belt_rectangles = passenger_no_seat_belt_rectangles
         if no_helmet_rectangles is not None:
             self.no_helmet_rectangles = no_helmet_rectangles
         if triple_ride_rectangles is not None:
@@ -389,6 +394,27 @@ class MetaAnprEvent(object):
         """
 
         self._no_seat_belt_rectangles = no_seat_belt_rectangles
+
+    @property
+    def passenger_no_seat_belt_rectangles(self):
+        """Gets the passenger_no_seat_belt_rectangles of this MetaAnprEvent.  # noqa: E501
+
+
+        :return: The passenger_no_seat_belt_rectangles of this MetaAnprEvent.  # noqa: E501
+        :rtype: list[ObjectRectWithTimeStampAndEventSnapReference]
+        """
+        return self._passenger_no_seat_belt_rectangles
+
+    @passenger_no_seat_belt_rectangles.setter
+    def passenger_no_seat_belt_rectangles(self, passenger_no_seat_belt_rectangles):
+        """Sets the passenger_no_seat_belt_rectangles of this MetaAnprEvent.
+
+
+        :param passenger_no_seat_belt_rectangles: The passenger_no_seat_belt_rectangles of this MetaAnprEvent.  # noqa: E501
+        :type: list[ObjectRectWithTimeStampAndEventSnapReference]
+        """
+
+        self._passenger_no_seat_belt_rectangles = passenger_no_seat_belt_rectangles
 
     @property
     def no_helmet_rectangles(self):

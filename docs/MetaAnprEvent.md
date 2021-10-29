@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **vehicle_model** | **str** |  | [optional] 
 **driver_on_call_rectangle** | [**ObjectRectWithTimeStampAndEventSnapReference**](ObjectRectWithTimeStampAndEventSnapReference.md) |  | [optional] 
 **no_seat_belt_rectangles** | [**list[ObjectRectWithTimeStampAndEventSnapReference]**](ObjectRectWithTimeStampAndEventSnapReference.md) |  | [optional] 
+**passenger_no_seat_belt_rectangles** | [**list[ObjectRectWithTimeStampAndEventSnapReference]**](ObjectRectWithTimeStampAndEventSnapReference.md) |  | [optional] 
 **no_helmet_rectangles** | [**list[ObjectRectWithTimeStampAndEventSnapReference]**](ObjectRectWithTimeStampAndEventSnapReference.md) |  | [optional] 
 **triple_ride_rectangles** | [**ObjectRectWithTimeStampAndEventSnapReference**](ObjectRectWithTimeStampAndEventSnapReference.md) |  | [optional] 
 **pillion_ride_rectangles** | [**list[ObjectRectWithTimeStampAndEventSnapReference]**](ObjectRectWithTimeStampAndEventSnapReference.md) |  | [optional] 
