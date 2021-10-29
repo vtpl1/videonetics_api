@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **vehicle_type** | [**VehicleType**](VehicleType.md) |  | [optional] 
 **vehicle_color** | [**Color**](Color.md) |  | [optional] 
 **speed** | **float** |  | [optional] 
+**is_wrong_lane** | **bool** |  | [optional] [default to False]
 **is_wrong_way** | **bool** |  | [optional] [default to False]
 **is_wrong_turn** | **bool** |  | [optional] [default to False]
 **is_red_light_violation** | **bool** |  | [optional] [default to False]

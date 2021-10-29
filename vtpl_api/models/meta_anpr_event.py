@@ -32,6 +32,7 @@ class MetaAnprEvent(object):
         'vehicle_type': 'VehicleType',
         'vehicle_color': 'Color',
         'speed': 'float',
+        'is_wrong_lane': 'bool',
         'is_wrong_way': 'bool',
         'is_wrong_turn': 'bool',
         'is_red_light_violation': 'bool',
@@ -50,6 +51,7 @@ class MetaAnprEvent(object):
         'vehicle_type': 'vehicleType',
         'vehicle_color': 'vehicleColor',
         'speed': 'speed',
+        'is_wrong_lane': 'isWrongLane',
         'is_wrong_way': 'isWrongWay',
         'is_wrong_turn': 'isWrongTurn',
         'is_red_light_violation': 'isRedLightViolation',
@@ -63,12 +65,13 @@ class MetaAnprEvent(object):
         'pillion_ride_rectangles': 'pillionRideRectangles'
     }
 
-    def __init__(self, license_plate_information=None, vehicle_type=None, vehicle_color=None, speed=None, is_wrong_way=False, is_wrong_turn=False, is_red_light_violation=False, is_stop_light_violation=False, vehicle_make=None, vehicle_model=None, driver_on_call_rectangle=None, no_seat_belt_rectangles=None, no_helmet_rectangles=None, triple_ride_rectangles=None, pillion_ride_rectangles=None):  # noqa: E501
+    def __init__(self, license_plate_information=None, vehicle_type=None, vehicle_color=None, speed=None, is_wrong_lane=False, is_wrong_way=False, is_wrong_turn=False, is_red_light_violation=False, is_stop_light_violation=False, vehicle_make=None, vehicle_model=None, driver_on_call_rectangle=None, no_seat_belt_rectangles=None, no_helmet_rectangles=None, triple_ride_rectangles=None, pillion_ride_rectangles=None):  # noqa: E501
         """MetaAnprEvent - a model defined in Swagger"""  # noqa: E501
         self._license_plate_information = None
         self._vehicle_type = None
         self._vehicle_color = None
         self._speed = None
+        self._is_wrong_lane = None
         self._is_wrong_way = None
         self._is_wrong_turn = None
         self._is_red_light_violation = None
@@ -89,6 +92,8 @@ class MetaAnprEvent(object):
             self.vehicle_color = vehicle_color
         if speed is not None:
             self.speed = speed
+        if is_wrong_lane is not None:
+            self.is_wrong_lane = is_wrong_lane
         if is_wrong_way is not None:
             self.is_wrong_way = is_wrong_way
         if is_wrong_turn is not None:
@@ -195,6 +200,27 @@ class MetaAnprEvent(object):
         """
 
         self._speed = speed
+
+    @property
+    def is_wrong_lane(self):
+        """Gets the is_wrong_lane of this MetaAnprEvent.  # noqa: E501
+
+
+        :return: The is_wrong_lane of this MetaAnprEvent.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_wrong_lane
+
+    @is_wrong_lane.setter
+    def is_wrong_lane(self, is_wrong_lane):
+        """Sets the is_wrong_lane of this MetaAnprEvent.
+
+
+        :param is_wrong_lane: The is_wrong_lane of this MetaAnprEvent.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_wrong_lane = is_wrong_lane
 
     @property
     def is_wrong_way(self):
