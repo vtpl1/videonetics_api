@@ -61,14 +61,26 @@ class DeeperLookApi:
                         "$or": [
                             {
                                 "$and": [
-                                    {"capbilitiesType": {"$in": capabilties}},
-                                    {"engineMachineId": {"$exists": False}},
+                                    {
+                                        "capbilitiesType": {
+                                            "$in": capabilties
+                                        }
+                                    },
+                                    {
+                                        "engineMachineId": {
+                                            "$exists": False
+                                        }
+                                    },
                                 ]
                             },
-                            {"engineMachineId": my_id},
+                            {
+                                "engineMachineId": my_id
+                            },
                         ]
                     },
-                    {"isExpired": False},
+                    {
+                        "isExpired": False
+                    },
                 ]
             }
             logging.info(f"The where clause: {json.dumps(where)}")
@@ -108,9 +120,9 @@ class DeeperLookApi:
             logging.error("Exception when calling EnginesApi->engine_tasks_id_get: %s\n" % type(e))
         assert etag is not None
         try:
-            api_response = self.__api.engine_tasks_id_patch(
-                if_match=etag, id=job_id, body=json.dumps({"engineMachineId": my_id})
-            )
+            api_response = self.__api.engine_tasks_id_patch(if_match=etag,
+                                                            id=job_id,
+                                                            body=json.dumps({"engineMachineId": my_id}))
             ret = True
         except ApiException as e:
             logging.error("Exception when calling EnginesApi->engine_tasks_id_patch: %s\n" % e)
@@ -143,7 +155,10 @@ class DeeperLookApi:
             api_response = self.__api.engine_tasks_id_patch(
                 if_match=etag,
                 id=job_id,
-                body=json.dumps({"engineMachineId": my_id, "isExpired": True}),
+                body=json.dumps({
+                    "engineMachineId": my_id,
+                    "isExpired": True
+                }),
             )
             ret = True
         except ApiException as e:
@@ -191,13 +206,11 @@ class DeeperLookApi:
                 api_response = self.__api.engine_task_status_id_patch(if_match=etag, id=status_id, body=body)
         except ApiException as e:
             logging.error(
-                "Exception when calling EnginesApi->engine_task_status_post or engine_task_status_id_patch: %s\n" % e
-            )
+                "Exception when calling EnginesApi->engine_task_status_post or engine_task_status_id_patch: %s\n" % e)
         except urllib3.exceptions.MaxRetryError as e:
             logging.error(
-                "Exception when calling EnginesApi->engine_task_status_post or engine_task_status_id_patch: %s\n"
-                % type(e)
-            )
+                "Exception when calling EnginesApi->engine_task_status_post or engine_task_status_id_patch: %s\n" %
+                type(e))
 
         # assert etag is not None
         return ret
@@ -221,7 +234,7 @@ class DeeperLookApi:
             logging.error("upload_image connection error")
         return ret
 
-    def send_event(self, job_id, start_time_stamp,  end_time_stamp, jpeg_image_bytes: bytes, event_data) -> bool:
+    def send_event(self, job_id, start_time_stamp, end_time_stamp, jpeg_image_bytes: bytes, event_data) -> bool:
         capbilities_type = 201
         assert jpeg_image_bytes is not None
         image_name = "dog.jpg"
@@ -242,10 +255,14 @@ class DeeperLookApi:
             logging.error("event_snaps_post returned None")
             return False
 
-        try:            
-            api_response = self.__api.va_events_post(body=VaEvent(meta_va_event=MetaVaEvent(count=1), capbilities_type=capbilities_type, event_details=EventDetails(
-                engine_task_id=job_id, start_time_stamp=start_time_stamp, end_time_stamp=end_time_stamp),
-                event_snaps=[api_response.id], event_clips=[]))
+        try:
+            api_response = self.__api.va_events_post(body=VaEvent(
+                meta_va_event=MetaVaEvent(count=1),
+                capbilities_type=capbilities_type,
+                event_details=EventDetails(
+                    engine_task_id=job_id, start_time_stamp=start_time_stamp, end_time_stamp=end_time_stamp),
+                event_snaps=[api_response.id],
+                event_clips=[]))
             ret = True
         except ApiException as e:
             logging.error("Exception when calling EnginesApi->engine_tasks_id_get: %s\n" % e)
@@ -257,7 +274,8 @@ class DeeperLookApi:
 
         return ret
 
-    def send_attribute_event(self, job_id, start_time_stamp,  end_time_stamp, jpeg_image_bytes: bytes, event_data) -> bool:
+    def send_attribute_event(self, job_id, start_time_stamp, end_time_stamp, jpeg_image_bytes: bytes,
+                             event_data) -> bool:
         capbilities_type = 201
         assert jpeg_image_bytes is not None
         image_name = "dog.jpg"
@@ -278,10 +296,14 @@ class DeeperLookApi:
             logging.error("event_snaps_post returned None")
             return False
 
-        try:            
-            api_response = self.__api.attribute_events_post(body=AttributeEvent(meta_va_event=MetaAttributeEvent(), capbilities_type=capbilities_type, event_details=EventDetails(
-                engine_task_id=job_id, start_time_stamp=start_time_stamp, end_time_stamp=end_time_stamp),
-                event_snaps=[api_response.id], event_clips=[]))
+        try:
+            api_response = self.__api.attribute_events_post(body=AttributeEvent(
+                meta_va_event=MetaAttributeEvent(),
+                capbilities_type=capbilities_type,
+                event_details=EventDetails(
+                    engine_task_id=job_id, start_time_stamp=start_time_stamp, end_time_stamp=end_time_stamp),
+                event_snaps=[api_response.id],
+                event_clips=[]))
             ret = True
         except ApiException as e:
             logging.error("Exception when calling EnginesApi->engine_tasks_id_get: %s\n" % e)
@@ -292,7 +314,6 @@ class DeeperLookApi:
             return False
 
         return ret
-
 
     def upload_fsbq(self, video_file_path: str, video_name: str) -> Tuple[str, str]:
         content_type = "application/x-fsbq"
@@ -332,14 +353,26 @@ class DeeperLookApi:
                         "$or": [
                             {
                                 "$and": [
-                                    {"capbilitiesType": {"$in": capabilties}},
-                                    {"engineMachineId": {"$exists": False}},
+                                    {
+                                        "capbilitiesType": {
+                                            "$in": capabilties
+                                        }
+                                    },
+                                    {
+                                        "engineMachineId": {
+                                            "$exists": False
+                                        }
+                                    },
                                 ]
                             },
-                            {"engineMachineId": my_id},
+                            {
+                                "engineMachineId": my_id
+                            },
                         ]
                     },
-                    {"isExpired": False},
+                    {
+                        "isExpired": False
+                    },
                 ]
             }
             logging.info(f"The where clause: {json.dumps(where)}")
@@ -379,9 +412,9 @@ class DeeperLookApi:
             logging.error("Exception when calling EnginesApi->precis_engine_tasks_id_get: %s\n" % type(e))
         assert etag is not None
         try:
-            api_response = self.__api.precis_engine_tasks_id_patch(
-                if_match=etag, id=job_id, body=json.dumps({"engineMachineId": my_id})
-            )
+            api_response = self.__api.precis_engine_tasks_id_patch(if_match=etag,
+                                                                   id=job_id,
+                                                                   body=json.dumps({"engineMachineId": my_id}))
             ret = True
         except ApiException as e:
             logging.error("Exception when calling EnginesApi->precis_engine_tasks_id_patch: %s\n" % e)
@@ -414,7 +447,11 @@ class DeeperLookApi:
             api_response = self.__api.precis_engine_tasks_id_patch(
                 if_match=etag,
                 id=job_id,
-                body=json.dumps({"engineMachineId": my_id, "isExpired": True, "resultUrl": media_url}),
+                body=json.dumps({
+                    "engineMachineId": my_id,
+                    "isExpired": True,
+                    "resultUrl": media_url
+                }),
             )
             ret = True
         except ApiException as e:
@@ -424,7 +461,12 @@ class DeeperLookApi:
 
         return ret
 
-    def send_precis_job_status(self, job_id: str, percent: float, start_time_stamp: float, end_time_stamp: float, media_url: str = None) -> bool:
+    def send_precis_job_status(self,
+                               job_id: str,
+                               percent: float,
+                               start_time_stamp: float,
+                               end_time_stamp: float,
+                               media_url: str = None) -> bool:
         assert job_id is not None
         assert len(job_id) > 0
 
@@ -455,7 +497,10 @@ class DeeperLookApi:
         # failure = EngineTaskStatusFailure()
         failure = None
         if media_url is not None:
-            body = PrecisEngineTaskStatus(engine_task_id=job_id, progress=progress, failure=failure, result_url=media_url)
+            body = PrecisEngineTaskStatus(engine_task_id=job_id,
+                                          progress=progress,
+                                          failure=failure,
+                                          result_url=media_url)
         else:
             body = PrecisEngineTaskStatus(engine_task_id=job_id, progress=progress, failure=failure)
         try:
@@ -465,16 +510,56 @@ class DeeperLookApi:
                 api_response = self.__api.precis_engine_task_status_id_patch(if_match=etag, id=status_id, body=body)
         except ApiException as e:
             logging.error(
-                "Exception when calling EnginesApi->engine_task_status_post or precis_engine_task_status_id_patch: %s\n" % e
-            )
+                "Exception when calling EnginesApi->engine_task_status_post or precis_engine_task_status_id_patch: %s\n"
+                % e)
         except urllib3.exceptions.MaxRetryError as e:
             logging.error(
                 "Exception when calling EnginesApi->engine_task_status_post or precis_engine_task_status_id_patch: %s\n"
-                % type(e)
-            )
+                % type(e))
 
         # assert etag is not None
         return ret
+
+    def get_next_attribure_events(self, last_time_stamp=0, page=0) -> List[MetaAttributeEvent]:
+        capabilties = [321]
+        items = []
+        try:
+            # Get all engineTasks
+            # where={"$or": [ { "$and": [{"capbilitiesType": { "$in": [201, 207] } }, {"engineMachineId": { "$exists": false } }] }, {"engineMachineId": "monotosh"} ]}
+            # where={"$and": [{"$or": [ { "$and": [{"capbilitiesType": { "$in": [201, 207] } }, {"engineMachineId": { "$exists": false } }] }, {"engineMachineId": "monotosh"} ]}, { "isExpired": false }]}
+            # &sort=[('created', -1)]
+            # &maxResults=1
+
+            where = {
+                "$and": [
+                    {
+                        "capbilitiesType": {
+                            "$in": capabilties
+                        }
+                    },
+                    {
+                        "eventDetails.startTimeStamp": {
+                            "$gte": last_time_stamp
+                        }
+                    },
+                ]
+            }
+            print(f"The where clause: {json.dumps(where)}")
+            sort = [("created", -1)]
+            max_results = 25
+            api_response = self.__api.attribute_events_get(
+                where=json.dumps(where),
+                sort=json.dumps(sort),
+                max_results=json.dumps(max_results),
+                page=json.dumps(page)
+            )
+            items = api_response.items
+            print(f"Next page number: {api_response.links.next}")
+        except ApiException as e:
+            print("Exception when calling EnginesApi->precis_engine_tasks_get: %s\n" % e)
+        except urllib3.exceptions.MaxRetryError as e:
+            print("Monotosh Exception when calling EnginesApi->precis_engine_tasks_get: %s\n" % type(e))
+        return items
 
 
 class DeeperLookTaskSubmitterApi:
@@ -526,7 +611,8 @@ class DeeperLookTaskSubmitterApi:
             logging.error("upload_video connection error")
         return ret
 
-    def put_jobs(self, capbilities_type: int, video_file: str, start_time_stamp: int, end_time_stamp: int, time_to_live: int):
+    def put_jobs(self, capbilities_type: int, video_file: str, start_time_stamp: int, end_time_stamp: int,
+                 time_to_live: int):
         video_file.replace("\\", "/")
         video_name = None
         for x in video_file.split("/"):
@@ -544,9 +630,10 @@ class DeeperLookTaskSubmitterApi:
             api_response = self.__api.engine_tasks_post(body=EngineTask(
                 capbilities_type=capbilities_type,
                 time_to_live=time_to_live,
-                source=SourceEndPoint(source_list=[SourceEndPointSourceList(type=SourceType.HTTP, base_url=fully_qualified_url)],
-                                      start_time_stamp=start_time_stamp,
-                                      end_time_stamp=end_time_stamp)))
+                source=SourceEndPoint(
+                    source_list=[SourceEndPointSourceList(type=SourceType.HTTP, base_url=fully_qualified_url)],
+                    start_time_stamp=start_time_stamp,
+                    end_time_stamp=end_time_stamp)))
             logging.info(api_response)
             ret = True
         except ApiException as e:
@@ -590,8 +677,8 @@ def test_job_executor(caplog):
         for i in range(10, 101, 10):
             x.send_job_status(item.id, i, time.time(), time.time())
             with open("1.jpg", "rb") as f:
-                assert x.send_event(item.id, item.source.start_time_stamp,
-                                    item.source.end_time_stamp, f.read(), None) == True
+                assert x.send_event(item.id, item.source.start_time_stamp, item.source.end_time_stamp, f.read(),
+                                    None) == True
         x.flag_finish_job(item.id, my_id)
     # logging.info(f"{items}")
     logging.info("End")
@@ -603,9 +690,9 @@ def test_job_submitter(caplog):
     x = DeeperLookTaskSubmitterApi()
     my_id = "d6a64827-edab-4714-bcec-36f634106f11"
     y = DeeperLookApi()
-    start_time_stamp = time.time()*1000
+    start_time_stamp = time.time() * 1000
     end_time_stamp = start_time_stamp
-    time_to_live = 5*3600*1000
+    time_to_live = 5 * 3600 * 1000
     ret = x.put_jobs(201, "2min_1080p.mp4", start_time_stamp, end_time_stamp, time_to_live)
     assert ret == True
     #y.get_jobs([201, 207], 2, my_id)
@@ -625,12 +712,23 @@ def test_precis_job_executor(caplog):
     for item in items:
         x.flag_precis_start_job(item.id, my_id)
         for i in range(10, 101, 10):
-            x.send_precis_job_status(item.id, i, int(time.time()*1000), int(time.time()*1000))
+            x.send_precis_job_status(item.id, i, int(time.time() * 1000), int(time.time() * 1000))
             time.sleep(1)
         media_url = x.upload_fsbq("a.fsbq", "a.fsbq")
-        x.send_precis_job_status(item.id, i, int(time.time()*1000), int(time.time()*1000), media_url=media_url[0])
-        
+        x.send_precis_job_status(item.id, i, int(time.time() * 1000), int(time.time() * 1000), media_url=media_url[0])
+
         x.flag_precis_finish_job(item.id, my_id, media_url[0])
     # logging.info(f"{items}")
     logging.info("End")
 
+
+def test_get_attribute_events_executor():
+    print("Started")
+    x = DeeperLookApi()
+    attribute_events = x.get_next_attribure_events()
+    # print(attribute_events)
+    print("End")
+
+if __name__ == "__main__":
+    print("Hello")
+    test_get_attribute_events_executor()
