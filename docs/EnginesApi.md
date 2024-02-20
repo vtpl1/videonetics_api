@@ -1,4 +1,4 @@
-# vtpl_api.EnginesApi
+# swagger_client.EnginesApi
 
 All URIs are relative to *http://v2.videonetics.com:5000*
 
@@ -91,16 +91,16 @@ Get all anprEvents
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the anprEvent model. Example:   * To find anprEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /anprEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find anprEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /anprEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /anprEvents?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort anprEvents by startTimeStamp in eventDetails IN ASCEDING order, use /anprEvents?sort=eventDetails.startTimeStamp   * To sort anprEvents by startTimeStamp in eventDetails IN DECENDING order, use /anprEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING (optional)
@@ -151,16 +151,16 @@ Delete an anprEvent
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -204,16 +204,16 @@ Get anprEvent by id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find anprEvents with eventSnap object. use /anprEvents/{id}?embedded={\"eventSnaps\":1}' (optional)
 
@@ -258,19 +258,19 @@ Patch
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.AnprEvent() # AnprEvent |  (optional)
+body = swagger_client.AnprEvent() # AnprEvent |  (optional)
 
 try:
     # Patch
@@ -314,17 +314,17 @@ Create an anprEvent.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.AnprEvent() # AnprEvent |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.AnprEvent() # AnprEvent |  (optional)
 
 try:
     # Create an anprEvent
@@ -366,16 +366,16 @@ Get all attributeEvents
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the attributeEvent model. Example:   * To find attributeEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /attributeEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find attributeEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /attributeEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /attributeEvents?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort attributeEvents by startTimeStamp in eventDetails IN ASCEDING order, use /attributeEvents?sort=eventDetails.startTimeStamp   * To sort attributeEvents by startTimeStamp in eventDetails IN DECENDING order, use /attributeEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING (optional)
@@ -426,16 +426,16 @@ Delete an attributeEvent
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -479,16 +479,16 @@ Get attributeEvent by id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find attributeEvents with eventSnap object. use /attributeEvents/{id}?embedded={\"eventSnaps\":1}' (optional)
 
@@ -533,19 +533,19 @@ Patch
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.AttributeEvent() # AttributeEvent |  (optional)
+body = swagger_client.AttributeEvent() # AttributeEvent |  (optional)
 
 try:
     # Patch
@@ -589,17 +589,17 @@ Create an attributeEvent.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.AttributeEvent() # AttributeEvent |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.AttributeEvent() # AttributeEvent |  (optional)
 
 try:
     # Create an attributeEvent
@@ -641,16 +641,16 @@ Get all unprocesed clips
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 
 try:
     # Get all unprocesed clips
@@ -689,16 +689,16 @@ Get clip by id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -741,17 +741,17 @@ Create an unprocesed clip
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.Clip() # Clip |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Clip() # Clip |  (optional)
 
 try:
     # Create an unprocesed clip
@@ -793,16 +793,16 @@ Get task status response
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 
 try:
     # Get task status response
@@ -841,16 +841,16 @@ Get all engineTaskStatus
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the engineTaskStatus model. Example:   * To find engineTaskStatus with engineTaskId equal \"11\", use /engineTaskStatus?where={\"engineTaskId\":\"11\"} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engineTaskStatus?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTaskStatus?sort=created   * To sort engineTasks by created IN DECENDING order, use /engineTaskStatus?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
@@ -899,16 +899,16 @@ Delete an engineTaskStatus
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -952,16 +952,16 @@ Get engineTaskStatus for a given id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -1004,19 +1004,19 @@ Patch an engineTaskStatus. Submit an object with one or more properties of the e
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.EngineTaskStatus() # EngineTaskStatus |  (optional)
+body = swagger_client.EngineTaskStatus() # EngineTaskStatus |  (optional)
 
 try:
     # Patch an engineTaskStatus
@@ -1060,17 +1060,17 @@ Create a engineTaskStatus.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.EngineTaskStatus() # EngineTaskStatus |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.EngineTaskStatus() # EngineTaskStatus |  (optional)
 
 try:
     # Create an engineTaskStatus
@@ -1112,16 +1112,16 @@ Get all engineTasks details
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the engineTask model. Example:   * To find engineTasks with capbilitiesType equal 211 and sourceId equal \"4\", use /engineTasks?where={\"capbilitiesType\":322,\"source.sourceId\":\"4\"}   * To find engineTasks with destination.extras.value equal \"1553774721506487\", use /engineTasks?where={\"destination.extras.value\":\"1553774721506487\"} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engines?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /engineTasks?sort=created   * To sort engineTasks by created IN DECENDING order, use /engineTasks?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
@@ -1172,16 +1172,16 @@ Delete an engine task
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -1225,16 +1225,16 @@ Get engine task for a given id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -1277,19 +1277,19 @@ Patch an engine task. Submit an object with one or more properties of the engine
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.EngineTask() # EngineTask |  (optional)
+body = swagger_client.EngineTask() # EngineTask |  (optional)
 
 try:
     # Patch an engine task
@@ -1333,17 +1333,17 @@ Create a engineTasks.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.EngineTask() # EngineTask |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.EngineTask() # EngineTask |  (optional)
 
 try:
     # Create an engineTask
@@ -1385,16 +1385,16 @@ Get all engine details
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /engines?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /engines?page=4 (optional)
 sort = 'sort_example' # str |  (optional)
@@ -1443,16 +1443,16 @@ Delete an engine
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -1496,16 +1496,16 @@ Get engine details for a given id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -1548,19 +1548,19 @@ Patch
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.Engine() # Engine |  (optional)
+body = swagger_client.Engine() # Engine |  (optional)
 
 try:
     # Patch
@@ -1604,17 +1604,17 @@ Create an engine.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.Engine() # Engine |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Engine() # Engine |  (optional)
 
 try:
     # Create an engine
@@ -1656,16 +1656,16 @@ Get all eventSnaps
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 
 try:
     # Get all eventSnaps
@@ -1704,16 +1704,16 @@ Get eventSnap by id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -1756,17 +1756,17 @@ Create an eventSnap.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.Snap() # Snap |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Snap() # Snap |  (optional)
 
 try:
     # Create an eventSnap
@@ -1808,16 +1808,16 @@ Get all inferencers details
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /inferencers?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /inferencers?page=4 (optional)
 sort = 'sort_example' # str |  (optional)
@@ -1866,16 +1866,16 @@ Delete an inferencer
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -1919,16 +1919,16 @@ Get engine details for a given id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -1971,19 +1971,19 @@ Patch
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.Inferencer() # Inferencer |  (optional)
+body = swagger_client.Inferencer() # Inferencer |  (optional)
 
 try:
     # Patch
@@ -2027,17 +2027,17 @@ Create an inferencer.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.Inferencer() # Inferencer |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Inferencer() # Inferencer |  (optional)
 
 try:
     # Create an inferencer
@@ -2079,16 +2079,16 @@ Get all media sources
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | Media sources (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /mediaSources?page=4 (optional)
 sort = 'sort_example' # str |  (optional)
@@ -2137,16 +2137,16 @@ Delete a media source
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -2190,16 +2190,16 @@ Get media source by id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -2242,19 +2242,19 @@ Patch
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.SourceEndPoint() # SourceEndPoint |  (optional)
+body = swagger_client.SourceEndPoint() # SourceEndPoint |  (optional)
 
 try:
     # Patch
@@ -2298,17 +2298,17 @@ Create a media source
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.SourceEndPoint() # SourceEndPoint |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.SourceEndPoint() # SourceEndPoint |  (optional)
 
 try:
     # Create a media source
@@ -2350,16 +2350,16 @@ Get all motionDetectors details
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /motionDetectors?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /motionDetectors?page=4 (optional)
 sort = 'sort_example' # str |  (optional)
@@ -2408,16 +2408,16 @@ Delete an motionDetector
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -2461,16 +2461,16 @@ Get engine details for a given id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -2513,19 +2513,19 @@ Patch
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.MotionDetector() # MotionDetector |  (optional)
+body = swagger_client.MotionDetector() # MotionDetector |  (optional)
 
 try:
     # Patch
@@ -2569,17 +2569,17 @@ Create an motionDetector.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.MotionDetector() # MotionDetector |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.MotionDetector() # MotionDetector |  (optional)
 
 try:
     # Create an motionDetector
@@ -2621,16 +2621,16 @@ Get all pipelines details
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /pipelines?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /pipelines?page=4 (optional)
 sort = 'sort_example' # str |  (optional)
@@ -2679,16 +2679,16 @@ Delete an pipeline
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -2732,16 +2732,16 @@ Get engine details for a given id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -2784,19 +2784,19 @@ Patch
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.Pipeline() # Pipeline |  (optional)
+body = swagger_client.Pipeline() # Pipeline |  (optional)
 
 try:
     # Patch
@@ -2840,17 +2840,17 @@ Create an pipeline.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.Pipeline() # Pipeline |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Pipeline() # Pipeline |  (optional)
 
 try:
     # Create an pipeline
@@ -2892,16 +2892,16 @@ Get all preProcesses details
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the registeredFace model. Example:   * To find enginess with capabilities 206, 211 , use /preProcesses?where={\"capabilities\":{\"$in\":[206,211]}} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /preProcesses?page=4 (optional)
 sort = 'sort_example' # str |  (optional)
@@ -2950,16 +2950,16 @@ Delete an preProcess
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -3003,16 +3003,16 @@ Get engine details for a given id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -3055,19 +3055,19 @@ Patch
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.PreProcess() # PreProcess |  (optional)
+body = swagger_client.PreProcess() # PreProcess |  (optional)
 
 try:
     # Patch
@@ -3111,17 +3111,17 @@ Create an preProcess.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.PreProcess() # PreProcess |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.PreProcess() # PreProcess |  (optional)
 
 try:
     # Create an preProcess
@@ -3163,16 +3163,16 @@ Get all precisEngineTaskStatus
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the precisEngineTaskStatus model. Example:   * To find precisEngineTaskStatus with engineTaskId equal \"11\", use /precisEngineTaskStatus?where={\"engineTaskId\":\"11\"} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /precisEngineTaskStatus?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /precisEngineTaskStatus?sort=created   * To sort engineTasks by created IN DECENDING order, use /precisEngineTaskStatus?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
@@ -3221,16 +3221,16 @@ Delete an precisEngineTaskStatus
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -3274,16 +3274,16 @@ Get precisEngineTaskStatus for a given id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -3326,19 +3326,19 @@ Patch an engineTaskStatus. Submit an object with one or more properties of the p
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.PrecisEngineTaskStatus() # PrecisEngineTaskStatus |  (optional)
+body = swagger_client.PrecisEngineTaskStatus() # PrecisEngineTaskStatus |  (optional)
 
 try:
     # Patch an precisEngineTaskStatus
@@ -3382,17 +3382,17 @@ Create a precisEngineTaskStatus.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.PrecisEngineTaskStatus() # PrecisEngineTaskStatus |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.PrecisEngineTaskStatus() # PrecisEngineTaskStatus |  (optional)
 
 try:
     # Create an precisEngineTaskStatus
@@ -3434,16 +3434,16 @@ Get all engineTasks details
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the engineTask model. Example:   * To find precisEngineTasks with capbilitiesType equal 211 and sourceId equal \"4\", use /precisEngineTasks?where={\"capbilitiesType\":322,\"source.sourceId\":\"4\"}   * To find precisEngineTasks with destination.extras.value equal \"1553774721506487\", use /precisEngineTasks?where={\"destination.extras.value\":\"1553774721506487\"} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find engine tasks at page no 4, use /engines?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort engineTasks by created IN ASCEDING order, use /precisEngineTasks?sort=created   * To sort engineTasks by created IN DECENDING order, use /precisEngineTasks?sort=-created   * Please note the - (minus) sign in front of the created, that indicates inverse of ASCENDING (optional)
@@ -3494,16 +3494,16 @@ Delete an precis engine task
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -3547,16 +3547,16 @@ Get precis engine task for a given id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -3599,19 +3599,19 @@ Patch an engine task. Submit an object with one or more properties of the engine
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.PrecisEngineTask() # PrecisEngineTask |  (optional)
+body = swagger_client.PrecisEngineTask() # PrecisEngineTask |  (optional)
 
 try:
     # Patch an precis engine task
@@ -3655,17 +3655,17 @@ Create a engineTasks.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.PrecisEngineTask() # PrecisEngineTask |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.PrecisEngineTask() # PrecisEngineTask |  (optional)
 
 try:
     # Create an precisEngineTasks
@@ -3707,16 +3707,16 @@ Get all unprocesed snaps
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 
 try:
     # Get all unprocesed snaps
@@ -3755,16 +3755,16 @@ Get snap by id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 
 try:
@@ -3807,17 +3807,17 @@ Create an unprocesed snap
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.Snap() # Snap |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.Snap() # Snap |  (optional)
 
 try:
     # Create a unprocesed snap
@@ -3859,16 +3859,16 @@ Get all vaEvents
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 where = 'where_example' # str | The where clause takes a JSON as a string with one or many properties of the vaEvent model. Example:   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\"}   * To find vaEvents with engineTaskId equal 5c1956e925b6b30001103eaa and sourceId equal 5c1956e925b6b30001103eab, use /vaEvents?where={\"eventDetails.engineTaskId\":\"5c1956e925b6b30001103eaa\",\"eventDetails.sourceId\":\"5c1956e925b6b30001103eab\"} (optional)
 page = 56 # int | The page clause takes a the page number you want to query. Example:   * To find registered faces at page no 4, use /vaEvents?page=4 (optional)
 sort = 'sort_example' # str | The sort query parameter sorts the result set in ascending and desending order by one of the property of the result set. Example:   * To sort vaEvents by startTimeStamp in eventDetails IN ASCEDING order, use /vaEvents?sort=eventDetails.startTimeStamp   * To sort vaEvents by startTimeStamp in eventDetails IN DECENDING order, use /vaEvents?sort=-eventDetails.startTimeStamp   * Please note the - (minus) sign in front of the eventDetails.startTimeStamp, that indicates inverse of ASCENDING (optional)
@@ -3919,16 +3919,16 @@ Delete an vaEvent
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 if_match = 'if_match_example' # str | 
 
@@ -3972,16 +3972,16 @@ Get vaEvent by id
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | Unique ID
 embedded = 'embedded_example' # str | The embedded clause takes a JSON as a string with eventSnaps argument. Example:   * 'To find vaEvents with eventSnap object. use /vaEvents/{id}?embedded={\"eventSnaps\":1}' (optional)
 
@@ -4026,19 +4026,19 @@ Patch
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
 if_match = 'if_match_example' # str | 
 id = 'id_example' # str | Unique ID
-body = vtpl_api.VaEvent() # VaEvent |  (optional)
+body = swagger_client.VaEvent() # VaEvent |  (optional)
 
 try:
     # Patch
@@ -4082,17 +4082,17 @@ Create an vaEvent.
 ```python
 from __future__ import print_function
 import time
-import vtpl_api
-from vtpl_api.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 # Configure HTTP basic authorization: basicAuth
-configuration = vtpl_api.Configuration()
+configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
-api_instance = vtpl_api.EnginesApi(vtpl_api.ApiClient(configuration))
-body = vtpl_api.VaEvent() # VaEvent |  (optional)
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+body = swagger_client.VaEvent() # VaEvent |  (optional)
 
 try:
     # Create an vaEvent
