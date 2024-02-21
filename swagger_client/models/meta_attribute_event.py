@@ -83,7 +83,7 @@ class MetaAttributeEvent(object):
         'car_type': 'str',
         'car_type_conf': 'float',
         'car_type_validated': 'bool',
-        'age': 'float',
+        'age': 'str',
         'age_conf': 'float',
         'age_validated': 'bool',
         'hair_length': 'str',
@@ -1720,7 +1720,7 @@ class MetaAttributeEvent(object):
 
 
         :return: The age of this MetaAttributeEvent.  # noqa: E501
-        :rtype: float
+        :rtype: str
         """
         return self._age
 
@@ -1730,7 +1730,7 @@ class MetaAttributeEvent(object):
 
 
         :param age: The age of this MetaAttributeEvent.  # noqa: E501
-        :type: float
+        :type: str
         """
 
         self._age = age

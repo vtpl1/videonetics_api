@@ -58,7 +58,7 @@ Name | Type | Description | Notes
 **car_type** | **str** |  | [optional] 
 **car_type_conf** | **float** |  | [optional] 
 **car_type_validated** | **bool** |  | [optional] 
-**age** | **float** |  | [optional] 
+**age** | **str** |  | [optional] 
 **age_conf** | **float** |  | [optional] 
 **age_validated** | **bool** |  | [optional] 
 **hair_length** | **str** |  | [optional] 
