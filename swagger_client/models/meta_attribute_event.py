@@ -127,9 +127,9 @@ class MetaAttributeEvent(object):
         'face_recognised_person_name2': 'str',
         'face_recognised_person_id2_conf': 'float',
         'face_recognised_person_id2_validated': 'bool',
-        'vehicle_ocr': 'str',
-        'vehicle_ocr_conf': 'float',
-        'vehicle_ocr_validated': 'bool',
+        'vehicle_license_number': 'str',
+        'vehicle_license_number_conf': 'float',
+        'vehicle_license_number_validated': 'bool',
         'vehicle_quality_factor': 'float',
         'human_quality_factor': 'float',
         'event_time': 'int',
@@ -239,9 +239,9 @@ class MetaAttributeEvent(object):
         'face_recognised_person_name2': 'faceRecognisedPersonName2',
         'face_recognised_person_id2_conf': 'faceRecognisedPersonId2Conf',
         'face_recognised_person_id2_validated': 'faceRecognisedPersonId2Validated',
-        'vehicle_ocr': 'vehicleOcr',
-        'vehicle_ocr_conf': 'vehicleOcrConf',
-        'vehicle_ocr_validated': 'vehicleOcrValidated',
+        'vehicle_license_number': 'vehicleLicenseNumber',
+        'vehicle_license_number_conf': 'vehicleLicenseNumberConf',
+        'vehicle_license_number_validated': 'vehicleLicenseNumberValidated',
         'vehicle_quality_factor': 'vehicleQualityFactor',
         'human_quality_factor': 'humanQualityFactor',
         'event_time': 'eventTime',
@@ -251,7 +251,7 @@ class MetaAttributeEvent(object):
         'unique_event_id': 'uniqueEventId'
     }
 
-    def __init__(self, object_type=1, obj_type_conf=None, obj_type_validated=None, estimated_height=0, top_type=None, top_type_conf=None, top_type_validated=None, top_color=None, top_color_conf=None, top_color_validated=None, bottom_type=None, bottom_type_conf=None, bottom_type_validated=None, bottom_color=None, bottom_color_conf=None, bottom_colore_validated=None, sex=None, gender_conf=None, gender_validated=None, presence_of_bag=None, presence_of_bag_conf=None, presence_of_bag_validated=None, type_of_bag=None, type_of_bag_conf=None, type_of_bag_validated=None, clothing_pattern=None, clothing_pattern_conf=None, clothing_pattern_validated=None, presence_of_heade_dress=None, presence_of_heade_dress_conf=None, presence_of_heade_dress_validated=None, type_of_head_dress=None, type_of_head_dress_conf=None, type_of_head_dress_validated=None, associated_object=None, associated_object_conf=None, associated_object_validated=None, presence_of_long_sleeve=None, presence_of_long_sleeve_conf=None, presence_of_long_sleeve_validated=None, vehicle_type=None, vehicle_type_conf=None, vehicle_type_validated=None, vehicle_color=None, vehicle_color_conf=None, vehicle_color_validated=None, vehicle_make=None, vehicle_make_conf=None, vehicle_make_validated=None, vehicle_model=None, vehicle_model_conf=None, vehicle_model_validated=None, car_type=None, car_type_conf=None, car_type_validated=None, age=None, age_conf=None, age_validated=None, hair_length=None, hair_length_conf=None, hair_length_validated=None, hair_colour=None, hair_colour_conf=None, hair_colour_validated=None, wear_glass=None, wear_glass_conf=None, wear_glass_validated=None, posture=None, posture_conf=None, posture_validated=None, bottom_length_type=None, bottom_length_type_conf=None, bottom_length_type_validated=None, head_dress_type=None, head_dress_type_conf=None, head_dress_type_validated=None, head_dress_colour=None, head_dress_colour_conf=None, head_dress_colour_validated=None, wears_mask=None, wears_mask_conf=None, wears_mask_validated=None, mask_colour=None, mask_colour_conf=None, mask_colour_validated=None, bag_colour=None, bag_colour_conf=None, bag_colour_validated=None, bag_style=None, bag_style_conf=None, bag_style_validated=None, face_recognised_person_id1=None, face_recognised_person_name1=None, face_recognised_person_id1_conf=None, face_recognised_person_id1_validated=None, face_recognised_person_id2=None, face_recognised_person_name2=None, face_recognised_person_id2_conf=None, face_recognised_person_id2_validated=None, vehicle_ocr=None, vehicle_ocr_conf=None, vehicle_ocr_validated=None, vehicle_quality_factor=None, human_quality_factor=None, event_time=None, channel_id=None, app_id=None, track_id=None, unique_event_id=None):  # noqa: E501
+    def __init__(self, object_type=1, obj_type_conf=None, obj_type_validated=None, estimated_height=0, top_type=None, top_type_conf=None, top_type_validated=None, top_color=None, top_color_conf=None, top_color_validated=None, bottom_type=None, bottom_type_conf=None, bottom_type_validated=None, bottom_color=None, bottom_color_conf=None, bottom_colore_validated=None, sex=None, gender_conf=None, gender_validated=None, presence_of_bag=None, presence_of_bag_conf=None, presence_of_bag_validated=None, type_of_bag=None, type_of_bag_conf=None, type_of_bag_validated=None, clothing_pattern=None, clothing_pattern_conf=None, clothing_pattern_validated=None, presence_of_heade_dress=None, presence_of_heade_dress_conf=None, presence_of_heade_dress_validated=None, type_of_head_dress=None, type_of_head_dress_conf=None, type_of_head_dress_validated=None, associated_object=None, associated_object_conf=None, associated_object_validated=None, presence_of_long_sleeve=None, presence_of_long_sleeve_conf=None, presence_of_long_sleeve_validated=None, vehicle_type=None, vehicle_type_conf=None, vehicle_type_validated=None, vehicle_color=None, vehicle_color_conf=None, vehicle_color_validated=None, vehicle_make=None, vehicle_make_conf=None, vehicle_make_validated=None, vehicle_model=None, vehicle_model_conf=None, vehicle_model_validated=None, car_type=None, car_type_conf=None, car_type_validated=None, age=None, age_conf=None, age_validated=None, hair_length=None, hair_length_conf=None, hair_length_validated=None, hair_colour=None, hair_colour_conf=None, hair_colour_validated=None, wear_glass=None, wear_glass_conf=None, wear_glass_validated=None, posture=None, posture_conf=None, posture_validated=None, bottom_length_type=None, bottom_length_type_conf=None, bottom_length_type_validated=None, head_dress_type=None, head_dress_type_conf=None, head_dress_type_validated=None, head_dress_colour=None, head_dress_colour_conf=None, head_dress_colour_validated=None, wears_mask=None, wears_mask_conf=None, wears_mask_validated=None, mask_colour=None, mask_colour_conf=None, mask_colour_validated=None, bag_colour=None, bag_colour_conf=None, bag_colour_validated=None, bag_style=None, bag_style_conf=None, bag_style_validated=None, face_recognised_person_id1=None, face_recognised_person_name1=None, face_recognised_person_id1_conf=None, face_recognised_person_id1_validated=None, face_recognised_person_id2=None, face_recognised_person_name2=None, face_recognised_person_id2_conf=None, face_recognised_person_id2_validated=None, vehicle_license_number=None, vehicle_license_number_conf=None, vehicle_license_number_validated=None, vehicle_quality_factor=None, human_quality_factor=None, event_time=None, channel_id=None, app_id=None, track_id=None, unique_event_id=None):  # noqa: E501
         """MetaAttributeEvent - a model defined in Swagger"""  # noqa: E501
         self._object_type = None
         self._obj_type_conf = None
@@ -352,9 +352,9 @@ class MetaAttributeEvent(object):
         self._face_recognised_person_name2 = None
         self._face_recognised_person_id2_conf = None
         self._face_recognised_person_id2_validated = None
-        self._vehicle_ocr = None
-        self._vehicle_ocr_conf = None
-        self._vehicle_ocr_validated = None
+        self._vehicle_license_number = None
+        self._vehicle_license_number_conf = None
+        self._vehicle_license_number_validated = None
         self._vehicle_quality_factor = None
         self._human_quality_factor = None
         self._event_time = None
@@ -561,12 +561,12 @@ class MetaAttributeEvent(object):
             self.face_recognised_person_id2_conf = face_recognised_person_id2_conf
         if face_recognised_person_id2_validated is not None:
             self.face_recognised_person_id2_validated = face_recognised_person_id2_validated
-        if vehicle_ocr is not None:
-            self.vehicle_ocr = vehicle_ocr
-        if vehicle_ocr_conf is not None:
-            self.vehicle_ocr_conf = vehicle_ocr_conf
-        if vehicle_ocr_validated is not None:
-            self.vehicle_ocr_validated = vehicle_ocr_validated
+        if vehicle_license_number is not None:
+            self.vehicle_license_number = vehicle_license_number
+        if vehicle_license_number_conf is not None:
+            self.vehicle_license_number_conf = vehicle_license_number_conf
+        if vehicle_license_number_validated is not None:
+            self.vehicle_license_number_validated = vehicle_license_number_validated
         if vehicle_quality_factor is not None:
             self.vehicle_quality_factor = vehicle_quality_factor
         if human_quality_factor is not None:
@@ -2664,67 +2664,67 @@ class MetaAttributeEvent(object):
         self._face_recognised_person_id2_validated = face_recognised_person_id2_validated
 
     @property
-    def vehicle_ocr(self):
-        """Gets the vehicle_ocr of this MetaAttributeEvent.  # noqa: E501
+    def vehicle_license_number(self):
+        """Gets the vehicle_license_number of this MetaAttributeEvent.  # noqa: E501
 
 
-        :return: The vehicle_ocr of this MetaAttributeEvent.  # noqa: E501
+        :return: The vehicle_license_number of this MetaAttributeEvent.  # noqa: E501
         :rtype: str
         """
-        return self._vehicle_ocr
+        return self._vehicle_license_number
 
-    @vehicle_ocr.setter
-    def vehicle_ocr(self, vehicle_ocr):
-        """Sets the vehicle_ocr of this MetaAttributeEvent.
+    @vehicle_license_number.setter
+    def vehicle_license_number(self, vehicle_license_number):
+        """Sets the vehicle_license_number of this MetaAttributeEvent.
 
 
-        :param vehicle_ocr: The vehicle_ocr of this MetaAttributeEvent.  # noqa: E501
+        :param vehicle_license_number: The vehicle_license_number of this MetaAttributeEvent.  # noqa: E501
         :type: str
         """
 
-        self._vehicle_ocr = vehicle_ocr
+        self._vehicle_license_number = vehicle_license_number
 
     @property
-    def vehicle_ocr_conf(self):
-        """Gets the vehicle_ocr_conf of this MetaAttributeEvent.  # noqa: E501
+    def vehicle_license_number_conf(self):
+        """Gets the vehicle_license_number_conf of this MetaAttributeEvent.  # noqa: E501
 
 
-        :return: The vehicle_ocr_conf of this MetaAttributeEvent.  # noqa: E501
+        :return: The vehicle_license_number_conf of this MetaAttributeEvent.  # noqa: E501
         :rtype: float
         """
-        return self._vehicle_ocr_conf
+        return self._vehicle_license_number_conf
 
-    @vehicle_ocr_conf.setter
-    def vehicle_ocr_conf(self, vehicle_ocr_conf):
-        """Sets the vehicle_ocr_conf of this MetaAttributeEvent.
+    @vehicle_license_number_conf.setter
+    def vehicle_license_number_conf(self, vehicle_license_number_conf):
+        """Sets the vehicle_license_number_conf of this MetaAttributeEvent.
 
 
-        :param vehicle_ocr_conf: The vehicle_ocr_conf of this MetaAttributeEvent.  # noqa: E501
+        :param vehicle_license_number_conf: The vehicle_license_number_conf of this MetaAttributeEvent.  # noqa: E501
         :type: float
         """
 
-        self._vehicle_ocr_conf = vehicle_ocr_conf
+        self._vehicle_license_number_conf = vehicle_license_number_conf
 
     @property
-    def vehicle_ocr_validated(self):
-        """Gets the vehicle_ocr_validated of this MetaAttributeEvent.  # noqa: E501
+    def vehicle_license_number_validated(self):
+        """Gets the vehicle_license_number_validated of this MetaAttributeEvent.  # noqa: E501
 
 
-        :return: The vehicle_ocr_validated of this MetaAttributeEvent.  # noqa: E501
+        :return: The vehicle_license_number_validated of this MetaAttributeEvent.  # noqa: E501
         :rtype: bool
         """
-        return self._vehicle_ocr_validated
+        return self._vehicle_license_number_validated
 
-    @vehicle_ocr_validated.setter
-    def vehicle_ocr_validated(self, vehicle_ocr_validated):
-        """Sets the vehicle_ocr_validated of this MetaAttributeEvent.
+    @vehicle_license_number_validated.setter
+    def vehicle_license_number_validated(self, vehicle_license_number_validated):
+        """Sets the vehicle_license_number_validated of this MetaAttributeEvent.
 
 
-        :param vehicle_ocr_validated: The vehicle_ocr_validated of this MetaAttributeEvent.  # noqa: E501
+        :param vehicle_license_number_validated: The vehicle_license_number_validated of this MetaAttributeEvent.  # noqa: E501
         :type: bool
         """
 
-        self._vehicle_ocr_validated = vehicle_ocr_validated
+        self._vehicle_license_number_validated = vehicle_license_number_validated
 
     @property
     def vehicle_quality_factor(self):
