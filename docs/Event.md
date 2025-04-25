@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **capbilities_type** | [**Capability**](Capability.md) |  | [optional] 
 **event_type** | [**EventType**](EventType.md) |  | [optional] 
 **event_details** | [**EventDetails**](EventDetails.md) |  | [optional] 
+**faceevent_snaps** | **list[str]** | _id of snap from #$ref: &#x27;#/components/schemas/snap&#x27; | [optional] 
+**faceevent_snap_time_stamps** | **list[int]** |  | [optional] 
 **event_snaps** | **list[str]** | _id of snap from #$ref: &#x27;#/components/schemas/snap&#x27; | [optional] 
 **event_snap_time_stamps** | **list[int]** |  | [optional] 
 **event_clips** | **list[str]** | _id of snap from #$ref: &#x27;#/components/schemas/clip&#x27; | [optional] 

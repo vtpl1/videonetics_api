@@ -71,6 +71,7 @@ Method | HTTP request | Description
 [**precis_engine_tasks_id_get**](EnginesApi.md#precis_engine_tasks_id_get) | **GET** /precisEngineTasks/{id} | Get precis engine task by id
 [**precis_engine_tasks_id_patch**](EnginesApi.md#precis_engine_tasks_id_patch) | **PATCH** /precisEngineTasks/{id} | Patch an precis engine task
 [**precis_engine_tasks_post**](EnginesApi.md#precis_engine_tasks_post) | **POST** /precisEngineTasks | Create an precisEngineTasks
+[**precis_engine_tasks_v2_jobid_post**](EnginesApi.md#precis_engine_tasks_v2_jobid_post) | **POST** /precisEngineTasksV2/{jobid} | Create an precisEngineTasks
 [**snaps_get**](EnginesApi.md#snaps_get) | **GET** /snaps | Get all unprocesed snaps
 [**snaps_id_get**](EnginesApi.md#snaps_id_get) | **GET** /snaps/{id} | Get snap by id
 [**snaps_post**](EnginesApi.md#snaps_post) | **POST** /snaps | Create a unprocesed snap
@@ -3679,6 +3680,62 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**PrecisEngineTask**](PrecisEngineTask.md)|  | [optional] 
+
+### Return type
+
+[**DefaultResponse**](DefaultResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **precis_engine_tasks_v2_jobid_post**
+> DefaultResponse precis_engine_tasks_v2_jobid_post(if_match, jobid, body=body)
+
+Create an precisEngineTasks
+
+Create a engineTasks.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.EnginesApi(swagger_client.ApiClient(configuration))
+if_match = 'if_match_example' # str | 
+jobid = 'jobid_example' # str | Unique ID
+body = swagger_client.PrecisEngineTask() # PrecisEngineTask |  (optional)
+
+try:
+    # Create an precisEngineTasks
+    api_response = api_instance.precis_engine_tasks_v2_jobid_post(if_match, jobid, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling EnginesApi->precis_engine_tasks_v2_jobid_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **if_match** | **str**|  | 
+ **jobid** | **str**| Unique ID | 
  **body** | [**PrecisEngineTask**](PrecisEngineTask.md)|  | [optional] 
 
 ### Return type

@@ -45,7 +45,6 @@ coverage.xml
 *,cover
 .hypothesis/
 venv/
-.venv/
 .python-version
 
 # Translations
@@ -63,6 +62,3 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
-
-site
-a.fsbq

@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import swagger_client
-from swagger_client.models.color import Color  # noqa: E501
+from swagger_client.models.baggage_properties import BaggageProperties  # noqa: E501
 from swagger_client.rest import ApiException
 
 
-class TestColor(unittest.TestCase):
-    """Color unit test stubs"""
+class TestBaggageProperties(unittest.TestCase):
+    """BaggageProperties unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestColor(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testColor(self):
-        """Test Color"""
+    def testBaggageProperties(self):
+        """Test BaggageProperties"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.color.Color()  # noqa: E501
+        # model = swagger_client.models.baggage_properties.BaggageProperties()  # noqa: E501
         pass
 
 
